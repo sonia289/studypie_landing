@@ -1283,7 +1283,7 @@ export default function Frame() {
   const formatTime = (num: number) => String(num).padStart(2, '0');
 
   return (
-    <div className="bg-white relative w-[375px] h-full mx-auto overflow-x-hidden">
+    <div className="bg-white relative w-[375px] min-h-screen mx-auto overflow-x-hidden">
       <div className="absolute bg-white h-[278px] left-0 overflow-clip top-0 w-[375px]" data-name="1">
         <div className="absolute bottom-[-7.91%] left-1/2 top-0 translate-x-[-50%] w-[375px]" data-name="검정 배경">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 375 300">
