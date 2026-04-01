@@ -1,14 +1,14 @@
 import svgPaths from "./svg-35svzyfnu7";
-import imgChatGptImage202512150711591 from "figma:asset/982951c76e3f9a743b9fe34ca00972b36a8bfa07.png";
-import imgChatGptImage20262111237401 from "figma:asset/1ef2f02aea7bf5dc49684f74635f00a751e13060.png";
-import imgChatGptImage202512150721301 from "figma:asset/7ca707c4e572dd549a830e00daa99029196c1829.png";
-import img from "figma:asset/ce48023dba47833355e8fd4444aff00a2ceac390.png";
-import img1 from "figma:asset/622316b7afc236d4a480ca80c3d07f3035aff4fc.png";
-import img2 from "figma:asset/5ac02f5683a34786ef4876a8aaafc27e98fb5d25.png";
-import imgAi from "figma:asset/beabff5dfe43fa893fe2486c8824b18db96aefa0.png";
-import img3 from "figma:asset/144b8a49cd1a3902474b4b798ee1de0198a8d6e2.png";
-import imgLearningNoteExample1 from "figma:asset/3ec3f9309bb4d329c16106ff37df561ccbc7fcea.png";
-import img20251114320331 from "figma:asset/83e04be8227eaa1b7d3d996a93b627d9093cf328.png";
+import imgChatGptImage202512150711591 from "../assets/982951c76e3f9a743b9fe34ca00972b36a8bfa07.png";
+import imgChatGptImage20262111237401 from "../assets/1ef2f02aea7bf5dc49684f74635f00a751e13060.png";
+import imgChatGptImage202512150721301 from "../assets/7ca707c4e572dd549a830e00daa99029196c1829.png";
+import img from "../assets/ce48023dba47833355e8fd4444aff00a2ceac390.png";
+import img1 from "../assets/622316b7afc236d4a480ca80c3d07f3035aff4fc.png";
+import img2 from "../assets/5ac02f5683a34786ef4876a8aaafc27e98fb5d25.png";
+import imgAi from "../assets/beabff5dfe43fa893fe2486c8824b18db96aefa0.png";
+import img3 from "../assets/144b8a49cd1a3902474b4b798ee1de0198a8d6e2.png";
+import imgLearningNoteExample1 from "../assets/3ec3f9309bb4d329c16106ff37df561ccbc7fcea.png";
+import img20251114320331 from "../assets/83e04be8227eaa1b7d3d996a93b627d9093cf328.png";
 
 function MaskGroup() {
   return (

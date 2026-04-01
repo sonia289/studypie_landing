@@ -1,8 +1,8 @@
 import svgPaths from "./svg-670zlmrjst";
 import clsx from "clsx";
 import { useState } from "react";
-import imgLearningNoteExample1 from "figma:asset/3ec3f9309bb4d329c16106ff37df561ccbc7fcea.png";
-import img20251114320331 from "figma:asset/83e04be8227eaa1b7d3d996a93b627d9093cf328.png";
+import imgLearningNoteExample1 from "../assets/3ec3f9309bb4d329c16106ff37df561ccbc7fcea.png";
+import img20251114320331 from "../assets/83e04be8227eaa1b7d3d996a93b627d9093cf328.png";
 type WrapperProps = {
   additionalClassNames?: string;
 };
