@@ -1,0 +1,23 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* 모바일 가로 스크롤 방지 */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 루트 컨테이너 중앙 정렬 */
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

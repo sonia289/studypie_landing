@@ -1,0 +1,5 @@
+@import url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/css/SpoqaHanSansNeo.css');
+
+:root {
+  --font-spoqa: 'Spoqa Han Sans Neo', sans-serif;
+}
