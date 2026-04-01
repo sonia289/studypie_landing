@@ -9,6 +9,18 @@
 
     <body>
       <div id="root"></div>
+      <script>
+        window.onerror = function(msg, url, line, col, err) {
+          document.getElementById('root').innerHTML =
+            '<div style="padding:40px;color:red;font-size:16px">' +
+            '<h2>JS Error</h2><pre>' + msg + '\n' + (err && err.stack || '') + '</pre></div>';
+        };
+        window.addEventListener('unhandledrejection', function(e) {
+          document.getElementById('root').innerHTML =
+            '<div style="padding:40px;color:red;font-size:16px">' +
+            '<h2>Promise Error</h2><pre>' + (e.reason && e.reason.stack || e.reason) + '</pre></div>';
+        });
+      </script>
       <script type="module" src="/src/main.tsx"></script>
     </body>
   </html>
