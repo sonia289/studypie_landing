@@ -792,7 +792,7 @@ export default function Group() {
             </div>
           </div>
         </div>
-        <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[22.76px] not-italic text-[7.938px] text-nowrap text-white top-[67.76px] tracking-[-0.4763px]">비즈니스 영어 할인쿠폰</p>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[22.76px] not-italic text-[7.938px] text-nowrap text-white top-[67.76px] tracking-[-0.4763px]">봄맞이 할인 쿠폰</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo:Bold',sans-serif] leading-[normal] left-[22.76px] not-italic text-[0px] text-nowrap text-white top-[82.84px] tracking-[-1.3223px]">
           <span className="text-[33.057px]">12</span>
           <span className="text-[14.982px] tracking-[-0.5993px]">만원</span>

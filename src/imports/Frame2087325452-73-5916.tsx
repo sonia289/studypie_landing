@@ -1209,7 +1209,7 @@ export default function Frame() {
   const dates = getSubscriptionDates();
 
   const handleCopyCoupon = () => {
-    const text = 'sp25연말할인';
+    const text = 'sp26봄맞이할인';
     
     // Create a temporary textarea element
     const textarea = document.createElement('textarea');
@@ -1376,12 +1376,11 @@ export default function Frame() {
         </div>
         <div className="absolute bg-[#435af7] h-[32px] left-1/2 overflow-clip top-0 translate-x-[-50%] w-[375px]" data-name="상단 띠배너">
           <div className="absolute content-stretch flex gap-[9.529px] items-center left-[calc(50%+0.5px)] top-1/2 translate-x-[-50%] translate-y-[-50%]">
-            <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic relative shrink-0 text-[14.807px] text-center text-nowrap text-white tracking-[-0.7404px]">
-              <span>{`비즈니스 영어 패키지 `}</span>
-              <span className="font-['Spoqa_Han_Sans_Neo'] font-bold tracking-[-0.8px]">UPTO 73%</span>
+            <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic relative shrink-0 text-[12px] text-center text-nowrap text-white tracking-[-0.7404px]">
+              <span>{`🚨곧 마감! 놓치면 다음 봄을 기다려야 해요🚨`}</span>
             </p>
             <div className="bg-black h-[21.439px] overflow-clip relative rounded-[29.82px] shrink-0 w-[90.522px] cursor-pointer" onClick={handleCTAClick}>
-              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium h-[11.911px] leading-[normal] left-[calc(50%+0.31px)] not-italic text-[9.529px] text-center text-white top-[calc(50%-6.18px)] tracking-[-0.7623px] translate-x-[-50%] w-[63.127px]">강의 보러 가기 →</p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium h-[11.911px] leading-[normal] left-[calc(50%+0.31px)] not-italic text-[9.529px] text-center text-white top-[calc(50%-6.18px)] tracking-[-0.7623px] translate-x-[-50%] w-[63.127px]">강의 구매하기</p>
             </div>
           </div>
         </div>
@@ -1478,8 +1477,8 @@ export default function Frame() {
         </div>
         <div className="absolute contents left-[calc(50%+0.35px)] top-[196px] translate-x-[-50%]">
           <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.35px)] not-italic text-[0px] text-[24.972px] text-center text-nowrap text-white top-[196px] translate-x-[-50%]">
-            <p className="mb-0">2026년 직장인 특가!</p>
-            <p className="font-['Spoqa_Han_Sans_Neo'] font-bold text-[#ff76d5]">~최대 73% 할인</p>
+            <p className="mb-0">봄맞이 프로모션 특가!</p>
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-bold text-[#ff76d5]">12만원 선착순 할인</p>
           </div>
           <div className="absolute contents left-[77.89px] top-[284.79px]">
             <div className="absolute h-[101.87px] left-[77.89px] top-[284.79px] w-[219.199px]" data-name="Subtract">
@@ -3379,7 +3378,7 @@ export default function Frame() {
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%+0.5px)] not-italic text-[28.842px] text-center text-white top-[287px] tracking-[-0.8653px] translate-x-[-50%] w-[292px]">일주일 뒤에는 없습니다</p>
         <p className="absolute font-['WindSong:Regular',sans-serif] leading-[normal] left-[calc(50%+0.5px)] not-italic text-[#ff76d5] text-[29.758px] text-center top-[260px] tracking-[-0.8927px] translate-x-[-50%] w-[260px]">Final Offer</p>
         <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.5px)] not-italic text-[14.898px] text-center text-white top-[325.1px] tracking-[-0.4469px] translate-x-[-50%] w-[292px]">
-          <p className="mb-0">26년 이벤트, 할인받을 수 있는</p>
+          <p className="mb-0">26년 봄 프로모션, 할인받을 수 있는</p>
           <p className="font-['Spoqa_Han_Sans_Neo'] font-medium text-[#ff76d5]">이벤트 마지막 주!</p>
         </div>
         <div className="absolute content-stretch flex flex-col gap-[2px] items-start left-[21px] top-[513px] w-[333px]">
