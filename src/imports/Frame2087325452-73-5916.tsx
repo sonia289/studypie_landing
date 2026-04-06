@@ -1344,25 +1344,29 @@ export default function Frame() {
   }, [updateScale]);
 
   return (
-    <div
-      className="mx-auto origin-top"
-      style={{ width: 375, transform: `scale(${scale})` }}
-    >
-      {/* 상단 띠배너 - sticky */}
-      <div className="sticky top-0 z-50 relative" data-name="상단 띠배너" style={{ height: '43.975px', background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)' }}>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <p className="font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] not-italic text-[8.91px] text-center text-nowrap text-white tracking-[-0.4px]">
-            🚨곧 마감! 놓치면 다음 봄을 기다려야 해요🚨
-          </p>
-          <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[12.73px] text-center text-nowrap text-white tracking-[-0.5px] w-[189.404px]">
-            {formatTime(timeLeft.days)}일 {formatTime(timeLeft.hours)}시간 {formatTime(timeLeft.minutes)}분  {formatTime(timeLeft.seconds)}초 남았습니다
-          </p>
-        </div>
-        <div className="absolute right-[12px] top-1/2 -translate-y-1/2 shrink-0 cursor-pointer flex items-center justify-center w-[62.33px] h-[17.04px]" style={{ border: '0.21px solid white', borderRadius: '0px', WebkitBorderRadius: '0px' }} onClick={handleCTAClick}>
-          <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[8.1px] text-center text-white text-nowrap tracking-[-0.5px]">강의 구매하기</p>
+    <>
+      {/* 상단 띠배너 - fixed, zoom 컨테이너 밖 */}
+      <div className="fixed top-0 left-0 right-0 z-50" style={{ height: '43.975px', background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)' }} data-name="상단 띠배너">
+        <div className="relative mx-auto" style={{ width: 375, height: '43.975px', zoom: scale }}>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] not-italic text-[8.91px] text-center text-nowrap text-white tracking-[-0.4px]">
+              🚨곧 마감! 놓치면 다음 봄을 기다려야 해요🚨
+            </p>
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[12.73px] text-center text-nowrap text-white tracking-[-0.5px] w-[189.404px]">
+              {formatTime(timeLeft.days)}일 {formatTime(timeLeft.hours)}시간 {formatTime(timeLeft.minutes)}분  {formatTime(timeLeft.seconds)}초 남았습니다
+            </p>
+          </div>
+          <div className="absolute right-[12px] top-1/2 -translate-y-1/2 shrink-0 cursor-pointer flex items-center justify-center w-[62.33px] h-[17.04px]" style={{ border: '0.21px solid white', borderRadius: '0px', WebkitBorderRadius: '0px' }} onClick={handleCTAClick}>
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[8.1px] text-center text-white text-nowrap tracking-[-0.5px]">강의 구매하기</p>
+          </div>
         </div>
       </div>
-      <div className="bg-white relative w-[375px] h-[5678px] overflow-x-hidden" style={{ marginTop: '-44px' }}>
+      {/* 메인 콘텐츠 */}
+      <div
+        className="mx-auto origin-top"
+        style={{ width: 375, zoom: scale, paddingTop: '43.975px' }}
+      >
+      <div className="bg-white relative w-[375px] h-[5678px] overflow-x-hidden">
       {/* 히어로 섹션 - 띠배너 아래에서 시작 */}
       <div className="absolute left-0 top-[44px] w-[375px] h-[246px] overflow-visible" data-name="1" style={{ background: 'linear-gradient(180deg, #0084FF 0%, #4070E8 10%, #9080D8 22%, #B8A0E0 32%, #D8C0E8 40%, #FFFFFF 50%, #F8B8E0 60%, #F0A0D0 75%, #F8C8E8 90%, #FFFFFF 100%)' }}>
         {/* 벚꽃 타원 장식 (발광 효과) */}
@@ -2322,5 +2326,6 @@ export default function Frame() {
       </div>
     </div>
     </div>
+    </>
   );
 }
