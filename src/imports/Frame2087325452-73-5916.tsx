@@ -1303,10 +1303,10 @@ export default function Frame() {
         </div>
         <div className="absolute left-0 top-0 w-[375px] relative" data-name="상단 띠배너" style={{ height: '43.975px', background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)' }}>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic text-[8px] text-center text-nowrap text-white tracking-[-0.4px]">
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] not-italic text-[8.91px] text-center text-nowrap text-white tracking-[-0.4px]">
               🚨곧 마감! 놓치면 다음 봄을 기다려야 해요🚨
             </p>
-            <p className="font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] not-italic text-[11.5px] text-center text-nowrap text-white tracking-[-0.5px] w-[189.404px]">
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[12.73px] text-center text-nowrap text-white tracking-[-0.5px] w-[189.404px]">
               {formatTime(timeLeft.days)}일 {formatTime(timeLeft.hours)}시간 {formatTime(timeLeft.minutes)}분  {formatTime(timeLeft.seconds)}초 남았습니다
             </p>
           </div>
