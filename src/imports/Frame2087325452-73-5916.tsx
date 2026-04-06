@@ -1,8 +1,8 @@
 import svgPaths from "./svg-zhutp1cxe1";
 import svgPathsNewDesign from "./svg-35svzyfnu7";
 import clsx from "clsx";
-import { motion } from "motion/react";
-import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import imgSpringHeroCopy from "../assets/spring-hero-copy.png";
 import imgSpringEllipse from "../assets/spring-ellipse.svg";
 import imgCherryBlossomLeft from "../assets/cherry-blossom-left.svg";
@@ -48,6 +48,20 @@ import imgPhoneScreenExpression from "../assets/phone-screen-expression.png";
 import imgPhoneScreenQuiz from "../assets/phone-screen-quiz.png";
 import imgStudyfyAppBadge from "../assets/studyfy-app-badge.svg";
 import imgTabArrowIcon from "../assets/tab-arrow-icon.svg";
+import imgSubtractSpring from "../assets/spring/imgSubtract.png";
+import imgSubtract1Spring from "../assets/spring/imgSubtract1.png";
+import imgMaskGroupSpring from "../assets/spring/imgMaskGroup.png";
+import imgCoupon from "../assets/spring/coupon-image.png";
+import imgGroup1707481105Spring from "../assets/spring/imgGroup1707481105.png";
+import imgEllipse4669 from "../assets/spring/ellipse4669.svg";
+import imgEllipse4671 from "../assets/spring/ellipse4671.svg";
+import imgEllipse4672 from "../assets/spring/ellipse4672.svg";
+import imgEllipse4673 from "../assets/spring/ellipse4673.svg";
+import imgEllipse4674 from "../assets/spring/ellipse4674.svg";
+import imgEllipse4675 from "../assets/spring/ellipse4675.svg";
+import imgEllipse4676 from "../assets/spring/ellipse4676.svg";
+import imgEllipse4677 from "../assets/spring/ellipse4677.svg";
+import imgBgGroup from "../assets/spring/bgGroup.svg";
 import imgTabArrowLine from "../assets/tab-arrow-line.svg";
 import imgNewBadgeBg from "../assets/new-badge-bg.svg";
 type BackgroundImage7Props = {
@@ -139,7 +153,7 @@ type BackgroundImage3Props = {
 
 function BackgroundImage3({ additionalClassNames = "" }: BackgroundImage3Props) {
   return (
-    <div className={clsx("absolute h-[12.382px] left-[188px] w-[125.848px]", additionalClassNames)}>
+    <div className={clsx("absolute h-[12.382px] left-[197px] w-[150.444px]", additionalClassNames)}>
       <div className="absolute inset-[-2.86%_-0.68%_-2.86%_0]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 126.702 13.0895">
           <path d={svgPaths.p2a063180} fill="var(--stroke-0, white)" id="Vector 1441" />
@@ -157,10 +171,10 @@ type BackgroundImage2Props = {
 
 function BackgroundImage2({ text, text1, price = '29,200', additionalClassNames = "" }: BackgroundImage2Props) {
   return (
-    <p className={clsx("absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[190.99px] not-italic text-[0px] text-nowrap text-white tracking-[-0.956px]", additionalClassNames)}>
-      <span className="text-[14.651px] tracking-[-0.586px]">{text}</span>
-      <span className="text-[23.9px]">{` ${price}`}</span>
-      <span className="text-[23.901px] tracking-[-0.9561px]">{text1}</span>
+    <p className={clsx("absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[199.99px] not-italic text-[0px] text-nowrap text-white tracking-[-1.2705px]", additionalClassNames)}>
+      <span className="text-[19.471px] tracking-[-0.7789px]">{text}</span>
+      <span className="text-[31.764px]">{` ${price}`}</span>
+      <span className="text-[31.766px] tracking-[-1.2706px]">{text1}</span>
     </p>
   );
 }
@@ -173,7 +187,7 @@ type BackgroundImage1Props = {
 
 function BackgroundImage1({ text, text1, price = '1,300,000', additionalClassNames = "" }: BackgroundImage1Props) {
   return (
-    <p className={clsx("absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[190.99px] not-italic text-[#626262] text-[0px] text-nowrap tracking-[-1.3331px]", additionalClassNames)}>
+    <p className={clsx("absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[199.99px] not-italic text-[#626262] text-[0px] text-nowrap tracking-[-1.3331px]", additionalClassNames)}>
       <span className="text-[11.674px]">{text}</span>
       <span className="text-[19.045px]">{` ${price}`}</span>
       <span className="text-[11.674px]">{text1}</span>
@@ -189,34 +203,30 @@ type BackgroundImageProps = {
 
 function BackgroundImage({ additionalClassNames = "", activeTab = 'business', startDate = "2025. 12. 17", endDate = "2026. 12. 17" }: BackgroundImageProps) {
   return (
-    <div className={clsx("absolute content-stretch flex flex-col gap-[4.495px] items-start left-[calc(50%-2.03px)] translate-x-[-50%]", additionalClassNames)}>
-      <div className="content-stretch flex font-['Spoqa_Han_Sans_Neo'] gap-[16.854px] items-center not-italic px-0 py-[9.617px] relative shrink-0 text-[9.364px] text-nowrap tracking-[-0.6554px] w-full">
-        <p className="leading-[normal] relative shrink-0 text-[#626262]">{`수강 기간 `}</p>
-        <p className="leading-[normal] relative shrink-0 text-white">
-          <span className="font-['Spoqa_Han_Sans_Neo'] font-bold not-italic text-[#d9ff00]">{"오늘 결제 시"}</span>
-          <span>{`  ${startDate} ~ ${endDate}`}</span>
+    <div className={clsx("absolute content-stretch flex flex-col gap-[4.495px] items-start left-[calc(50%+1px)] translate-x-[-50%] w-[339px]", additionalClassNames)}>
+      <div className="content-stretch flex font-['Spoqa_Han_Sans_Neo'] gap-[16.854px] items-center not-italic py-[9.617px] relative shrink-0 text-[9.364px] tracking-[-0.6554px] w-full">
+        <p className="leading-[normal] relative shrink-0 text-[#626262] whitespace-nowrap">{`수강 기간 `}</p>
+        <p className="leading-[0] relative shrink-0 text-white whitespace-pre">
+          <span className="font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] not-italic text-[#d9ff00]">{"오늘 결제 시"}</span>
+          <span className="leading-[normal]">{`  ${startDate} ~ ${endDate}`}</span>
         </p>
       </div>
-      <div className="content-stretch flex font-['Spoqa_Han_Sans_Neo'] gap-[33.334px] items-center leading-[normal] not-italic relative shrink-0 text-[9.364px] text-nowrap tracking-[-0.6554px] w-full">
+      <div className="content-stretch flex font-['Spoqa_Han_Sans_Neo'] gap-[33.334px] items-center leading-[normal] not-italic relative shrink-0 text-[9.364px] tracking-[-0.6554px] w-full whitespace-nowrap">
         <p className="relative shrink-0 text-[#626262]">{"구성"}</p>
         <p className="relative shrink-0 text-white">
-          {activeTab === 'business' 
+          {activeTab === 'business'
             ? "7개 강의 12개월 무제한 수강권 [유료기간(학습) 4개월 + 무료기간(복습) 8개월]"
             : "13개 강의 12개월 무제한 수강권 [유료기간(학습) 4개월 + 무료기간(복습) 8개월]"
           }
         </p>
       </div>
-      <div className="relative shrink-0 w-full">
-        <div className="flex flex-row items-center size-full">
-          <div className="content-stretch flex items-center pl-[50.557px] pr-0 py-0 relative w-full">
-            <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic relative shrink-0 text-[9.364px] text-nowrap text-white tracking-[-0.6554px]">
-              {activeTab === 'business' 
-                ? <>7개 강의 복습용 엑기스 학습노트 (1,046p) <span className="text-[#d9ff00]">+ 스터디파이 AI 튜터 학습 프로그램 제공</span></>
-                : <>13개 강의 복습용 엑기스 학습노트 (2,413p) <span className="text-[#d9ff00]">+ 스터디파이 AI 튜터 학습 프로그램 제공</span></>
-              }
-            </p>
-          </div>
-        </div>
+      <div className="content-stretch flex items-center pl-[50px] relative shrink-0 w-full">
+        <p className="font-['Spoqa_Han_Sans_Neo'] leading-[0] not-italic relative shrink-0 text-[9.364px] text-white tracking-[-0.6554px] whitespace-nowrap">
+          {activeTab === 'business'
+            ? <><span className="leading-[normal]">7개 강의 복습용 엑기스 학습노트 (1,046p) </span><span className="leading-[normal] text-[#d9ff00]">+ 스터디파이 AI 튜터 학습 프로그램 제공</span></>
+            : <><span className="leading-[normal]">13개 강의 복습용 엑기스 학습노트 (2,413p) </span><span className="leading-[normal] text-[#d9ff00]">+ 스터디파이 AI 튜터 학습 프로그램 제공</span></>
+          }
+        </p>
       </div>
     </div>
   );
@@ -228,15 +238,7 @@ type SubtractBackgroundImageProps = {
 function SubtractBackgroundImage({ additionalClassNames = "" }: SubtractBackgroundImageProps) {
   return (
     <div className={clsx("absolute h-[72.548px] left-[24px] w-[156.105px]", additionalClassNames)}>
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 156.105 72.5479">
-        <path d={svgPaths.p16e5c400} fill="url(#paint0_linear_72_2865)" id="Subtract" />
-        <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_72_2865" x1="-2.79212e-06" x2="172.055" y1="0.646371" y2="78.4762">
-            <stop stopColor="#435AF7" />
-            <stop offset="1" stopColor="#FF76D5" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <img src={imgCoupon} alt="" className="block w-full h-full" />
     </div>
   );
 }
@@ -1196,6 +1198,26 @@ export default function Frame() {
   const [isCopied, setIsCopied] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeTab, setActiveTab] = useState<'business' | 'study'>('business');
+  const [tabFading, setTabFading] = useState(false);
+  const pendingTab = useRef<'business' | 'study' | null>(null);
+  const switchTab = (tab: 'business' | 'study') => {
+    if (tab === activeTab || tabFading) return;
+    pendingTab.current = tab;
+    setTabFading(true);
+  };
+  useEffect(() => {
+    if (!tabFading || !pendingTab.current) return;
+    const timer = setTimeout(() => {
+      setActiveTab(pendingTab.current!);
+      pendingTab.current = null;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTabFading(false);
+        });
+      });
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [tabFading]);
   
   // 동적으로 오늘 날짜와 1년 후 날짜 계산
   const getSubscriptionDates = () => {
@@ -1242,7 +1264,7 @@ export default function Frame() {
   };
 
   const handleCTAClick = () => {
-    window.location.href = 'https://studypie.co/course/a/english_package_2022';
+    window.location.href = 'https://studypie.co/course/a/english_package_2022#package';
   };
 
   const slides = [imgLearningNoteExample1, img20251114320331];
@@ -1253,6 +1275,18 @@ export default function Frame() {
 
   const handleNextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  // 마우스/터치 드래그로 슬라이드 넘기기
+  const dragStartX = useRef(0);
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    dragStartX.current = 'touches' in e ? e.touches[0].clientX : e.clientX;
+  };
+  const handleDragEnd = (e: React.MouseEvent | React.TouchEvent) => {
+    const endX = 'changedTouches' in e ? e.changedTouches[0].clientX : e.clientX;
+    const diff = dragStartX.current - endX;
+    if (diff > 30) handleNextSlide();
+    else if (diff < -30) handlePrevSlide();
   };
 
   useEffect(() => {
@@ -1292,8 +1326,28 @@ export default function Frame() {
 
   const formatTime = (num: number) => String(num).padStart(2, '0');
 
+  // 375px 디자인을 화면 폭에 맞게 스케일링
+  const [scale, setScale] = useState(1);
+  const updateScale = useCallback(() => {
+    const vw = window.innerWidth;
+    if (vw < 375) {
+      setScale(vw / 375);
+    } else {
+      setScale(1);
+    }
+  }, []);
+
+  useEffect(() => {
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, [updateScale]);
+
   return (
-    <div className="w-[375px] mx-auto">
+    <div
+      className="mx-auto origin-top"
+      style={{ width: 375, transform: `scale(${scale})` }}
+    >
       {/* 상단 띠배너 - sticky */}
       <div className="sticky top-0 z-50 relative" data-name="상단 띠배너" style={{ height: '43.975px', background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)' }}>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -1468,1010 +1522,81 @@ export default function Frame() {
           </p>
           {/* 쿠폰 사용 유의사항 */}
           <div className="absolute left-[23px] top-[548px] w-[308px]">
-            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[14.479px] text-white mb-[12px] tracking-[-0.7239px]">쿠폰 사용 유의사항</p>
+            <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic text-[14.479px] text-white mb-[12px] tracking-[-0.7239px]">쿠폰 사용 유의사항</p>
             <div className="font-['Spoqa_Han_Sans_Neo'] leading-[17px] not-italic text-[10.342px] text-[#616aac] tracking-[-0.5px]">
               <p className="mb-0">• 해당 쿠폰은 선착순 쿠폰으로 조기 소진 될 수 있습니다.</p>
               <p className="mb-0">• 결제 화면에서 할인 코드를 입력하시면 할인이 적용됩니다.</p>
               <p className="mb-0">• 쿠폰 코드를 받으셨더라도 선착순 소진 시 사용이 불가할 수 있습니다.</p>
             </div>
           </div>
-          <div className="absolute contents left-[77.89px] top-[363.79px] cursor-pointer" onClick={handleCopyCoupon}>
-            <div className="absolute h-[101.87px] left-[77.89px] top-[363.79px] w-[219.199px] cursor-pointer" data-name="Subtract" onClick={handleCopyCoupon}>
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 219.199 101.87">
-                <path d={svgPaths.p24da5030} fill="url(#paint0_linear_72_2760)" id="Subtract" />
-                <defs>
-                  <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_72_2760" x1="-3.92062e-06" x2="241.595" y1="0.907617" y2="110.194">
-                    <stop stopColor="#435AF7" />
-                    <stop offset="1" stopColor="#FF76D5" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div className="absolute contents left-[77.89px] top-[363.79px]" data-name="Mask group">
-              <div className="absolute contents inset-[34.43%_13.68%_51.37%_51.73%]" data-name="Group">
-                <div className="absolute inset-[36.25%_38.81%_53.51%_55.74%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-131.145px_-30.961px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20.4184 89.1551">
-                    <path d={svgPaths.p30b8f2f0} fill="var(--fill-0, #ECECEC)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[37.38%_36.84%_54.57%_58.54%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-141.621px_-40.805px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.3467 70.1005">
-                    <path d={svgPaths.p6896f00} fill="var(--fill-0, #4056EC)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[40.73%_32.52%_58.16%_64.79%]" data-name="Group">
-                  <div className="absolute contents inset-[40.73%_32.52%_58.16%_64.79%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[40.69%_32.52%_58.17%_64.77%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[40.69%_32.52%_58.17%_64.77%] mask-position-[-165.004px,_0.059px_-69.633px,_0.32px] mask-size-[219.199px_101.867px,_10.09px_9.642px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup1}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.1468 9.95308">
-                          <g id="Group">
-                            <path d={svgPaths.p3c3b1570} fill="var(--fill-0, #E7E7E7)" id="Vector" />
-                            <path d={svgPaths.p3b842a00} fill="var(--fill-0, #E5E5E5)" id="Vector_2" />
-                            <path d={svgPaths.p1da84400} fill="var(--fill-0, #E4E4E4)" id="Vector_3" />
-                            <path d={svgPaths.p3d319b00} fill="var(--fill-0, #E2E2E2)" id="Vector_4" />
-                            <path d={svgPaths.p25cc7680} fill="var(--fill-0, #E1E1E1)" id="Vector_5" />
-                            <path d={svgPaths.p166ed000} fill="var(--fill-0, #DFDFDF)" id="Vector_6" />
-                            <path d={svgPaths.p1a0dc170} fill="var(--fill-0, #DEDEDE)" id="Vector_7" />
-                            <path d={svgPaths.p1a897100} fill="var(--fill-0, #DCDCDC)" id="Vector_8" />
-                            <path d={svgPaths.p22554400} fill="var(--fill-0, #DBDBDB)" id="Vector_9" />
-                            <path d={svgPaths.p33cc5080} fill="var(--fill-0, #D9D9D9)" id="Vector_10" />
-                            <path d={svgPaths.p19b5b180} fill="var(--fill-0, #D8D8D8)" id="Vector_11" />
-                            <path d={svgPaths.p8e98000} fill="var(--fill-0, #D6D6D6)" id="Vector_12" />
-                            <path d={svgPaths.p312e15b0} fill="var(--fill-0, #D5D5D5)" id="Vector_13" />
-                            <path d={svgPaths.p39645b80} fill="var(--fill-0, #D3D3D3)" id="Vector_14" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[47.49%_42.88%_51.68%_53.32%]" data-name="Group">
-                  <div className="absolute contents inset-[47.49%_42.88%_51.68%_53.32%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[47.49%_42.88%_51.68%_53.32%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[47.49%_42.88%_51.68%_53.32%] mask-position-[-122.039px,_0px_-128.836px,_0px] mask-size-[219.199px_101.867px,_14.25px_7.246px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup2}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14.2584 7.2374">
-                          <g id="Group">
-                            <path d={svgPaths.p355dd500} fill="var(--fill-0, #B2B2B2)" id="Vector" />
-                            <path d={svgPaths.p34046600} fill="var(--fill-0, #B0B0B0)" id="Vector_2" />
-                            <path d={svgPaths.p16d52500} fill="var(--fill-0, #AFAFAF)" id="Vector_3" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[40.29%_30.86%_58.81%_66.94%]" data-name="Group">
-                  <div className="absolute contents inset-[40.29%_30.86%_58.81%_66.94%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[40.29%_30.86%_58.81%_66.94%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[40.29%_30.86%_58.81%_66.94%] mask-position-[-173.125px,_0px_-66.102px,_0px] mask-size-[219.199px_101.867px,_8.266px_7.902px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup3}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8.26211 7.89861">
-                          <g id="Group">
-                            <path d={svgPaths.pc8eae40} fill="var(--fill-0, #3C51DE)" id="Vector" />
-                            <path d={svgPaths.pbd09b40} fill="var(--fill-0, #3C51DF)" id="Vector_2" />
-                            <path d={svgPaths.p35a77780} fill="var(--fill-0, #3D52E1)" id="Vector_3" />
-                            <path d={svgPaths.p1de4bb00} fill="var(--fill-0, #3D53E2)" id="Vector_4" />
-                            <path d={svgPaths.p10ba58f0} fill="var(--fill-0, #3E53E4)" id="Vector_5" />
-                            <path d={svgPaths.p1a79a080} fill="var(--fill-0, #3E54E5)" id="Vector_6" />
-                            <path d={svgPaths.p348528f0} fill="var(--fill-0, #3E54E7)" id="Vector_7" />
-                            <path d={svgPaths.p20b39300} fill="var(--fill-0, #3E54E5)" id="Vector_8" />
-                            <path d={svgPaths.peb0800} fill="var(--fill-0, #3E53E4)" id="Vector_9" />
-                            <path d={svgPaths.p19ee2180} fill="var(--fill-0, #3D53E2)" id="Vector_10" />
-                            <path d={svgPaths.p17c69400} fill="var(--fill-0, #3D52E1)" id="Vector_11" />
-                            <path d={svgPaths.p24d5600} fill="var(--fill-0, #3C51DF)" id="Vector_12" />
-                            <path d={svgPaths.p18500900} fill="var(--fill-0, #3C51DE)" id="Vector_13" />
-                            <path d={svgPaths.p1cc49700} fill="var(--fill-0, #3C50DC)" id="Vector_14" />
-                            <path d={svgPaths.p3fca8600} fill="var(--fill-0, #3B50DB)" id="Vector_15" />
-                            <path d={svgPaths.p2e3a9980} fill="var(--fill-0, #3B4FD9)" id="Vector_16" />
-                            <path d={svgPaths.p1524a500} fill="var(--fill-0, #3A4FD8)" id="Vector_17" />
-                            <path d={svgPaths.p3e96a500} fill="var(--fill-0, #3A4ED6)" id="Vector_18" />
-                            <path d={svgPaths.p2a115b00} fill="var(--fill-0, #3A4ED5)" id="Vector_19" />
-                            <path d={svgPaths.p26191380} fill="var(--fill-0, #394DD3)" id="Vector_20" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[40.64%_30.1%_58.66%_67.33%]" data-name="Group">
-                  <div className="absolute contents inset-[40.64%_30.1%_58.66%_67.33%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[40.64%_30.11%_58.66%_67.33%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[40.64%_30.11%_58.66%_67.33%] mask-position-[-174.574px,_0.008px_-69.203px,_0px] mask-size-[219.199px_101.867px,_9.637px_6.063px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup4}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.63382 6.05504">
-                          <g id="Group">
-                            <path d={svgPaths.p22246d80} fill="var(--fill-0, #B0B0B0)" id="Vector" />
-                            <path d={svgPaths.p382d2400} fill="var(--fill-0, #AFAFAF)" id="Vector_2" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[41.28%_31.25%_57.93%_65.66%]" data-name="Group">
-                  <div className="absolute contents inset-[41.28%_31.25%_57.93%_65.66%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[41.28%_31.25%_57.93%_65.66%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[41.28%_31.25%_57.93%_65.66%] mask-position-[-168.344px,_0px_-74.789px,_0px] mask-size-[219.199px_101.867px,_11.574px_6.87px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup5}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.5708 6.86146">
-                          <g id="Group">
-                            <path d={svgPaths.p1fd61f80} fill="var(--fill-0, #3040B0)" id="Vector" />
-                            <path d={svgPaths.p2c6b4a00} fill="var(--fill-0, #2F40AF)" id="Vector_2" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-[42.08%_32.14%_57.33%_63.84%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-161.504px_-81.766px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.0844 5.09184">
-                    <path d={svgPaths.p2a8e1680} fill="var(--fill-0, #B6B6B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[39.07%_27%_58.72%_64.74%]" data-name="Group">
-                  <div className="absolute contents inset-[39.07%_27%_58.72%_64.74%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[39.07%_27.01%_58.63%_64.74%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[39.07%_27.01%_58.63%_64.74%] mask-position-[-164.879px,_0px_-55.523px,_0px] mask-size-[219.199px_101.867px,_30.962px_19.222px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup6}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30.9533 20.0233">
-                          <g id="Group">
-                            <path d={svgPaths.p1bcc0000} fill="var(--fill-0, #AFAFAF)" id="Vector" />
-                            <path d={svgPaths.p1cc53cc0} fill="var(--fill-0, #B0B0B0)" id="Vector_2" />
-                            <path d={svgPaths.pb523c80} fill="var(--fill-0, #B2B2B2)" id="Vector_3" />
-                            <path d={svgPaths.p3f466600} fill="var(--fill-0, #B3B3B3)" id="Vector_4" />
-                            <path d={svgPaths.p1a002500} fill="var(--fill-0, #B5B5B5)" id="Vector_5" />
-                            <path d={svgPaths.p2b73eb80} fill="var(--fill-0, #B6B6B6)" id="Vector_6" />
-                            <path d={svgPaths.p3e4e5a00} fill="var(--fill-0, #B8B8B8)" id="Vector_7" />
-                            <path d={svgPaths.p3065a000} fill="var(--fill-0, #B9B9B9)" id="Vector_8" />
-                            <path d={svgPaths.pf9e2a00} fill="var(--fill-0, #BBBBBB)" id="Vector_9" />
-                            <path d={svgPaths.p11d31f80} fill="var(--fill-0, #BCBCBC)" id="Vector_10" />
-                            <path d={svgPaths.p3debf900} fill="var(--fill-0, #BEBEBE)" id="Vector_11" />
-                            <path d={svgPaths.p1a73d900} fill="var(--fill-0, #C0C0C0)" id="Vector_12" />
-                            <path d={svgPaths.p11776400} fill="var(--fill-0, #C1C1C1)" id="Vector_13" />
-                            <path d={svgPaths.p2f354df2} fill="var(--fill-0, #C3C3C3)" id="Vector_14" />
-                            <path d={svgPaths.p3bce5080} fill="var(--fill-0, #C4C4C4)" id="Vector_15" />
-                            <path d={svgPaths.p16207840} fill="var(--fill-0, #C6C6C6)" id="Vector_16" />
-                            <path d={svgPaths.pd446600} fill="var(--fill-0, #C7C7C7)" id="Vector_17" />
-                            <path d={svgPaths.p28edc180} fill="var(--fill-0, #C9C9C9)" id="Vector_18" />
-                            <path d={svgPaths.p130f5820} fill="var(--fill-0, #CACACA)" id="Vector_19" />
-                            <path d={svgPaths.p39966000} fill="var(--fill-0, #CCCCCC)" id="Vector_20" />
-                            <path d={svgPaths.p1077e80} fill="var(--fill-0, #CDCDCD)" id="Vector_21" />
-                            <path d={svgPaths.p76180} fill="var(--fill-0, #CFCFCF)" id="Vector_22" />
-                            <path d={svgPaths.p17d1eb40} fill="var(--fill-0, #D0D0D0)" id="Vector_23" />
-                            <path d={svgPaths.p1cc42400} fill="var(--fill-0, #D2D2D2)" id="Vector_24" />
-                            <path d={svgPaths.pf49c400} fill="var(--fill-0, #D3D3D3)" id="Vector_25" />
-                            <path d={svgPaths.p716be00} fill="var(--fill-0, #D5D5D5)" id="Vector_26" />
-                            <path d={svgPaths.p22d94b80} fill="var(--fill-0, #D6D6D6)" id="Vector_27" />
-                            <path d={svgPaths.p17bc0040} fill="var(--fill-0, #D8D8D8)" id="Vector_28" />
-                            <path d={svgPaths.pf2ab200} fill="var(--fill-0, #D9D9D9)" id="Vector_29" />
-                            <path d={svgPaths.p307a100} fill="var(--fill-0, #DBDBDB)" id="Vector_30" />
-                            <path d={svgPaths.p17123c80} fill="var(--fill-0, #DCDCDC)" id="Vector_31" />
-                            <path d={svgPaths.p110e1000} fill="var(--fill-0, #DEDEDE)" id="Vector_32" />
-                            <path d={svgPaths.pbdf4280} fill="var(--fill-0, #DFDFDF)" id="Vector_33" />
-                            <path d={svgPaths.p121bff80} fill="var(--fill-0, #E1E1E1)" id="Vector_34" />
-                            <path d={svgPaths.p39cae600} fill="var(--fill-0, #E2E2E2)" id="Vector_35" />
-                            <path d={svgPaths.p334ace70} fill="var(--fill-0, #E4E4E4)" id="Vector_36" />
-                            <path d={svgPaths.p284d9700} fill="var(--fill-0, #E5E5E5)" id="Vector_37" />
-                            <path d={svgPaths.p162eae00} fill="var(--fill-0, #E7E7E7)" id="Vector_38" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[39.81%_28.51%_59.17%_66.95%]" data-name="Group">
-                  <div className="absolute contents inset-[39.81%_28.51%_59.17%_66.95%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[39.81%_28.51%_59.16%_66.95%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[39.81%_28.51%_59.16%_66.95%] mask-position-[-173.176px,_0.008px_-61.969px,_-0.016px] mask-size-[219.199px_101.867px,_17.023px_8.93px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup7}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.0277 8.92348">
-                          <g id="Group">
-                            <path d={svgPaths.p8e1b400} fill="var(--fill-0, #2F40AF)" id="Vector" />
-                            <path d={svgPaths.p783e780} fill="var(--fill-0, #3040B0)" id="Vector_2" />
-                            <path d={svgPaths.p317e6a00} fill="var(--fill-0, #3041B2)" id="Vector_3" />
-                            <path d={svgPaths.p1d896b00} fill="var(--fill-0, #3141B3)" id="Vector_4" />
-                            <path d={svgPaths.pb039500} fill="var(--fill-0, #3142B5)" id="Vector_5" />
-                            <path d={svgPaths.p86dd280} fill="var(--fill-0, #3143B6)" id="Vector_6" />
-                            <path d={svgPaths.p3cb3b880} fill="var(--fill-0, #3243B8)" id="Vector_7" />
-                            <path d={svgPaths.p35b16e70} fill="var(--fill-0, #3244B9)" id="Vector_8" />
-                            <path d={svgPaths.p1a651700} fill="var(--fill-0, #3344BB)" id="Vector_9" />
-                            <path d={svgPaths.p39951900} fill="var(--fill-0, #3345BC)" id="Vector_10" />
-                            <path d={svgPaths.p15454b00} fill="var(--fill-0, #3345BE)" id="Vector_11" />
-                            <path d={svgPaths.p36a0d540} fill="var(--fill-0, #3446C0)" id="Vector_12" />
-                            <path d={svgPaths.p36e0e180} fill="var(--fill-0, #3446C1)" id="Vector_13" />
-                            <path d={svgPaths.p3385d00} fill="var(--fill-0, #3547C3)" id="Vector_14" />
-                            <path d={svgPaths.p2a637880} fill="var(--fill-0, #3547C4)" id="Vector_15" />
-                            <path d={svgPaths.p33918c00} fill="var(--fill-0, #3548C6)" id="Vector_16" />
-                            <path d={svgPaths.p2f61f480} fill="var(--fill-0, #3649C7)" id="Vector_17" />
-                            <path d={svgPaths.p212601c0} fill="var(--fill-0, #3649C9)" id="Vector_18" />
-                            <path d={svgPaths.p72f7e20} fill="var(--fill-0, #374ACA)" id="Vector_19" />
-                            <path d={svgPaths.p3a2f39f2} fill="var(--fill-0, #374ACC)" id="Vector_20" />
-                            <path d={svgPaths.p8af4200} fill="var(--fill-0, #374BCD)" id="Vector_21" />
-                            <path d={svgPaths.p189a8e80} fill="var(--fill-0, #384BCF)" id="Vector_22" />
-                            <path d={svgPaths.p3046fd00} fill="var(--fill-0, #384CD0)" id="Vector_23" />
-                            <path d={svgPaths.p360eec00} fill="var(--fill-0, #394CD2)" id="Vector_24" />
-                            <path d={svgPaths.p26567b00} fill="var(--fill-0, #394DD3)" id="Vector_25" />
-                            <path d={svgPaths.p358fa100} fill="var(--fill-0, #3A4ED5)" id="Vector_26" />
-                            <path d={svgPaths.pb7cef80} fill="var(--fill-0, #3A4ED6)" id="Vector_27" />
-                            <path d={svgPaths.p2fcb7580} fill="var(--fill-0, #3A4FD8)" id="Vector_28" />
-                            <path d={svgPaths.p2ce8b1f0} fill="var(--fill-0, #3B4FD9)" id="Vector_29" />
-                            <path d={svgPaths.p9558d80} fill="var(--fill-0, #3B50DB)" id="Vector_30" />
-                            <path d={svgPaths.p39889df2} fill="var(--fill-0, #3C50DC)" id="Vector_31" />
-                            <path d={svgPaths.p934fe00} fill="var(--fill-0, #3C51DE)" id="Vector_32" />
-                            <path d={svgPaths.p2c748080} fill="var(--fill-0, #3C51DF)" id="Vector_33" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[42.09%_33.52%_56.4%_63.84%]" data-name="Group">
-                  <div className="absolute contents inset-[42.09%_33.52%_56.4%_63.84%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[42.08%_33.52%_56.4%_63.84%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[42.08%_33.52%_56.4%_63.84%] mask-position-[-161.496px,_0px_-81.766px,_0.008px] mask-size-[219.199px_101.867px,_9.918px_13.219px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup8}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.92287 13.2347">
-                          <g id="Group">
-                            <path d={svgPaths.p3fa58900} fill="var(--fill-0, #E2E2E2)" id="Vector" />
-                            <path d={svgPaths.p29327c00} fill="var(--fill-0, #E4E4E4)" id="Vector_2" />
-                            <path d={svgPaths.pd448280} fill="var(--fill-0, #E5E5E5)" id="Vector_3" />
-                            <path d={svgPaths.p23cf8720} fill="var(--fill-0, #E7E7E7)" id="Vector_4" />
-                            <path d={svgPaths.p1a1ecf80} fill="var(--fill-0, #E5E5E5)" id="Vector_5" />
-                            <path d={svgPaths.p4e1b800} fill="var(--fill-0, #E4E4E4)" id="Vector_6" />
-                            <path d={svgPaths.p2727c80} fill="var(--fill-0, #E2E2E2)" id="Vector_7" />
-                            <path d={svgPaths.p10297d00} fill="var(--fill-0, #E1E1E1)" id="Vector_8" />
-                            <path d={svgPaths.p9d20970} fill="var(--fill-0, #DFDFDF)" id="Vector_9" />
-                            <path d={svgPaths.p3b881cf0} fill="var(--fill-0, #DEDEDE)" id="Vector_10" />
-                            <path d={svgPaths.p3c46e870} fill="var(--fill-0, #DCDCDC)" id="Vector_11" />
-                            <path d={svgPaths.p1d640600} fill="var(--fill-0, #DBDBDB)" id="Vector_12" />
-                            <path d={svgPaths.p234f6c00} fill="var(--fill-0, #D9D9D9)" id="Vector_13" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[39.93%_28.39%_59.48%_69.68%]" data-name="Group">
-                  <div className="absolute contents inset-[39.93%_28.39%_59.48%_69.68%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[39.93%_28.39%_59.48%_69.68%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[39.93%_28.39%_59.48%_69.68%] mask-position-[-183.402px,_0px_-63.008px,_0.008px] mask-size-[219.199px_101.867px,_7.227px_5.136px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup9}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.24505 5.15847">
-                          <g id="Group">
-                            <path d={svgPaths.p93d1100} fill="var(--fill-0, #D3D3D3)" id="Vector" />
-                            <path d={svgPaths.p3cd26b00} fill="var(--fill-0, #D5D5D5)" id="Vector_2" />
-                            <path d={svgPaths.p133f440} fill="var(--fill-0, #D6D6D6)" id="Vector_3" />
-                            <path d={svgPaths.p9057280} fill="var(--fill-0, #D8D8D8)" id="Vector_4" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-[41.52%_29.83%_57.76%_66.93%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-173.109px_-76.852px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.1338 6.28355">
-                    <path d={svgPaths.p2afec200} fill="var(--fill-0, #3041B2)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[41.69%_29.05%_57.61%_68.36%]" data-name="Group">
-                  <div className="absolute contents inset-[41.69%_29.05%_57.61%_68.36%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[41.69%_29.05%_57.61%_68.36%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[41.69%_29.05%_57.61%_68.36%] mask-position-[-178.438px,_0px_-78.344px,_0px] mask-size-[219.199px_101.867px,_9.738px_6.073px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup10}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.73412 6.07129">
-                          <g id="Group">
-                            <path d={svgPaths.p1bc26c00} fill="var(--fill-0, #2F40AF)" id="Vector" />
-                            <path d={svgPaths.p27f8600} fill="var(--fill-0, #3040B0)" id="Vector_2" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[41.9%_28.66%_56.77%_66.52%]" data-name="Group">
-                  <div className="absolute contents inset-[41.9%_28.66%_56.77%_66.52%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[41.89%_28.66%_56.77%_66.52%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[41.89%_28.66%_56.77%_66.52%] mask-position-[-171.547px,_0px_-80.078px,_0.039px] mask-size-[219.199px_101.867px,_18.086px_11.644px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup11}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.0898 11.6841">
-                          <g id="Group">
-                            <path d={svgPaths.p301aa00} fill="var(--fill-0, #DBDBDB)" id="Vector" />
-                            <path d={svgPaths.p3f78c800} fill="var(--fill-0, #DCDCDC)" id="Vector_2" />
-                            <path d={svgPaths.p19288b80} fill="var(--fill-0, #DEDEDE)" id="Vector_3" />
-                            <path d={svgPaths.p2d457a00} fill="var(--fill-0, #DFDFDF)" id="Vector_4" />
-                            <path d={svgPaths.p14b4680} fill="var(--fill-0, #E1E1E1)" id="Vector_5" />
-                            <path d={svgPaths.p24e64280} fill="var(--fill-0, #E2E2E2)" id="Vector_6" />
-                            <path d={svgPaths.p3b319cf0} fill="var(--fill-0, #E4E4E4)" id="Vector_7" />
-                            <path d={svgPaths.p18468380} fill="var(--fill-0, #E5E5E5)" id="Vector_8" />
-                            <path d={svgPaths.p3c30400} fill="var(--fill-0, #E7E7E7)" id="Vector_9" />
-                            <path d={svgPaths.pad73300} fill="var(--fill-0, #E5E5E5)" id="Vector_10" />
-                            <path d={svgPaths.p34ac5c80} fill="var(--fill-0, #E4E4E4)" id="Vector_11" />
-                            <path d={svgPaths.p15f83500} fill="var(--fill-0, #E2E2E2)" id="Vector_12" />
-                            <path d={svgPaths.p1f56ea00} fill="var(--fill-0, #E1E1E1)" id="Vector_13" />
-                            <path d={svgPaths.p2f37a580} fill="var(--fill-0, #DFDFDF)" id="Vector_14" />
-                            <path d={svgPaths.p965f100} fill="var(--fill-0, #DEDEDE)" id="Vector_15" />
-                            <path d={svgPaths.p3a120c80} fill="var(--fill-0, #DCDCDC)" id="Vector_16" />
-                            <path d={svgPaths.p1904e280} fill="var(--fill-0, #DBDBDB)" id="Vector_17" />
-                            <path d={svgPaths.p3a83cb00} fill="var(--fill-0, #D9D9D9)" id="Vector_18" />
-                            <path d={svgPaths.p25908100} fill="var(--fill-0, #D8D8D8)" id="Vector_19" />
-                            <path d={svgPaths.p2c6b2100} fill="var(--fill-0, #D6D6D6)" id="Vector_20" />
-                            <path d={svgPaths.p1806b700} fill="var(--fill-0, #D5D5D5)" id="Vector_21" />
-                            <path d={svgPaths.p25fc6fc0} fill="var(--fill-0, #D3D3D3)" id="Vector_22" />
-                            <path d={svgPaths.p14079180} fill="var(--fill-0, #D2D2D2)" id="Vector_23" />
-                            <path d={svgPaths.p1b189200} fill="var(--fill-0, #D0D0D0)" id="Vector_24" />
-                            <path d={svgPaths.p169efb80} fill="var(--fill-0, #CFCFCF)" id="Vector_25" />
-                            <path d={svgPaths.p1642cb00} fill="var(--fill-0, #CDCDCD)" id="Vector_26" />
-                            <path d={svgPaths.p3ce1f300} fill="var(--fill-0, #CCCCCC)" id="Vector_27" />
-                            <path d={svgPaths.p1d44ed00} fill="var(--fill-0, #CACACA)" id="Vector_28" />
-                            <path d={svgPaths.p3ec5b720} fill="var(--fill-0, #C9C9C9)" id="Vector_29" />
-                            <path d={svgPaths.p2bbf7480} fill="var(--fill-0, #C7C7C7)" id="Vector_30" />
-                            <path d={svgPaths.p3e8c4200} fill="var(--fill-0, #C6C6C6)" id="Vector_31" />
-                            <path d={svgPaths.p9b30b00} fill="var(--fill-0, #C4C4C4)" id="Vector_32" />
-                            <path d={svgPaths.p3082f000} fill="var(--fill-0, #C3C3C3)" id="Vector_33" />
-                            <path d={svgPaths.p2f17c6f0} fill="var(--fill-0, #C1C1C1)" id="Vector_34" />
-                            <path d={svgPaths.p3cf09c00} fill="var(--fill-0, #C0C0C0)" id="Vector_35" />
-                            <path d={svgPaths.p3c539100} fill="var(--fill-0, #BEBEBE)" id="Vector_36" />
-                            <path d={svgPaths.p2e0ec600} fill="var(--fill-0, #BCBCBC)" id="Vector_37" />
-                            <path d={svgPaths.p4a18000} fill="var(--fill-0, #BBBBBB)" id="Vector_38" />
-                            <path d={svgPaths.p31476c00} fill="var(--fill-0, #B9B9B9)" id="Vector_39" />
-                            <path d={svgPaths.p1ccad780} fill="var(--fill-0, #B8B8B8)" id="Vector_40" />
-                            <path d={svgPaths.pf7bb970} fill="var(--fill-0, #B6B6B6)" id="Vector_41" />
-                            <path d={svgPaths.p1d655900} fill="var(--fill-0, #B5B5B5)" id="Vector_42" />
-                            <path d={svgPaths.p29fa5c80} fill="var(--fill-0, #B3B3B3)" id="Vector_43" />
-                            <path d={svgPaths.p2aa45900} fill="var(--fill-0, #B2B2B2)" id="Vector_44" />
-                            <path d={svgPaths.p37540500} fill="var(--fill-0, #B0B0B0)" id="Vector_45" />
-                            <path d={svgPaths.pfc0f680} fill="var(--fill-0, #AFAFAF)" id="Vector_46" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[42.15%_26.43%_56.01%_64.94%]" data-name="Group">
-                  <div className="absolute contents inset-[42.15%_26.43%_56.01%_64.94%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[42.15%_26.44%_56.01%_64.94%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[42.15%_26.44%_56.01%_64.94%] mask-position-[-165.617px,_0px_-82.336px,_-0.008px] mask-size-[219.199px_101.867px,_32.361px_16.017px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup12}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32.3532 16.0078">
-                          <g id="Group">
-                            <path d={svgPaths.p220cdb00} fill="var(--fill-0, #3C51DE)" id="Vector" />
-                            <path d={svgPaths.p34b46480} fill="var(--fill-0, #3C50DC)" id="Vector_2" />
-                            <path d={svgPaths.pe4e3100} fill="var(--fill-0, #3B50DB)" id="Vector_3" />
-                            <path d={svgPaths.p1562cd00} fill="var(--fill-0, #3B4FD9)" id="Vector_4" />
-                            <path d={svgPaths.p82e4f80} fill="var(--fill-0, #3A4FD8)" id="Vector_5" />
-                            <path d={svgPaths.p2e6eea00} fill="var(--fill-0, #3A4ED6)" id="Vector_6" />
-                            <path d={svgPaths.p88cb00} fill="var(--fill-0, #3A4ED5)" id="Vector_7" />
-                            <path d={svgPaths.p38208b00} fill="var(--fill-0, #394DD3)" id="Vector_8" />
-                            <path d={svgPaths.p31c24d00} fill="var(--fill-0, #394CD2)" id="Vector_9" />
-                            <path d={svgPaths.p2dcd3a00} fill="var(--fill-0, #384CD0)" id="Vector_10" />
-                            <path d={svgPaths.p1227a00} fill="var(--fill-0, #384BCF)" id="Vector_11" />
-                            <path d={svgPaths.p1b135d50} fill="var(--fill-0, #374BCD)" id="Vector_12" />
-                            <path d={svgPaths.p36ff4fb0} fill="var(--fill-0, #374ACC)" id="Vector_13" />
-                            <path d={svgPaths.p2f0cd600} fill="var(--fill-0, #374ACA)" id="Vector_14" />
-                            <path d={svgPaths.p16fe5500} fill="var(--fill-0, #3649C9)" id="Vector_15" />
-                            <path d={svgPaths.p2767ec00} fill="var(--fill-0, #3649C7)" id="Vector_16" />
-                            <path d={svgPaths.p3c506e80} fill="var(--fill-0, #3548C6)" id="Vector_17" />
-                            <path d={svgPaths.p3080d400} fill="var(--fill-0, #3547C4)" id="Vector_18" />
-                            <path d={svgPaths.p23f58d80} fill="var(--fill-0, #3547C3)" id="Vector_19" />
-                            <path d={svgPaths.p2ed26200} fill="var(--fill-0, #3446C1)" id="Vector_20" />
-                            <path d={svgPaths.pc5ee500} fill="var(--fill-0, #3446C0)" id="Vector_21" />
-                            <path d={svgPaths.p230e30c0} fill="var(--fill-0, #3345BE)" id="Vector_22" />
-                            <path d={svgPaths.p10804580} fill="var(--fill-0, #3345BC)" id="Vector_23" />
-                            <path d={svgPaths.p1d125170} fill="var(--fill-0, #3344BB)" id="Vector_24" />
-                            <path d={svgPaths.p10212580} fill="var(--fill-0, #3244B9)" id="Vector_25" />
-                            <path d={svgPaths.p34190300} fill="var(--fill-0, #3243B8)" id="Vector_26" />
-                            <path d={svgPaths.p4582680} fill="var(--fill-0, #3143B6)" id="Vector_27" />
-                            <path d={svgPaths.pdc49380} fill="var(--fill-0, #3142B5)" id="Vector_28" />
-                            <path d={svgPaths.p17fe100} fill="var(--fill-0, #3141B3)" id="Vector_29" />
-                            <path d={svgPaths.p6aee580} fill="var(--fill-0, #3041B2)" id="Vector_30" />
-                            <path d={svgPaths.p394b2880} fill="var(--fill-0, #3040B0)" id="Vector_31" />
-                            <path d={svgPaths.p35b77400} fill="var(--fill-0, #2F40AF)" id="Vector_32" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[43.05%_33.27%_56.31%_64.67%]" data-name="Group">
-                  <div className="absolute contents inset-[43.05%_33.27%_56.31%_64.67%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[43.02%_33.25%_56.3%_64.6%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[43.02%_33.25%_56.3%_64.6%] mask-position-[-164.352px,_0.254px_-89.953px,_0.227px] mask-size-[219.199px_101.867px,_7.738px_5.557px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup13}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8.0633 5.84226">
-                          <g id="Group">
-                            <path d={svgPaths.pdf6040} fill="var(--fill-0, #D9D9D9)" id="Vector" />
-                            <path d={svgPaths.p30f21c00} fill="var(--fill-0, #D8D8D8)" id="Vector_2" />
-                            <path d={svgPaths.p35323a00} fill="var(--fill-0, #D6D6D6)" id="Vector_3" />
-                            <path d={svgPaths.p2d316900} fill="var(--fill-0, #D5D5D5)" id="Vector_4" />
-                            <path d={svgPaths.p2b410f00} fill="var(--fill-0, #D3D3D3)" id="Vector_5" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[43.14%_33.25%_56.3%_64.91%]" data-name="Group">
-                  <div className="absolute contents inset-[43.14%_33.25%_56.3%_64.91%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[43.13%_33.25%_56.3%_64.88%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[43.13%_33.25%_56.3%_64.88%] mask-position-[-165.398px,_0.133px_-90.844px,_0.102px] mask-size-[219.199px_101.867px,_6.883px_4.852px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup14}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.01642 4.95164">
-                          <g id="Group">
-                            <path d={svgPaths.p1d87e800} fill="var(--fill-0, #D3D3D3)" id="Vector" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[39.97%_28.12%_59.32%_69.79%]" data-name="Group">
-                  <div className="absolute contents inset-[39.97%_28.12%_59.32%_69.79%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[39.96%_28.08%_59.27%_69.77%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[39.96%_28.08%_59.27%_69.77%] mask-position-[-183.727px,_0.094px_-63.266px,_0.078px] mask-size-[219.199px_101.867px,_7.826px_6.234px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup15}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8.06371 6.68928">
-                          <g id="Group">
-                            <path d={svgPaths.p3222e100} fill="var(--fill-0, #D8D8D8)" id="Vector" />
-                            <path d={svgPaths.p1321bb00} fill="var(--fill-0, #D9D9D9)" id="Vector_2" />
-                            <path d={svgPaths.p3833b00} fill="var(--fill-0, #DBDBDB)" id="Vector_3" />
-                            <path d={svgPaths.pb3d3a00} fill="var(--fill-0, #DCDCDC)" id="Vector_4" />
-                            <path d={svgPaths.p21511c80} fill="var(--fill-0, #DEDEDE)" id="Vector_5" />
-                            <path d={svgPaths.p22ca7400} fill="var(--fill-0, #DFDFDF)" id="Vector_6" />
-                            <path d={svgPaths.p29f0a240} fill="var(--fill-0, #E1E1E1)" id="Vector_7" />
-                            <path d={svgPaths.p1f29d090} fill="var(--fill-0, #E2E2E2)" id="Vector_8" />
-                            <path d={svgPaths.p1e185400} fill="var(--fill-0, #E4E4E4)" id="Vector_9" />
-                            <path d={svgPaths.p344ac000} fill="var(--fill-0, #E5E5E5)" id="Vector_10" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[40.13%_28.12%_59.31%_70.06%]" data-name="Group">
-                  <div className="absolute contents inset-[40.13%_28.12%_59.31%_70.06%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[40.12%_28.08%_59.27%_70.05%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[40.12%_28.08%_59.27%_70.05%] mask-position-[-184.793px,_0.047px_-64.672px,_0.109px] mask-size-[219.199px_101.867px,_6.825px_4.837px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup16}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6.9973 5.28303">
-                          <g id="Group">
-                            <path d={svgPaths.p9c8ba00} fill="var(--fill-0, #E5E5E5)" id="Vector" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[42.12%_31.67%_56.9%_66.05%]" data-name="Group">
-                  <div className="absolute contents inset-[42.12%_31.67%_56.9%_66.05%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[42.12%_31.67%_56.9%_66.05%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[42.12%_31.67%_56.9%_66.05%] mask-position-[-169.785px,_0px_-82.055px,_0px] mask-size-[219.199px_101.867px,_8.571px_8.594px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup17}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8.56721 8.58898">
-                          <g id="Group">
-                            <path d={svgPaths.p23a5bd00} fill="var(--fill-0, #3E53E4)" id="Vector" />
-                            <path d={svgPaths.p24afdf80} fill="var(--fill-0, #3E54E5)" id="Vector_2" />
-                            <path d={svgPaths.p1229cf00} fill="var(--fill-0, #3E54E7)" id="Vector_3" />
-                            <path d={svgPaths.p76b0a00} fill="var(--fill-0, #3E54E5)" id="Vector_4" />
-                            <path d={svgPaths.pcaf380} fill="var(--fill-0, #3E53E4)" id="Vector_5" />
-                            <path d={svgPaths.pe056a00} fill="var(--fill-0, #3D53E2)" id="Vector_6" />
-                            <path d={svgPaths.p5cd580} fill="var(--fill-0, #3D52E1)" id="Vector_7" />
-                            <path d={svgPaths.p1c3f4100} fill="var(--fill-0, #3C51DF)" id="Vector_8" />
-                            <path d={svgPaths.p1f720400} fill="var(--fill-0, #3C51DE)" id="Vector_9" />
-                            <path d={svgPaths.p2e784e00} fill="var(--fill-0, #3C50DC)" id="Vector_10" />
-                            <path d={svgPaths.p9987100} fill="var(--fill-0, #3B50DB)" id="Vector_11" />
-                            <path d={svgPaths.p3fb91100} fill="var(--fill-0, #3B4FD9)" id="Vector_12" />
-                            <path d={svgPaths.pda1c10} fill="var(--fill-0, #3A4FD8)" id="Vector_13" />
-                            <path d={svgPaths.p34deab00} fill="var(--fill-0, #3A4ED6)" id="Vector_14" />
-                            <path d={svgPaths.p2ef1e000} fill="var(--fill-0, #3A4ED5)" id="Vector_15" />
-                            <path d={svgPaths.p3f3c3100} fill="var(--fill-0, #394DD3)" id="Vector_16" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[40.14%_28.02%_59.09%_70.07%]" data-name="Group">
-                  <div className="absolute contents inset-[40.14%_28.02%_59.09%_70.07%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[40.12%_28.02%_59.09%_70.05%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[40.12%_28.02%_59.09%_70.05%] mask-position-[-184.789px,_0.07px_-64.672px,_0.148px] mask-size-[219.199px_101.867px,_7.188px_6.704px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup18}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.24875 6.85994">
-                          <g id="Group">
-                            <path d={svgPaths.p9c8ba00} fill="var(--fill-0, #E5E5E5)" id="Vector" />
-                            <path d={svgPaths.p7d8e000} fill="var(--fill-0, #E7E7E7)" id="Vector_2" />
-                            <path d={svgPaths.p7a37580} fill="var(--fill-0, #E5E5E5)" id="Vector_3" />
-                            <path d={svgPaths.p2d390880} fill="var(--fill-0, #E4E4E4)" id="Vector_4" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-[40.79%_28.6%_58.49%_68.08%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-177.406px_-70.461px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.4524 6.29629">
-                    <path d={svgPaths.p33ebde00} fill="var(--fill-0, #B3B3B3)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[41.84%_28.89%_57.55%_69.14%]" data-name="Group">
-                  <div className="absolute contents inset-[41.84%_28.89%_57.55%_69.14%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[41.84%_28.87%_57.55%_69.14%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[41.84%_28.87%_57.55%_69.14%] mask-position-[-181.371px,_0px_-79.617px,_0px] mask-size-[219.199px_101.867px,_7.412px_5.309px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup19}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.4603 5.3616">
-                          <g id="Group">
-                            <path d={svgPaths.p3affc680} fill="var(--fill-0, #D3D3D3)" id="Vector" />
-                            <path d={svgPaths.p3dae9960} fill="var(--fill-0, #D5D5D5)" id="Vector_2" />
-                            <path d={svgPaths.p242f5680} fill="var(--fill-0, #D6D6D6)" id="Vector_3" />
-                            <path d={svgPaths.pefff80} fill="var(--fill-0, #D8D8D8)" id="Vector_4" />
-                            <path d={svgPaths.p16853c00} fill="var(--fill-0, #D9D9D9)" id="Vector_5" />
-                            <path d={svgPaths.pe906b80} fill="var(--fill-0, #DBDBDB)" id="Vector_6" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[39.35%_25.95%_59.06%_71.18%]" data-name="Group">
-                  <div className="absolute contents inset-[39.35%_25.95%_59.06%_71.18%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[39.35%_25.95%_59.06%_71.18%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[39.35%_25.95%_59.06%_71.18%] mask-position-[-189.031px,_0px_-57.93px,_0px] mask-size-[219.199px_101.867px,_10.754px_13.861px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup20}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.755 13.8639">
-                          <g id="Group">
-                            <path d={svgPaths.p1d87e800} fill="var(--fill-0, #394DD3)" id="Vector" />
-                            <path d={svgPaths.p4d24240} fill="var(--fill-0, #3A4ED5)" id="Vector_2" />
-                            <path d={svgPaths.p2ab75b00} fill="var(--fill-0, #3A4ED6)" id="Vector_3" />
-                            <path d={svgPaths.p166de480} fill="var(--fill-0, #3A4FD8)" id="Vector_4" />
-                            <path d={svgPaths.p346a7980} fill="var(--fill-0, #3B4FD9)" id="Vector_5" />
-                            <path d={svgPaths.p31188f00} fill="var(--fill-0, #3B50DB)" id="Vector_6" />
-                            <path d={svgPaths.p1a027900} fill="var(--fill-0, #3C50DC)" id="Vector_7" />
-                            <path d={svgPaths.p16002200} fill="var(--fill-0, #3C51DE)" id="Vector_8" />
-                            <path d={svgPaths.p29d3d5f0} fill="var(--fill-0, #3C51DF)" id="Vector_9" />
-                            <path d={svgPaths.p1ecac80} fill="var(--fill-0, #3D52E1)" id="Vector_10" />
-                            <path d={svgPaths.p6c9a580} fill="var(--fill-0, #3D53E2)" id="Vector_11" />
-                            <path d={svgPaths.p3e611500} fill="var(--fill-0, #3E53E4)" id="Vector_12" />
-                            <path d={svgPaths.p24d52d00} fill="var(--fill-0, #3E54E5)" id="Vector_13" />
-                            <path d={svgPaths.pd41ec00} fill="var(--fill-0, #3E54E7)" id="Vector_14" />
-                            <path d={svgPaths.p6ef8a00} fill="var(--fill-0, #3E54E5)" id="Vector_15" />
-                            <path d={svgPaths.p2d7e6380} fill="var(--fill-0, #3E53E4)" id="Vector_16" />
-                            <path d={svgPaths.p1eb552f2} fill="var(--fill-0, #3D53E2)" id="Vector_17" />
-                            <path d={svgPaths.p36e67100} fill="var(--fill-0, #3D52E1)" id="Vector_18" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-[40.36%_25.96%_59.06%_70.17%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-185.234px_-66.719px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14.5044 5.06635">
-                    <path d={svgPaths.p18e86800} fill="var(--fill-0, #3142B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[40.96%_27.29%_58.24%_69.59%]" data-name="Group">
-                  <div className="absolute contents inset-[40.96%_27.29%_58.24%_69.59%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[40.96%_27.29%_58.24%_69.59%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[40.96%_27.29%_58.24%_69.59%] mask-position-[-183.051px,_0px_-71.961px,_0px] mask-size-[219.199px_101.867px,_11.727px_6.992px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup21}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.7254 6.99025">
-                          <g id="Group">
-                            <path d={svgPaths.p3c11d400} fill="var(--fill-0, #AFAFAF)" id="Vector" />
-                            <path d={svgPaths.p2de97d80} fill="var(--fill-0, #B0B0B0)" id="Vector_2" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-[37.38%_20.48%_61.82%_61.35%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-152.164px_-40.805px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 68.1249 6.93995">
-                    <path d={svgPaths.p2d169900} fill="var(--fill-0, #3142B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[36.25%_17.69%_62.88%_59.37%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-144.746px_-30.961px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 86.0324 7.57085">
-                    <path d={svgPaths.p3d71f200} fill="var(--fill-0, #B6B6B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[37.63%_20.48%_60.75%_77.3%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-211.973px_-42.945px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8.31647 14.1603">
-                    <path d={svgPaths.p2d53ab00} fill="var(--fill-0, #ECECEC)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[41.21%_26.4%_57.3%_70.9%]" data-name="Group">
-                  <div className="absolute contents inset-[41.21%_26.4%_57.3%_70.9%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[41.21%_26.4%_57.3%_70.9%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[41.21%_26.4%_57.3%_70.9%] mask-position-[-187.973px,_0px_-74.148px,_0px] mask-size-[219.199px_101.867px,_10.138px_12.977px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup22}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.1402 12.9742">
-                          <g id="Group">
-                            <path d={svgPaths.pb314480} fill="var(--fill-0, #394DD3)" id="Vector" />
-                            <path d={svgPaths.p1c2d8ac0} fill="var(--fill-0, #3A4ED5)" id="Vector_2" />
-                            <path d={svgPaths.p816ae00} fill="var(--fill-0, #3A4ED6)" id="Vector_3" />
-                            <path d={svgPaths.p1954f600} fill="var(--fill-0, #3A4FD8)" id="Vector_4" />
-                            <path d={svgPaths.p3280df00} fill="var(--fill-0, #3B4FD9)" id="Vector_5" />
-                            <path d={svgPaths.pb7f5780} fill="var(--fill-0, #3B50DB)" id="Vector_6" />
-                            <path d={svgPaths.p26237b00} fill="var(--fill-0, #3C50DC)" id="Vector_7" />
-                            <path d={svgPaths.p32f5f400} fill="var(--fill-0, #3C51DE)" id="Vector_8" />
-                            <path d={svgPaths.p1b832780} fill="var(--fill-0, #3C51DF)" id="Vector_9" />
-                            <path d={svgPaths.p15e28c80} fill="var(--fill-0, #3D52E1)" id="Vector_10" />
-                            <path d={svgPaths.p65d6f00} fill="var(--fill-0, #3D53E2)" id="Vector_11" />
-                            <path d={svgPaths.pf95900} fill="var(--fill-0, #3E53E4)" id="Vector_12" />
-                            <path d={svgPaths.p1eeb1400} fill="var(--fill-0, #3E54E5)" id="Vector_13" />
-                            <path d={svgPaths.pd253700} fill="var(--fill-0, #3E54E7)" id="Vector_14" />
-                            <path d={svgPaths.p8539a80} fill="var(--fill-0, #3E54E5)" id="Vector_15" />
-                            <path d={svgPaths.p5dc6a00} fill="var(--fill-0, #3E53E4)" id="Vector_16" />
-                            <path d={svgPaths.p35c64e80} fill="var(--fill-0, #3D53E2)" id="Vector_17" />
-                            <path d={svgPaths.p824ee80} fill="var(--fill-0, #3D52E1)" id="Vector_18" />
-                            <path d={svgPaths.p2d2faa00} fill="var(--fill-0, #3C51DF)" id="Vector_19" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-[39.07%_27.77%_56.56%_63.84%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-161.496px_-55.516px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 31.4793 38.0305">
-                    <path d={svgPaths.p6158200} fill="var(--fill-0, #455DFF)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[36.57%_17.69%_60.71%_79.68%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-220.918px_-33.734px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.85868 23.6876">
-                    <path d={svgPaths.p38701000} fill="var(--fill-0, #4056EC)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[38.7%_18.5%_60.71%_77.3%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-211.973px_-52.305px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.7535 5.11096">
-                    <path d={svgPaths.p38a44e00} fill="var(--fill-0, #3142B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[39.84%_18.93%_59.57%_76.87%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-210.375px_-62.234px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.7535 5.11733">
-                    <path d={svgPaths.pa38c600} fill="var(--fill-0, #B6B6B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[35.02%_13.68%_62.71%_82.92%]" data-name="Group">
-                  <div className="absolute contents inset-[35.02%_13.68%_62.71%_82.92%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[35.02%_13.68%_62.71%_82.92%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[35.02%_13.68%_62.71%_82.92%] mask-position-[-233.063px,_0px_-20.227px,_0px] mask-size-[219.199px_101.867px,_12.739px_19.807px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup23}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.7428 19.8049">
-                          <g id="Group">
-                            <path d={svgPaths.p1b4b5a80} fill="var(--fill-0, #D3D3D3)" id="Vector" />
-                            <path d={svgPaths.p74b2500} fill="var(--fill-0, #D5D5D5)" id="Vector_2" />
-                            <path d={svgPaths.pc831900} fill="var(--fill-0, #D6D6D6)" id="Vector_3" />
-                            <path d={svgPaths.p940e960} fill="var(--fill-0, #D8D8D8)" id="Vector_4" />
-                            <path d={svgPaths.p1c74ce70} fill="var(--fill-0, #D9D9D9)" id="Vector_5" />
-                            <path d={svgPaths.p21ef700} fill="var(--fill-0, #DBDBDB)" id="Vector_6" />
-                            <path d={svgPaths.pab14b00} fill="var(--fill-0, #DCDCDC)" id="Vector_7" />
-                            <path d={svgPaths.p2e8c8fb0} fill="var(--fill-0, #DEDEDE)" id="Vector_8" />
-                            <path d={svgPaths.p155c700} fill="var(--fill-0, #DFDFDF)" id="Vector_9" />
-                            <path d={svgPaths.pe93cf80} fill="var(--fill-0, #E1E1E1)" id="Vector_10" />
-                            <path d={svgPaths.p212e2880} fill="var(--fill-0, #E2E2E2)" id="Vector_11" />
-                            <path d={svgPaths.p7770680} fill="var(--fill-0, #E4E4E4)" id="Vector_12" />
-                            <path d={svgPaths.p11df3680} fill="var(--fill-0, #E5E5E5)" id="Vector_13" />
-                            <path d={svgPaths.p348b3300} fill="var(--fill-0, #E7E7E7)" id="Vector_14" />
-                            <path d={svgPaths.p3fda3e30} fill="var(--fill-0, #E5E5E5)" id="Vector_15" />
-                            <path d={svgPaths.p3d0c800} fill="var(--fill-0, #E4E4E4)" id="Vector_16" />
-                            <path d={svgPaths.p24ebb300} fill="var(--fill-0, #E2E2E2)" id="Vector_17" />
-                            <path d={svgPaths.p36289800} fill="var(--fill-0, #E1E1E1)" id="Vector_18" />
-                            <path d={svgPaths.p1e8a4180} fill="var(--fill-0, #DFDFDF)" id="Vector_19" />
-                            <path d={svgPaths.p316ac00} fill="var(--fill-0, #DEDEDE)" id="Vector_20" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute inset-[39.84%_21.31%_54.32%_74.89%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-202.949px_-62.234px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14.2304 50.8165">
-                    <path d={svgPaths.p1a48eb71} fill="var(--fill-0, #ECECEC)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[44.88%_23.29%_54.32%_58.54%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-141.621px_-106.102px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 68.1313 6.93995">
-                    <path d={svgPaths.p2995e380} fill="var(--fill-0, #B6B6B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[36.25%_19.5%_53.75%_55.74%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-131.145px_-30.961px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 92.8258 87.1221">
-                    <path d={svgPaths.p9236c00} fill="var(--fill-0, #455DFF)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[39.88%_18.93%_53.19%_76.87%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-210.359px_-62.547px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15.7662 60.3438">
-                    <path d={svgPaths.p34fc4300} fill="var(--fill-0, #4056EC)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[45.94%_21.32%_53.19%_55.74%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-131.145px_-115.328px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 86.026 7.56447">
-                    <path d={svgPaths.p29714d40} fill="var(--fill-0, #3142B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[47.77%_22.25%_51.37%_55.3%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-129.488px_-131.281px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 84.1907 7.50075">
-                    <path d={svgPaths.pfa75680} fill="var(--fill-0, #B6B6B6)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[36.74%_13.74%_53.25%_80.9%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-225.477px_-35.234px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20.0997 87.1922">
-                    <path d={svgPaths.p3dda49f0} fill="var(--fill-0, #ECECEC)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute inset-[34.43%_15.49%_51.92%_51.73%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-116.105px_-15.063px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
-                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 122.896 118.928">
-                    <path d={svgPaths.p384bba16} fill="var(--fill-0, white)" id="Vector" />
-                  </svg>
-                </div>
-                <div className="absolute contents inset-[46.2%_17.29%_51.37%_75.94%]" data-name="Group">
-                  <div className="absolute contents inset-[46.2%_17.29%_51.37%_75.94%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[46.2%_17.29%_51.37%_75.94%]" data-name="Group">
-                      <div className="[mask-clip:no-clip,_no-clip] [mask-composite:intersect,_intersect] [mask-mode:alpha,_alpha] [mask-repeat:no-repeat,_no-repeat] absolute inset-[46.2%_17.29%_51.37%_75.94%] mask-position-[-206.875px,_0px_-117.625px,_0px] mask-size-[219.199px_101.867px,_25.41px_21.164px] opacity-[0.51]" data-name="Group" style={{ maskImage: `url('${imgGroup}'), url('${imgGroup24}')` }}>
-                        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 25.4081 21.166">
-                          <g id="Group">
-                            <path d={svgPaths.p23b85400} fill="var(--fill-0, #DEDEDE)" id="Vector" />
-                            <path d={svgPaths.p1e2f1080} fill="var(--fill-0, #DCDCDC)" id="Vector_2" />
-                            <path d={svgPaths.p1003c590} fill="var(--fill-0, #DBDBDB)" id="Vector_3" />
-                            <path d={svgPaths.p4844900} fill="var(--fill-0, #D9D9D9)" id="Vector_4" />
-                            <path d={svgPaths.p1f3e1680} fill="var(--fill-0, #D8D8D8)" id="Vector_5" />
-                            <path d={svgPaths.p1f4e5270} fill="var(--fill-0, #D6D6D6)" id="Vector_6" />
-                            <path d={svgPaths.p8f17800} fill="var(--fill-0, #D5D5D5)" id="Vector_7" />
-                            <path d={svgPaths.p3332ae40} fill="var(--fill-0, #D3D3D3)" id="Vector_8" />
-                            <path d={svgPaths.p87fa600} fill="var(--fill-0, #D2D2D2)" id="Vector_9" />
-                            <path d={svgPaths.p1a756280} fill="var(--fill-0, #D0D0D0)" id="Vector_10" />
-                            <path d={svgPaths.p1a02e400} fill="var(--fill-0, #CFCFCF)" id="Vector_11" />
-                            <path d={svgPaths.p146b780} fill="var(--fill-0, #CDCDCD)" id="Vector_12" />
-                            <path d={svgPaths.p2118c900} fill="var(--fill-0, #CCCCCC)" id="Vector_13" />
-                            <path d={svgPaths.p2ecbd480} fill="var(--fill-0, #CACACA)" id="Vector_14" />
-                            <path d={svgPaths.p35e80a80} fill="var(--fill-0, #C9C9C9)" id="Vector_15" />
-                            <path d={svgPaths.p3839c380} fill="var(--fill-0, #C7C7C7)" id="Vector_16" />
-                            <path d={svgPaths.p2824e680} fill="var(--fill-0, #C6C6C6)" id="Vector_17" />
-                            <path d={svgPaths.p1f7a7f00} fill="var(--fill-0, #C4C4C4)" id="Vector_18" />
-                            <path d={svgPaths.p292b0e00} fill="var(--fill-0, #C3C3C3)" id="Vector_19" />
-                            <path d={svgPaths.p3317d100} fill="var(--fill-0, #C1C1C1)" id="Vector_20" />
-                            <path d={svgPaths.p35281c00} fill="var(--fill-0, #C0C0C0)" id="Vector_21" />
-                            <path d={svgPaths.p1c4f2a70} fill="var(--fill-0, #BEBEBE)" id="Vector_22" />
-                            <path d={svgPaths.p3f0fa400} fill="var(--fill-0, #BCBCBC)" id="Vector_23" />
-                            <path d={svgPaths.pf882200} fill="var(--fill-0, #BBBBBB)" id="Vector_24" />
-                            <path d={svgPaths.p32a09500} fill="var(--fill-0, #B9B9B9)" id="Vector_25" />
-                            <path d={svgPaths.p17906340} fill="var(--fill-0, #B8B8B8)" id="Vector_26" />
-                            <path d={svgPaths.p3a7666e0} fill="var(--fill-0, #B6B6B6)" id="Vector_27" />
-                            <path d={svgPaths.p98ec880} fill="var(--fill-0, #B5B5B5)" id="Vector_28" />
-                            <path d={svgPaths.p196ce780} fill="var(--fill-0, #B3B3B3)" id="Vector_29" />
-                            <path d={svgPaths.p32c56740} fill="var(--fill-0, #B2B2B2)" id="Vector_30" />
-                          </g>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[87.8px] not-italic text-[11.891px] text-nowrap text-white top-[378.85px] tracking-[-0.7135px]">봄맞이 할인 쿠폰</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[87.8px] not-italic text-[0px] text-nowrap text-white top-[413px] tracking-[-3.0977px]">
+          <div className="absolute left-[77.89px] top-[363.79px] w-[219.199px] h-[101.87px] cursor-pointer" onClick={handleCopyCoupon}>
+            <img src={imgCoupon} alt="" className="absolute inset-0 w-full h-full" />
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[9.91px] not-italic text-[11.891px] text-nowrap text-white top-[15.06px] tracking-[-0.7135px]">봄맞이 할인 쿠폰</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[9.91px] not-italic text-[0px] text-nowrap text-white top-[49.21px] tracking-[-3.0977px]">
               <span className="text-[38.721px]">1</span>
               <span className="text-[38.721px] tracking-[-0.3872px]">2</span>
-              <span className="text-[25px]">만원</span>
+              <span className="text-[25px] tracking-[-2px]">만원</span>
             </p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none" className="absolute left-[184.11px] top-[67.21px] w-[24.924px] h-[24px]">
+              <path d="M10.4764 0.724487C10.4764 0.32435 10.152 -2.49147e-05 9.75186 -2.49147e-05C9.35172 -2.49147e-05 9.02735 0.32435 9.02735 0.724487H9.75186H10.4764ZM9.23955 14.9471C9.52249 15.23 9.98123 15.23 10.2642 14.9471L14.8749 10.3363C15.1579 10.0534 15.1579 9.59463 14.8749 9.31169C14.592 9.02875 14.1333 9.02875 13.8503 9.31169L9.75186 13.4102L5.6534 9.31169C5.37046 9.02875 4.91173 9.02875 4.62879 9.31169C4.34585 9.59463 4.34585 10.0534 4.62879 10.3363L9.23955 14.9471ZM9.75186 0.724487H9.02735V14.4348H9.75186H10.4764V0.724487H9.75186Z" fill="white"/>
+              <path d="M0.724518 13.4354V18.117H18.782V13.4354" stroke="white" strokeWidth="1.44902" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
         </div>
-        <div className="absolute contents left-[5.96px] top-[649px]">
-          <div className="absolute bg-black h-[236.657px] left-[calc(50%+0.5px)] top-[687.13px] translate-x-[-50%] w-[364.087px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid' }} />
-          <div className="absolute contents left-[24px] top-[720px] cursor-pointer" onClick={handleCopyCoupon}>
-            <SubtractBackgroundImage additionalClassNames="top-[720px]" />
-            <div className="absolute contents left-[24px] top-[720px]" data-name="Mask group">
-              <div className="absolute contents inset-[63%_46.92%_26.88%_28.45%]" data-name="Group">
-                <VectorBackgroundImage additionalClassNames="inset-[64.3%_64.82%_28.41%_31.31%]" />
-                <VectorBackgroundImage1 additionalClassNames="inset-[65.1%_63.41%_29.16%_33.29%]" />
-                <div className="absolute contents inset-[67.49%_60.34%_31.72%_37.75%]" data-name="Group">
-                  <div className="absolute contents inset-[67.49%_60.34%_31.72%_37.75%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.46%_60.34%_31.72%_37.74%]" data-name="Group">
-                      <GroupBackgroundImage additionalClassNames="inset-[67.46%_60.34%_31.72%_37.74%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[72.3%_67.72%_27.11%_29.58%]" data-name="Group">
-                  <div className="absolute contents inset-[72.3%_67.72%_27.11%_29.58%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[72.3%_67.72%_27.11%_29.58%]" data-name="Group">
-                      <GroupBackgroundImage1 additionalClassNames="inset-[72.3%_67.72%_27.11%_29.58%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[67.17%_59.15%_32.18%_39.28%]" data-name="Group">
-                  <div className="absolute contents inset-[67.17%_59.15%_32.18%_39.28%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.17%_59.15%_32.18%_39.28%]" data-name="Group">
-                      <GroupBackgroundImage2 additionalClassNames="inset-[67.17%_59.15%_32.18%_39.28%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[67.43%_58.61%_32.08%_39.56%]" data-name="Group">
-                  <div className="absolute contents inset-[67.43%_58.61%_32.08%_39.56%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.43%_58.62%_32.08%_39.55%]" data-name="Group">
-                      <GroupBackgroundImage3 additionalClassNames="inset-[67.43%_58.62%_32.08%_39.55%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[67.88%_59.43%_31.56%_38.37%]" data-name="Group">
-                  <div className="absolute contents inset-[67.88%_59.43%_31.56%_38.37%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.88%_59.43%_31.56%_38.37%]" data-name="Group">
-                      <GroupBackgroundImage4 additionalClassNames="inset-[67.88%_59.43%_31.56%_38.37%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage2 additionalClassNames="inset-[68.45%_60.06%_31.13%_37.07%]" />
-                <div className="absolute contents inset-[66.31%_56.41%_32.12%_37.71%]" data-name="Group">
-                  <div className="absolute contents inset-[66.31%_56.41%_32.12%_37.71%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[66.31%_56.41%_32.06%_37.71%]" data-name="Group">
-                      <GroupBackgroundImage5 additionalClassNames="inset-[66.31%_56.41%_32.06%_37.71%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[66.83%_57.48%_32.44%_39.29%]" data-name="Group">
-                  <div className="absolute contents inset-[66.83%_57.48%_32.44%_39.29%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[66.83%_57.48%_32.44%_39.29%]" data-name="Group">
-                      <GroupBackgroundImage6 additionalClassNames="inset-[66.83%_57.48%_32.44%_39.29%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[68.45%_61.05%_30.47%_37.07%]" data-name="Group">
-                  <div className="absolute contents inset-[68.45%_61.05%_30.47%_37.07%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[68.45%_61.05%_30.47%_37.07%]" data-name="Group">
-                      <GroupBackgroundImage7 additionalClassNames="inset-[68.45%_61.05%_30.47%_37.07%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[66.92%_57.4%_32.66%_41.23%]" data-name="Group">
-                  <div className="absolute contents inset-[66.92%_57.4%_32.66%_41.23%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[66.92%_57.39%_32.66%_41.23%]" data-name="Group">
-                      <GroupBackgroundImage8 additionalClassNames="inset-[66.92%_57.39%_32.66%_41.23%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage3 additionalClassNames="inset-[68.05%_58.42%_31.43%_39.27%]" />
-                <div className="absolute contents inset-[68.17%_57.86%_31.33%_40.29%]" data-name="Group">
-                  <div className="absolute contents inset-[68.17%_57.86%_31.33%_40.29%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[68.17%_57.86%_31.33%_40.29%]" data-name="Group">
-                      <GroupBackgroundImage9 additionalClassNames="inset-[68.17%_57.86%_31.33%_40.29%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[68.32%_57.59%_30.73%_38.98%]" data-name="Group">
-                  <div className="absolute contents inset-[68.32%_57.59%_30.73%_38.98%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[68.31%_57.59%_30.73%_38.98%]" data-name="Group">
-                      <GroupBackgroundImage10 additionalClassNames="inset-[68.31%_57.59%_30.73%_38.98%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[68.5%_56%_30.19%_37.85%]" data-name="Group">
-                  <div className="absolute contents inset-[68.5%_56%_30.19%_37.85%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[68.5%_56%_30.19%_37.85%]" data-name="Group">
-                      <GroupBackgroundImage11 additionalClassNames="inset-[68.5%_56%_30.19%_37.85%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[69.14%_60.87%_30.4%_37.66%]" data-name="Group">
-                  <div className="absolute contents inset-[69.14%_60.87%_30.4%_37.66%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[69.12%_60.86%_30.4%_37.61%]" data-name="Group">
-                      <GroupBackgroundImage12 additionalClassNames="inset-[69.12%_60.86%_30.4%_37.61%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[69.2%_60.86%_30.4%_37.84%]" data-name="Group">
-                  <div className="absolute contents inset-[69.2%_60.86%_30.4%_37.84%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[69.2%_60.86%_30.4%_37.81%]" data-name="Group">
-                      <GroupBackgroundImage13 additionalClassNames="inset-[69.2%_60.86%_30.4%_37.81%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[66.95%_57.2%_32.54%_41.31%]" data-name="Group">
-                  <div className="absolute contents inset-[66.95%_57.2%_32.54%_41.31%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[66.94%_57.18%_32.51%_41.29%]" data-name="Group">
-                      <GroupBackgroundImage14 additionalClassNames="inset-[66.94%_57.18%_32.51%_41.29%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[67.06%_57.2%_32.54%_41.5%]" data-name="Group">
-                  <div className="absolute contents inset-[67.06%_57.2%_32.54%_41.5%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.06%_57.18%_32.51%_41.49%]" data-name="Group">
-                      <GroupBackgroundImage15 additionalClassNames="inset-[67.06%_57.18%_32.51%_41.49%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[68.48%_59.73%_30.82%_38.64%]" data-name="Group">
-                  <div className="absolute contents inset-[68.48%_59.73%_30.82%_38.64%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[68.48%_59.73%_30.82%_38.64%]" data-name="Group">
-                      <GroupBackgroundImage16 additionalClassNames="inset-[68.48%_59.73%_30.82%_38.64%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[67.07%_57.13%_32.38%_41.51%]" data-name="Group">
-                  <div className="absolute contents inset-[67.07%_57.13%_32.38%_41.51%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.06%_57.13%_32.38%_41.49%]" data-name="Group">
-                      <GroupBackgroundImage17 additionalClassNames="inset-[67.06%_57.13%_32.38%_41.49%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage4 additionalClassNames="inset-[67.53%_57.54%_31.96%_40.09%]" />
-                <div className="absolute contents inset-[68.28%_57.75%_31.29%_40.84%]" data-name="Group">
-                  <div className="absolute contents inset-[68.28%_57.75%_31.29%_40.84%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[68.28%_57.74%_31.28%_40.84%]" data-name="Group">
-                      <GroupBackgroundImage18 additionalClassNames="inset-[68.28%_57.74%_31.28%_40.84%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[66.5%_55.66%_32.36%_42.3%]" data-name="Group">
-                  <div className="absolute contents inset-[66.5%_55.66%_32.36%_42.3%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[66.5%_55.66%_32.36%_42.3%]" data-name="Group">
-                      <GroupBackgroundImage19 additionalClassNames="inset-[66.5%_55.66%_32.36%_42.3%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage5 additionalClassNames="inset-[67.22%_55.67%_32.36%_41.58%]" />
-                <div className="absolute contents inset-[67.65%_56.61%_31.78%_41.16%]" data-name="Group">
-                  <div className="absolute contents inset-[67.65%_56.61%_31.78%_41.16%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.65%_56.61%_31.78%_41.16%]" data-name="Group">
-                      <GroupBackgroundImage20 additionalClassNames="inset-[67.65%_56.61%_31.78%_41.16%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage6 additionalClassNames="inset-[65.1%_51.76%_34.33%_35.3%]" />
-                <VectorBackgroundImage7 additionalClassNames="inset-[64.3%_49.77%_35.08%_33.89%]" />
-                <VectorBackgroundImage8 additionalClassNames="inset-[65.28%_51.76%_33.56%_46.66%]" />
-                <div className="absolute contents inset-[67.83%_55.98%_31.11%_42.1%]" data-name="Group">
-                  <div className="absolute contents inset-[67.83%_55.98%_31.11%_42.1%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[67.83%_55.98%_31.11%_42.1%]" data-name="Group">
-                      <GroupBackgroundImage21 additionalClassNames="inset-[67.83%_55.98%_31.11%_42.1%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage9 additionalClassNames="inset-[66.31%_56.95%_30.58%_37.07%]" />
-                <VectorBackgroundImage10 additionalClassNames="inset-[64.53%_49.77%_33.54%_48.35%]" />
-                <VectorBackgroundImage11 additionalClassNames="inset-[66.04%_50.35%_33.54%_46.66%]" />
-                <VectorBackgroundImage12 additionalClassNames="inset-[66.86%_50.66%_32.73%_46.35%]" />
-                <div className="absolute contents inset-[63.42%_46.92%_34.96%_50.66%]" data-name="Group">
-                  <div className="absolute contents inset-[63.42%_46.92%_34.96%_50.66%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[63.42%_46.92%_34.96%_50.66%]" data-name="Group">
-                      <GroupBackgroundImage22 additionalClassNames="inset-[63.42%_46.92%_34.96%_50.66%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage13 additionalClassNames="inset-[66.86%_52.36%_28.99%_44.94%]" />
-                <VectorBackgroundImage14 additionalClassNames="inset-[70.44%_53.77%_28.99%_33.29%]" />
-                <VectorBackgroundImage15 additionalClassNames="inset-[64.3%_51.07%_28.58%_31.31%]" />
-                <VectorBackgroundImage16 additionalClassNames="inset-[66.88%_50.66%_28.18%_46.35%]" />
-                <VectorBackgroundImage17 additionalClassNames="inset-[71.2%_52.36%_28.18%_31.31%]" />
-                <VectorBackgroundImage18 additionalClassNames="inset-[72.5%_53.02%_26.88%_30.99%]" />
-                <VectorBackgroundImage19 additionalClassNames="inset-[64.65%_46.96%_28.22%_49.22%]" />
-                <VectorBackgroundImage20 additionalClassNames="inset-[63%_48.21%_27.28%_28.45%]" />
-                <div className="absolute contents inset-[71.39%_49.49%_26.88%_45.69%]" data-name="Group">
-                  <div className="absolute contents inset-[71.39%_49.49%_26.88%_45.69%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[71.39%_49.49%_26.88%_45.69%]" data-name="Group">
-                      <GroupBackgroundImage23 additionalClassNames="inset-[71.39%_49.49%_26.88%_45.69%]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[31.06px] not-italic text-[8.469px] text-nowrap text-white top-[548.73px] tracking-[-0.5081px]">봄맞이 할인 쿠폰</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[31.06px] not-italic text-[31.393px] text-nowrap text-white top-[570.2px] tracking-[-2.5114px]">12만원</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[32px] not-italic text-[8.5px] text-nowrap text-white top-[620px] tracking-[-0.5px]">
-              {isCopied ? '✅ 쿠폰 코드가 복사되었습니다!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
-            </p>
-          </div>
-          <div className="absolute h-[38.126px] left-[calc(50%-91.19px)] top-[649px] translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => setActiveTab('business')} />
-          <div className="absolute h-[38.126px] right-[4.96px] top-[649px] w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => setActiveTab('study')} />
-          <button 
-            onClick={() => setActiveTab('business')} 
-            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[97.12px] not-italic text-[14.77px] text-center text-nowrap top-[658.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
-            style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF' }}
+        <div className="absolute left-0 top-[649px] w-[375px] h-[290px]">
+          <div className="absolute bg-black h-[236.657px] left-[calc(50%+0.5px)] top-[38.13px] translate-x-[-50%] w-[364.087px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid', transition: 'border-color 0.3s ease' }} />
+          <div className="absolute h-[38.126px] left-[calc(50%-91.19px)] top-0 translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => switchTab('business')} />
+          <div className="absolute h-[38.126px] right-[4.96px] top-0 w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => switchTab('study')} />
+          <button
+            onClick={() => switchTab('business')}
+            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[97.12px] not-italic text-[14.77px] text-center text-nowrap top-[9.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+            style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF', transition: 'color 0.3s ease' }}
           >
             비즈니스 인텐시브
           </button>
-          <button 
-            onClick={() => setActiveTab('study')} 
-            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[280.84px] not-italic text-[14.77px] text-center text-nowrap top-[658.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
-            style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5' }}
+          <button
+            onClick={() => switchTab('study')}
+            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[280.84px] not-italic text-[14.77px] text-center text-nowrap top-[9.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+            style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5', transition: 'color 0.3s ease' }}
           >
             출국 없이 어학연수
           </button>
-          <BackgroundImage additionalClassNames="top-[839.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
-          <div className="absolute contents left-[188px] top-[713px]">
-            <BackgroundImage1 text="월" text1="원" price={activeTab === 'business' ? '1,300,000' : '2,540,000'} additionalClassNames="top-[713px]" />
-            {/* 기존 가격 (취소선) */}
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[190.99px] not-italic text-[0px] text-nowrap text-[#626262] top-[713px]">
-              <span className="text-[11.674px]">월</span>
-              <span className="text-[16px] line-through">{` ${activeTab === 'business' ? '39,200' : '59,200'}`}</span>
-              <span className="text-[11.674px]">원</span>
-            </p>
-            <BackgroundImage3 additionalClassNames="top-[725.02px]" />
-            {/* 할인된 가격 */}
-            <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '29,200' : '49,200'} additionalClassNames="top-[734.41px]" />
-            {/* 할인 배지들 */}
-            <div className="absolute h-[17.098px] left-[191.09px] rounded-[1.777px] top-[777.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[222.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[779.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[258.91px] not-italic text-[10.304px] text-center text-nowrap text-white top-[779.05px]">+</p>
-            <div className="absolute h-[17.098px] left-[271.81px] rounded-[1.777px] top-[777.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[302.68px] not-italic text-[10.304px] text-center text-nowrap text-white top-[779.63px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[303.35px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[800.72px] tracking-[-0.7488px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
-          </div>
+          <div
+              className="absolute left-0 top-[38px] w-full h-[252px]"
+              style={{ opacity: tabFading ? 0 : 1, transform: tabFading ? 'translateY(10px)' : 'translateY(0)', transition: 'opacity 0.25s ease-in-out, transform 0.25s ease-in-out' }}
+            >
+              <div className="absolute left-[24px] top-[33px] w-[156.105px] h-[72.548px] cursor-pointer" onClick={handleCopyCoupon}>
+                <img src={imgCoupon} alt="" className="absolute inset-0 w-full h-full" />
+                <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] left-[8px] not-italic text-[8.616px] text-nowrap text-white top-[10px] tracking-[-0.517px]">봄맞이 할인 쿠폰</p>
+                <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[0] left-[8px] not-italic text-[0px] text-nowrap text-white top-[35px] tracking-[-2.2443px]">
+                  <span className="leading-[normal] text-[28.054px] tracking-[-2.244px]">1</span>
+                  <span className="leading-[normal] text-[28.054px] tracking-[-0.281px]">2</span>
+                  <span className="leading-[normal] text-[18.113px] tracking-[-1.449px]">만원</span>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none" className="absolute left-[133.39px] top-[48.7px] w-[18.057px] h-[17.392px]">
+                  <path d="M10.4764 0.724487C10.4764 0.32435 10.152 -2.49147e-05 9.75186 -2.49147e-05C9.35172 -2.49147e-05 9.02735 0.32435 9.02735 0.724487H9.75186H10.4764ZM9.23955 14.9471C9.52249 15.23 9.98123 15.23 10.2642 14.9471L14.8749 10.3363C15.1579 10.0534 15.1579 9.59463 14.8749 9.31169C14.592 9.02875 14.1333 9.02875 13.8503 9.31169L9.75186 13.4102L5.6534 9.31169C5.37046 9.02875 4.91173 9.02875 4.62879 9.31169C4.34585 9.59463 4.34585 10.0534 4.62879 10.3363L9.23955 14.9471ZM9.75186 0.724487H9.02735V14.4348H9.75186H10.4764V0.724487H9.75186Z" fill="white"/>
+                  <path d="M0.724518 13.4354V18.117H18.782V13.4354" stroke="white" strokeWidth="1.44902" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] left-[calc(50%-89px)] -translate-x-1/2 not-italic text-[8.86px] text-center text-nowrap text-white top-[116px] cursor-pointer" onClick={handleCopyCoupon}>
+                {isCopied ? '✅ 복사 완료!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
+              </p>
+              {/* 가격 영역 */}
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[199.99px] not-italic text-[0px] text-nowrap text-[#626262] top-[26px] tracking-[-1.3331px]">
+                <span className="text-[11.674px]">월</span>
+                <span className="text-[19.045px] line-through">{` ${activeTab === 'business' ? '39,200' : '59,200'}`}</span>
+                <span className="text-[11.674px]">원</span>
+              </p>
+              <BackgroundImage3 additionalClassNames="top-[38.02px]" />
+              <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '29,200' : '49,200'} additionalClassNames="top-[47.41px]" />
+              <div className="absolute h-[17.098px] left-[200.09px] rounded-[1.777px] top-[90.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[231.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[92.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[271.41px] not-italic text-[11.552px] text-center text-nowrap text-white top-[92.05px] tracking-[-0.8086px] translate-x-[-50%]">+</p>
+              <div className="absolute h-[17.098px] left-[280.8px] rounded-[1.777px] top-[90.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[311.83px] not-italic text-[10.304px] text-center text-nowrap text-white top-[92.63px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[199.78px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[113.72px] tracking-[-0.7488px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
+              <BackgroundImage additionalClassNames="top-[152.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
+            </div>
         </div>
         <div className="absolute contents left-[calc(50%+0.5px)] top-[965px] translate-x-[-50%]">
           <div className="absolute bg-[#d9ff00] border-[#d9ff00] border-[0.561px] border-solid h-[38.578px] left-[calc(50%+0.5px)] rounded-[19.289px] top-[965px] translate-x-[-50%] w-[280.707px] cursor-pointer" onClick={handleCTAClick} />
@@ -2480,202 +1605,46 @@ export default function Frame() {
       </div>
       <div className="absolute bg-gradient-to-b from-[#8d005b] h-[321px] left-1/2 overflow-clip to-[#2e3fad] top-[1765px] translate-x-[-50%] w-[375px]" data-name="3">
         <div className="absolute contents inset-[-25.78%_-14.03%_-25.39%_-11.23%]" data-name="Clip path group">
-          <div className="absolute inset-[-158.72%_-66.97%_-159.12%_-64.02%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[197.961px_340.32px] mask-size-[469.707px_387.008px] opacity-[0.16]" data-name="Group" style={{ maskImage: `url('${imgGroup50}')` }}>
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 866.217 1069.68">
-              <g id="Group">
-                <g id="Group_2">
-                  <path d={svgPaths.p3daf3700} fill="var(--fill-0, #B5B5B5)" id="Vector" />
-                  <path d={svgPaths.p1d894900} fill="var(--fill-0, #B5B5B5)" id="Vector_2" />
-                  <path d={svgPaths.p309f4f0} fill="var(--fill-0, #B5B5B5)" id="Vector_3" />
-                  <path d={svgPaths.p32230e00} fill="var(--fill-0, #B5B5B5)" id="Vector_4" />
-                  <path d={svgPaths.p577d1c0} fill="var(--fill-0, #B5B5B5)" id="Vector_5" />
-                  <path d={svgPaths.p34803500} fill="var(--fill-0, #B5B5B5)" id="Vector_6" />
-                  <path d={svgPaths.p270c26a0} fill="var(--fill-0, #B5B5B5)" id="Vector_7" />
-                  <path d={svgPaths.p33ea4e00} fill="var(--fill-0, #B5B5B5)" id="Vector_8" />
-                  <path d={svgPaths.p88b9d00} fill="var(--fill-0, #B5B5B5)" id="Vector_9" />
-                  <path d={svgPaths.p165bd500} fill="var(--fill-0, #B5B5B5)" id="Vector_10" />
-                  <path d={svgPaths.p3fbe0780} fill="var(--fill-0, #B5B5B5)" id="Vector_11" />
-                  <path d={svgPaths.p2ed2f00} fill="var(--fill-0, #B5B5B5)" id="Vector_12" />
-                  <path d={svgPaths.p711f500} fill="var(--fill-0, #B5B5B5)" id="Vector_13" />
-                  <path d={svgPaths.p105bfb00} fill="var(--fill-0, #B5B5B5)" id="Vector_14" />
-                  <path d={svgPaths.p18bbda00} fill="var(--fill-0, #B5B5B5)" id="Vector_15" />
-                  <path d={svgPaths.p38e194f0} fill="var(--fill-0, #B5B5B5)" id="Vector_16" />
-                  <path d={svgPaths.p393a189c} fill="var(--fill-0, #B5B5B5)" id="Vector_17" />
-                  <path d={svgPaths.p32880e80} fill="var(--fill-0, #B5B5B5)" id="Vector_18" />
-                  <path d={svgPaths.p1cd0d800} fill="var(--fill-0, #B5B5B5)" id="Vector_19" />
-                  <path d={svgPaths.p3bc6cd80} fill="var(--fill-0, #B5B5B5)" id="Vector_20" />
-                  <path d={svgPaths.p119a9e00} fill="var(--fill-0, #B5B5B5)" id="Vector_21" />
-                  <path d={svgPaths.p352fd8c0} fill="var(--fill-0, #B5B5B5)" id="Vector_22" />
-                  <path d={svgPaths.p2442ba00} fill="var(--fill-0, #B5B5B5)" id="Vector_23" />
-                  <path d={svgPaths.p1db16580} fill="var(--fill-0, #B5B5B5)" id="Vector_24" />
-                  <path d={svgPaths.p23478900} fill="var(--fill-0, #B5B5B5)" id="Vector_25" />
-                  <path d={svgPaths.p3ebb3fc0} fill="var(--fill-0, #B5B5B5)" id="Vector_26" />
-                  <path d={svgPaths.p3069f780} fill="var(--fill-0, #B5B5B5)" id="Vector_27" />
-                </g>
-                <g id="Group_3">
-                  <path d={svgPaths.p2ec1c300} fill="var(--fill-0, #CECECE)" id="Vector_28" />
-                  <path d={svgPaths.p1fd2b700} fill="var(--fill-0, #CECECE)" id="Vector_29" />
-                  <path d={svgPaths.p30d6fa00} fill="var(--fill-0, #CECECE)" id="Vector_30" />
-                  <path d={svgPaths.p24912980} fill="var(--fill-0, #CECECE)" id="Vector_31" />
-                  <path d={svgPaths.p3a07e000} fill="var(--fill-0, #CECECE)" id="Vector_32" />
-                  <path d={svgPaths.p35642d40} fill="var(--fill-0, #CECECE)" id="Vector_33" />
-                  <path d={svgPaths.p3a13d080} fill="var(--fill-0, #CECECE)" id="Vector_34" />
-                  <path d={svgPaths.p5425080} fill="var(--fill-0, #CECECE)" id="Vector_35" />
-                  <path d={svgPaths.pac01e80} fill="var(--fill-0, #CECECE)" id="Vector_36" />
-                  <path d={svgPaths.p8049f00} fill="var(--fill-0, #CECECE)" id="Vector_37" />
-                  <path d={svgPaths.p7f3b680} fill="var(--fill-0, #CECECE)" id="Vector_38" />
-                  <path d={svgPaths.p379a9380} fill="var(--fill-0, #CECECE)" id="Vector_39" />
-                  <path d={svgPaths.p14ddcc0} fill="var(--fill-0, #CECECE)" id="Vector_40" />
-                  <path d={svgPaths.p1b11d200} fill="var(--fill-0, #CECECE)" id="Vector_41" />
-                </g>
-                <g id="Vector_42"></g>
-              </g>
-            </svg>
+          <div className="absolute inset-[-110.4%_-65.67%_-136.6%_-65.32%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[197.961px_354.383px] mask-size-[469.706px_403px] opacity-[0.16]" data-name="Group" style={{ maskImage: `url('${imgGroup50}')` }}>
+            <img alt="" className="absolute block max-w-none size-full" src={imgBgGroup} />
           </div>
         </div>
-        <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[19.24px] text-center text-nowrap text-white top-[124px] tracking-[-1.5392px] translate-x-[-50%]">
-          망설이는 순간 혜택이 종료돼요!
-        </p>
-        <div className="absolute contents left-1/2 top-[175px] translate-x-[-50%]">
-          <div className="absolute contents left-1/2 top-[175px] translate-x-[-50%]">
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-1/2 not-italic text-[0px] text-center text-nowrap text-white top-[175px] tracking-[0.6415px] translate-x-[-50%]">
-              <span className="text-[32.075px]">{formatTime(timeLeft.days)}</span>
-              <span className="font-['Spoqa_Han_Sans_Neo'] font-normal text-[16.103px]">일</span>
-              <span className="text-[32.075px]">{` : ${formatTime(timeLeft.hours)}`}</span>
-              <span className="font-['Spoqa_Han_Sans_Neo'] font-normal text-[16.103px]">시간</span>
-              <span className="text-[32.075px]">{` : ${formatTime(timeLeft.minutes)}`}</span>
-              <span className="font-['Spoqa_Han_Sans_Neo'] font-normal text-[16.103px]">분</span>
-              <span className="text-[32.075px]">{` : ${formatTime(timeLeft.seconds)}`}</span>
-              <span className="font-['Spoqa_Han_Sans_Neo'] font-normal text-[16.103px]">초</span>
-            </p>
+        <div className="absolute h-[50.727px] left-[calc(50%+0.5px)] top-[51px] translate-x-[-50%] w-[342px]" data-name="image 11802">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-full left-[5.52%] max-w-none top-0 w-[88.95%]" src={imgImage11802} />
           </div>
         </div>
-        <div className="absolute h-[62px] left-[calc(50%+0.5px)] top-[61px] translate-x-[-50%] w-[281.231px]" data-name="image 11802">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage11802} />
+        <div className="absolute h-[7.315px] left-0 mix-blend-color-dodge top-[90.34px] w-[217px]">
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4669} />
         </div>
-        <div className="absolute h-[7.315px] left-0 mix-blend-color-dodge top-[107.34px] w-[217px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 217 7.31461">
-            <g id="Ellipse 4669" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="108.5" cy="3.6573" fill="url(#paint0_radial_72_1922)" rx="108.5" ry="3.6573" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(108.5 3.6573) rotate(90) scale(3.6573 108.5)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_1922" r="1">
-                <stop stopColor="white" />
-                <stop offset="1" />
-              </radialGradient>
-            </defs>
-          </svg>
+        <div className="absolute h-[16px] left-[9px] mix-blend-color-dodge top-[86px] w-[106px]">
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4671} />
         </div>
-        <div className="absolute h-[16px] left-[9px] mix-blend-color-dodge top-[103px] w-[106px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 106 16">
-            <g id="Ellipse 4671" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="53" cy="8" fill="url(#paint0_radial_72_1920)" rx="53" ry="8" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(53 8) rotate(90) scale(8 53)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_1920" r="1">
-                <stop stopColor="white" />
-                <stop offset="0.169837" stopColor="#E1E1E1" />
-                <stop offset="0.681133" />
-              </radialGradient>
-            </defs>
-          </svg>
+        <div className="absolute h-[16px] left-[26px] mix-blend-color-dodge top-[36px] w-[20px]">
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4672} />
         </div>
-        <div className="absolute h-[16px] left-[26px] mix-blend-color-dodge top-[53px] w-[20px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 16">
-            <g id="Ellipse 4672" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="10" cy="8" fill="url(#paint0_radial_72_2595)" rx="10" ry="8" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(10 8) rotate(90) scale(8 10)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_2595" r="1">
-                <stop stopColor="white" />
-                <stop offset="0.169837" stopColor="#E1E1E1" />
-                <stop offset="0.681133" />
-              </radialGradient>
-            </defs>
-          </svg>
+        <div className="absolute h-[8px] left-[169px] mix-blend-color-dodge top-[86px] w-[10px]">
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4673} />
         </div>
-        <div className="absolute h-[8px] left-[169px] mix-blend-color-dodge top-[103px] w-[10px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10 8">
-            <g id="Ellipse 4673" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="5" cy="4" fill="url(#paint0_radial_72_1918)" rx="5" ry="4" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(5 4) rotate(90) scale(4 5)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_1918" r="1">
-                <stop stopColor="white" />
-                <stop offset="0.169837" stopColor="#E1E1E1" />
-                <stop offset="0.681133" />
-              </radialGradient>
-            </defs>
-          </svg>
-        </div>
-        <div className="absolute h-[23px] left-[314px] mix-blend-color-dodge top-[100px] w-[28px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 28 23">
-            <g id="Ellipse 4675" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="14" cy="11.5" fill="url(#paint0_radial_72_1916)" rx="14" ry="11.5" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(14 11.5) rotate(90) scale(11.5 14)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_1916" r="1">
-                <stop stopColor="white" />
-                <stop offset="0.169837" stopColor="#E1E1E1" />
-                <stop offset="0.681133" />
-              </radialGradient>
-            </defs>
-          </svg>
+        <div className="absolute h-[23px] left-[314px] mix-blend-color-dodge top-[92px] w-[28px]">
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4675} />
         </div>
         <div className="absolute h-[156px] left-[-86px] mix-blend-color-dodge top-[172px] w-[190px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 190 156">
-            <g id="Ellipse 4676" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="95" cy="78" fill="url(#paint0_radial_72_2212)" rx="95" ry="78" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(95 78) rotate(90) scale(78 95)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_2212" r="1">
-                <stop stopColor="white" />
-                <stop offset="0.169837" stopColor="#E1E1E1" />
-                <stop offset="0.681133" />
-              </radialGradient>
-            </defs>
-          </svg>
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4676} />
         </div>
         <div className="absolute h-[370px] left-[142px] mix-blend-color-dodge top-[-175px] w-[450px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 450 370">
-            <g id="Ellipse 4677" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="225" cy="185" fill="url(#paint0_radial_72_3450)" rx="225" ry="185" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(225 185) rotate(90) scale(185 225)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_3450" r="1">
-                <stop stopColor="white" />
-                <stop offset="0.169837" stopColor="#E1E1E1" />
-                <stop offset="0.681133" />
-              </radialGradient>
-            </defs>
-          </svg>
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4677} />
         </div>
-        <div className="absolute h-[26px] left-[29px] mix-blend-color-dodge top-[41px] w-[32px]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 26">
-            <g id="Ellipse 4674" style={{ mixBlendMode: "color-dodge" }}>
-              <ellipse cx="16" cy="13" fill="url(#paint0_radial_72_1914)" rx="16" ry="13" />
-            </g>
-            <defs>
-              <radialGradient cx="0" cy="0" gradientTransform="translate(16 13) rotate(90) scale(13 16)" gradientUnits="userSpaceOnUse" id="paint0_radial_72_1914" r="1">
-                <stop offset="0.497375" stopColor="white" />
-                <stop offset="0.681133" />
-              </radialGradient>
-            </defs>
-          </svg>
+        <div className="absolute h-[26px] left-[29px] mix-blend-color-dodge top-[24px] w-[32px]">
+          <img alt="" className="absolute block max-w-none size-full" src={imgEllipse4674} />
         </div>
-        {/* 할인쿠폰 남은 갯수 텍스트 콘텐츠 */}
-        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-1/2 not-italic text-[19.24px] text-center text-white top-[20px] tracking-[-1.5392px] translate-x-[-50%] whitespace-nowrap" style={{ background: 'linear-gradient(90deg, #FFD700, #FF76D5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          할인쿠폰 남은 갯수
-        </p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[19.24px] text-center text-white top-[107px] tracking-[-1.5392px] translate-x-[-50%] whitespace-nowrap">
           <span className="font-bold">30개</span>
           <span>가 모두 발급되면 할인 혜택이 끝나요!</span>
         </p>
-        <div className="absolute left-1/2 top-[132px] translate-x-[-50%] flex items-baseline">
-          <p className="font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] not-italic text-[128.39px] text-center text-white tracking-[2.5678px]">13</p>
-          <p className="font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] not-italic text-[40.67px] text-center text-white tracking-[0.8134px] ml-[4px]">개</p>
-        </div>
-        <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[12px] text-center text-white top-[286px] tracking-[-0.96px] translate-x-[-50%] whitespace-pre">{`⚠️  혜택 기간이 끝나면 쿠폰이 남아도 조기 종료 될 수 있습니다 ⚠`}</p>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%-12.5px)] not-italic text-[128.39px] text-center text-white top-[132px] tracking-[2.5678px] translate-x-[-50%] whitespace-nowrap">13</p>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%+82.38px)] not-italic text-[40.67px] text-center text-white top-[218px] tracking-[0.8134px] translate-x-[-50%] whitespace-nowrap">개</p>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[12px] text-center text-white top-[286px] tracking-[-0.96px] translate-x-[-50%] whitespace-pre">{`⚠  혜택 기간이 끝나면 쿠폰이 남아도 조기 종료 될 수 있습니다 ⚠`}</p>
       </div>
       <div className="absolute h-[165.972px] left-0 overflow-clip top-[2086px] w-[375px]" data-name="4" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 375 165.97\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-38.767 -10.388 11.973 -40.885 334.2 94.693)\\\'><stop stop-color=\\\'rgba(255,94,97,1)\\\' offset=\\\'0.039516\\\'/><stop stop-color=\\\'rgba(249,80,140,1)\\\' offset=\\\'0.28139\\\'/><stop stop-color=\\\'rgba(242,65,183,1)\\\' offset=\\\'0.52326\\\'/></radialGradient></defs></svg>')" }}>
         <div className="absolute inset-[-25.52%_-5%_-51.26%_52.87%]" data-name="Rectangle">
@@ -2956,8 +1925,10 @@ export default function Frame() {
           </div>
         </div>
         <div className="absolute content-stretch flex gap-[61.155px] items-center left-[21px] top-[1137.1px]">
-          <div className="bg-[rgba(255,255,255,0.12)] h-[270.776px] overflow-clip relative rounded-[13.847px] shrink-0 w-[335.393px]">
-            <div className="absolute h-[270.885px] left-[calc(50%-0.07px)] top-[calc(50%+0.05px)] translate-x-[-50%] translate-y-[-50%] w-[336.027px]">
+          <div className="bg-[rgba(255,255,255,0.12)] h-[270.776px] overflow-clip relative rounded-[13.847px] shrink-0 w-[335.393px] cursor-grab active:cursor-grabbing select-none"
+            onMouseDown={handleDragStart} onMouseUp={handleDragEnd}
+            onTouchStart={handleDragStart} onTouchEnd={handleDragEnd}>
+            <div className="absolute h-[270.885px] left-[calc(50%-0.07px)] top-[calc(50%+0.05px)] translate-x-[-50%] translate-y-[-50%] w-[336.027px] pointer-events-none">
               <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={slides[currentSlide]} />
             </div>
             <button onClick={handleNextSlide} className="absolute left-[302.31px] top-[123.85px] cursor-pointer">
@@ -3089,266 +2060,65 @@ export default function Frame() {
           </div>
         </div>
       </div>
-      <div className="absolute bg-white h-[447px] left-0 overflow-clip top-[5090px] w-[375px]">
-        <div className="absolute bg-black bottom-0 h-[447px] left-1/2 translate-x-[-50%] w-[375px]" />
-        <div className="absolute h-[52.622px] left-[20px] top-[5px] w-[145.642px]">
-          <Group2609478 />
-        </div>
-        <div className="absolute content-stretch flex flex-col gap-[4.495px] items-start left-[calc(50%-2.03px)] top-[199.29px] translate-x-[-50%]">
-          <div className="h-[31.235px] shrink-0 w-full" />
-          <div className="h-[12px] shrink-0 w-full" />
-          <div className="h-[12px] relative shrink-0 w-full">
-            <div className="flex flex-row items-center size-full">
-              <div className="size-full" />
-            </div>
-          </div>
-        </div>
-        <div className="absolute contents left-[calc(50%+0.5px)] top-[321px] translate-x-[-50%]">
-          <div className="absolute bg-[#d9ff00] border-[#d9ff00] border-[0.561px] border-solid h-[38.578px] left-[calc(50%+0.5px)] rounded-[19.289px] top-[321px] translate-x-[-50%] w-[280.707px] cursor-pointer" onClick={handleCTAClick} />
-          <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[calc(50%+0.91px)] not-italic text-[14.443px] text-black text-center text-nowrap top-[331.17px] translate-x-[-50%] cursor-pointer" onClick={handleCTAClick}>지금 구매하기</p>
-        </div>
-        <div className="absolute contents left-[5.96px] top-0">
-          <div className="absolute bg-black h-[236.657px] left-[calc(50%+0.5px)] top-[38.13px] translate-x-[-50%] w-[364.087px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid' }} />
-          <div className="absolute contents left-[24px] top-[83px]">
-            <SubtractBackgroundImage additionalClassNames="top-[83px]" />
-            <div className="absolute contents left-[24px] top-[83px]" data-name="Mask group">
-              <div className="absolute contents inset-[20.97%_46.92%_59.32%_28.45%]" data-name="Group">
-                <VectorBackgroundImage additionalClassNames="inset-[23.5%_64.82%_62.3%_31.31%]" />
-                <VectorBackgroundImage1 additionalClassNames="inset-[25.07%_63.41%_63.76%_33.29%]" />
-                <div className="absolute contents inset-[29.71%_60.34%_68.75%_37.75%]" data-name="Group">
-                  <div className="absolute contents inset-[29.71%_60.34%_68.75%_37.75%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[29.66%_60.34%_68.75%_37.74%]" data-name="Group">
-                      <GroupBackgroundImage additionalClassNames="inset-[29.66%_60.34%_68.75%_37.74%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[39.09%_67.72%_59.75%_29.58%]" data-name="Group">
-                  <div className="absolute contents inset-[39.09%_67.72%_59.75%_29.58%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[39.09%_67.72%_59.75%_29.58%]" data-name="Group">
-                      <GroupBackgroundImage1 additionalClassNames="inset-[39.09%_67.72%_59.75%_29.58%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[29.1%_59.15%_69.64%_39.28%]" data-name="Group">
-                  <div className="absolute contents inset-[29.1%_59.15%_69.64%_39.28%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[29.1%_59.15%_69.64%_39.28%]" data-name="Group">
-                      <GroupBackgroundImage2 additionalClassNames="inset-[29.1%_59.15%_69.64%_39.28%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[29.59%_58.61%_69.44%_39.56%]" data-name="Group">
-                  <div className="absolute contents inset-[29.59%_58.61%_69.44%_39.56%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[29.59%_58.62%_69.44%_39.55%]" data-name="Group">
-                      <GroupBackgroundImage3 additionalClassNames="inset-[29.59%_58.62%_69.44%_39.55%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[30.48%_59.43%_68.42%_38.37%]" data-name="Group">
-                  <div className="absolute contents inset-[30.48%_59.43%_68.42%_38.37%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[30.48%_59.43%_68.42%_38.37%]" data-name="Group">
-                      <GroupBackgroundImage4 additionalClassNames="inset-[30.48%_59.43%_68.42%_38.37%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage2 additionalClassNames="inset-[31.59%_60.06%_67.59%_37.07%]" />
-                <div className="absolute contents inset-[27.41%_56.41%_69.52%_37.71%]" data-name="Group">
-                  <div className="absolute contents inset-[27.41%_56.41%_69.52%_37.71%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[27.41%_56.41%_69.4%_37.71%]" data-name="Group">
-                      <GroupBackgroundImage5 additionalClassNames="inset-[27.41%_56.41%_69.4%_37.71%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[28.44%_57.48%_70.14%_39.29%]" data-name="Group">
-                  <div className="absolute contents inset-[28.44%_57.48%_70.14%_39.29%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[28.44%_57.48%_70.14%_39.29%]" data-name="Group">
-                      <GroupBackgroundImage6 additionalClassNames="inset-[28.44%_57.48%_70.14%_39.29%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[31.6%_61.05%_66.3%_37.07%]" data-name="Group">
-                  <div className="absolute contents inset-[31.6%_61.05%_66.3%_37.07%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[31.59%_61.05%_66.3%_37.07%]" data-name="Group">
-                      <GroupBackgroundImage7 additionalClassNames="inset-[31.59%_61.05%_66.3%_37.07%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[28.61%_57.4%_70.57%_41.23%]" data-name="Group">
-                  <div className="absolute contents inset-[28.61%_57.4%_70.57%_41.23%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[28.61%_57.39%_70.57%_41.23%]" data-name="Group">
-                      <GroupBackgroundImage8 additionalClassNames="inset-[28.61%_57.39%_70.57%_41.23%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage3 additionalClassNames="inset-[30.81%_58.42%_68.19%_39.27%]" />
-                <div className="absolute contents inset-[31.05%_57.86%_67.98%_40.29%]" data-name="Group">
-                  <div className="absolute contents inset-[31.05%_57.86%_67.98%_40.29%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[31.05%_57.86%_67.98%_40.29%]" data-name="Group">
-                      <GroupBackgroundImage9 additionalClassNames="inset-[31.05%_57.86%_67.98%_40.29%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[31.33%_57.59%_66.81%_38.98%]" data-name="Group">
-                  <div className="absolute contents inset-[31.33%_57.59%_66.81%_38.98%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[31.33%_57.59%_66.81%_38.98%]" data-name="Group">
-                      <GroupBackgroundImage10 additionalClassNames="inset-[31.33%_57.59%_66.81%_38.98%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[31.68%_56%_65.76%_37.85%]" data-name="Group">
-                  <div className="absolute contents inset-[31.68%_56%_65.76%_37.85%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[31.69%_56%_65.76%_37.85%]" data-name="Group">
-                      <GroupBackgroundImage11 additionalClassNames="inset-[31.69%_56%_65.76%_37.85%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[32.93%_60.87%_66.18%_37.66%]" data-name="Group">
-                  <div className="absolute contents inset-[32.93%_60.87%_66.18%_37.66%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[32.9%_60.86%_66.17%_37.61%]" data-name="Group">
-                      <GroupBackgroundImage12 additionalClassNames="inset-[32.9%_60.86%_66.17%_37.61%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[33.06%_60.86%_66.17%_37.84%]" data-name="Group">
-                  <div className="absolute contents inset-[33.06%_60.86%_66.17%_37.84%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[33.04%_60.86%_66.17%_37.81%]" data-name="Group">
-                      <GroupBackgroundImage13 additionalClassNames="inset-[33.04%_60.86%_66.17%_37.81%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[28.66%_57.2%_70.35%_41.31%]" data-name="Group">
-                  <div className="absolute contents inset-[28.66%_57.2%_70.35%_41.31%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[28.65%_57.18%_70.29%_41.29%]" data-name="Group">
-                      <GroupBackgroundImage14 additionalClassNames="inset-[28.65%_57.18%_70.29%_41.29%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[28.89%_57.2%_70.34%_41.5%]" data-name="Group">
-                  <div className="absolute contents inset-[28.89%_57.2%_70.34%_41.5%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[28.87%_57.18%_70.29%_41.49%]" data-name="Group">
-                      <GroupBackgroundImage15 additionalClassNames="inset-[28.87%_57.18%_70.29%_41.49%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[31.64%_59.73%_66.99%_38.64%]" data-name="Group">
-                  <div className="absolute contents inset-[31.64%_59.73%_66.99%_38.64%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[31.64%_59.73%_66.99%_38.64%]" data-name="Group">
-                      <GroupBackgroundImage16 additionalClassNames="inset-[31.64%_59.73%_66.99%_38.64%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[28.89%_57.13%_70.04%_41.51%]" data-name="Group">
-                  <div className="absolute contents inset-[28.89%_57.13%_70.04%_41.51%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[28.87%_57.13%_70.04%_41.49%]" data-name="Group">
-                      <GroupBackgroundImage17 additionalClassNames="inset-[28.87%_57.13%_70.04%_41.49%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage4 additionalClassNames="inset-[29.79%_57.54%_69.2%_40.09%]" />
-                <div className="absolute contents inset-[31.25%_57.75%_67.9%_40.84%]" data-name="Group">
-                  <div className="absolute contents inset-[31.25%_57.75%_67.9%_40.84%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[31.25%_57.74%_67.89%_40.84%]" data-name="Group">
-                      <GroupBackgroundImage18 additionalClassNames="inset-[31.25%_57.74%_67.89%_40.84%]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute contents inset-[27.8%_55.66%_70%_42.3%]" data-name="Group">
-                  <div className="absolute contents inset-[27.8%_55.66%_70%_42.3%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[27.8%_55.66%_69.99%_42.3%]" data-name="Group">
-                      <GroupBackgroundImage19 additionalClassNames="inset-[27.8%_55.66%_69.99%_42.3%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage5 additionalClassNames="inset-[29.2%_55.67%_70%_41.58%]" />
-                <div className="absolute contents inset-[30.03%_56.61%_68.85%_41.16%]" data-name="Group">
-                  <div className="absolute contents inset-[30.03%_56.61%_68.85%_41.16%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[30.03%_56.61%_68.85%_41.16%]" data-name="Group">
-                      <GroupBackgroundImage20 additionalClassNames="inset-[30.03%_56.61%_68.85%_41.16%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage6 additionalClassNames="inset-[25.07%_51.76%_73.83%_35.3%]" />
-                <VectorBackgroundImage7 additionalClassNames="inset-[23.5%_49.77%_75.29%_33.89%]" />
-                <VectorBackgroundImage8 additionalClassNames="inset-[25.41%_51.76%_72.33%_46.66%]" />
-                <div className="absolute contents inset-[30.38%_55.98%_67.55%_42.1%]" data-name="Group">
-                  <div className="absolute contents inset-[30.38%_55.98%_67.55%_42.1%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[30.38%_55.98%_67.55%_42.1%]" data-name="Group">
-                      <GroupBackgroundImage21 additionalClassNames="inset-[30.38%_55.98%_67.55%_42.1%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage9 additionalClassNames="inset-[27.41%_56.95%_66.53%_37.07%]" />
-                <VectorBackgroundImage10 additionalClassNames="inset-[23.94%_49.77%_72.28%_48.35%]" />
-                <VectorBackgroundImage11 additionalClassNames="inset-[26.9%_50.35%_72.28%_46.66%]" />
-                <VectorBackgroundImage12 additionalClassNames="inset-[28.48%_50.66%_70.7%_46.35%]" />
-                <div className="absolute contents inset-[21.79%_46.92%_75.06%_50.66%]" data-name="Group">
-                  <div className="absolute contents inset-[21.79%_46.92%_75.06%_50.66%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[21.79%_46.92%_75.06%_50.66%]" data-name="Group">
-                      <GroupBackgroundImage22 additionalClassNames="inset-[21.79%_46.92%_75.06%_50.66%]" />
-                    </div>
-                  </div>
-                </div>
-                <VectorBackgroundImage13 additionalClassNames="inset-[28.48%_52.36%_63.42%_44.94%]" />
-                <VectorBackgroundImage14 additionalClassNames="inset-[35.47%_53.77%_63.42%_33.29%]" />
-                <VectorBackgroundImage15 additionalClassNames="inset-[23.5%_51.07%_62.62%_31.31%]" />
-                <VectorBackgroundImage16 additionalClassNames="inset-[28.53%_50.66%_61.85%_46.35%]" />
-                <VectorBackgroundImage17 additionalClassNames="inset-[36.94%_52.36%_61.85%_31.31%]" />
-                <VectorBackgroundImage18 additionalClassNames="inset-[39.48%_53.02%_59.32%_30.99%]" />
-                <VectorBackgroundImage19 additionalClassNames="inset-[24.18%_46.96%_61.93%_49.22%]" />
-                <VectorBackgroundImage20 additionalClassNames="inset-[20.97%_48.21%_60.08%_28.45%]" />
-                <div className="absolute contents inset-[37.31%_49.49%_59.32%_45.69%]" data-name="Group">
-                  <div className="absolute contents inset-[37.31%_49.49%_59.32%_45.69%]" data-name="Clip path group">
-                    <div className="absolute contents inset-[37.31%_49.49%_59.32%_45.69%]" data-name="Group">
-                      <GroupBackgroundImage23 additionalClassNames="inset-[37.31%_49.49%_59.32%_45.69%]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[31.06px] not-italic text-[8.616px] text-nowrap text-white top-[93.73px] tracking-[-0.5169px]">봄맞이 할인 쿠폰</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[31.06px] not-italic text-[0px] text-nowrap text-white top-[118.66px] tracking-[-2.2443px]">
-              <span className="text-[28.054px]">1</span>
-              <span className="text-[28.054px] tracking-[-0.2805px]">2</span>
-              <span className="text-[18.113px]">만원</span>
-            </p>
-          </div>
-          <div className="absolute h-[38.126px] left-[calc(50%-90.69px)] top-0 translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => setActiveTab('business')} />
-          <div className="absolute h-[38.126px] right-[4.96px] top-0 w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => setActiveTab('study')} />
-          <button 
-            onClick={() => setActiveTab('business')} 
+      <div className="absolute bg-black left-0 top-[5090px] w-[375px] h-[447px]" />
+      <div className="absolute left-0 top-[5090px] w-[375px] h-[447px]">
+          <div className="absolute bg-black h-[236.657px] left-[calc(50%+0.5px)] top-[38.13px] translate-x-[-50%] w-[364.087px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid', transition: 'border-color 0.3s ease' }} />
+          <div className="absolute h-[38.126px] left-[calc(50%-91.19px)] top-0 translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => switchTab('business')} />
+          <div className="absolute h-[38.126px] right-[4.96px] top-0 w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => switchTab('study')} />
+          <button
+            onClick={() => switchTab('business')}
             className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[97.12px] not-italic text-[14.77px] text-center text-nowrap top-[9.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
-            style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF' }}
+            style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF', transition: 'color 0.3s ease' }}
           >
             비즈니스 인텐시브
           </button>
-          <button 
-            onClick={() => setActiveTab('study')} 
+          <button
+            onClick={() => switchTab('study')}
             className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[280.84px] not-italic text-[14.77px] text-center text-nowrap top-[9.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
-            style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5' }}
+            style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5', transition: 'color 0.3s ease' }}
           >
             출국 없이 어학연수
           </button>
-          <BackgroundImage additionalClassNames="top-[190.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
-          <div className="absolute contents left-[188px] top-[74px]">
-            <BackgroundImage1 text="월" text1="원" price={activeTab === 'business' ? '1,300,000' : '2,540,000'} additionalClassNames="top-[74px]" />
-            {/* 기존 가격 (취소선) */}
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[190.99px] not-italic text-[0px] text-nowrap text-[#626262] top-[94px]">
-              <span className="text-[11.674px]">월</span>
-              <span className="text-[16px] line-through">{` ${activeTab === 'business' ? '39,200' : '59,200'}`}</span>
-              <span className="text-[11.674px]">원</span>
-            </p>
-            <BackgroundImage3 additionalClassNames="top-[86.02px]" />
-            {/* 할인된 가격 */}
-            <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '29,200' : '49,200'} additionalClassNames="top-[100.36px]" />
-            {/* 할인 배지들 */}
-            <div className="absolute h-[17.098px] left-[191.09px] rounded-[1.777px] top-[138.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[222.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[140.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[258.91px] not-italic text-[10.304px] text-center text-nowrap text-white top-[140.63px]">+</p>
-            <div className="absolute h-[17.098px] left-[271.81px] rounded-[1.777px] top-[138.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[302.68px] not-italic text-[10.304px] text-center text-nowrap text-white top-[140.63px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[303.35px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[163px] tracking-[-0.7488px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
-          </div>
+          <div
+              className="absolute left-0 top-[38px] w-full h-[252px]"
+              style={{ opacity: tabFading ? 0 : 1, transform: tabFading ? 'translateY(10px)' : 'translateY(0)', transition: 'opacity 0.25s ease-in-out, transform 0.25s ease-in-out' }}
+            >
+              <div className="absolute left-[24px] top-[33px] w-[156.105px] h-[72.548px] cursor-pointer" onClick={handleCopyCoupon}>
+                <img src={imgCoupon} alt="" className="absolute inset-0 w-full h-full" />
+                <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] left-[8px] not-italic text-[8.616px] text-nowrap text-white top-[10px] tracking-[-0.517px]">봄맞이 할인 쿠폰</p>
+                <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[0] left-[8px] not-italic text-[0px] text-nowrap text-white top-[35px] tracking-[-2.2443px]">
+                  <span className="leading-[normal] text-[28.054px] tracking-[-2.244px]">1</span>
+                  <span className="leading-[normal] text-[28.054px] tracking-[-0.281px]">2</span>
+                  <span className="leading-[normal] text-[18.113px] tracking-[-1.449px]">만원</span>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none" className="absolute left-[133.39px] top-[48.7px] w-[18.057px] h-[17.392px]">
+                  <path d="M10.4764 0.724487C10.4764 0.32435 10.152 -2.49147e-05 9.75186 -2.49147e-05C9.35172 -2.49147e-05 9.02735 0.32435 9.02735 0.724487H9.75186H10.4764ZM9.23955 14.9471C9.52249 15.23 9.98123 15.23 10.2642 14.9471L14.8749 10.3363C15.1579 10.0534 15.1579 9.59463 14.8749 9.31169C14.592 9.02875 14.1333 9.02875 13.8503 9.31169L9.75186 13.4102L5.6534 9.31169C5.37046 9.02875 4.91173 9.02875 4.62879 9.31169C4.34585 9.59463 4.34585 10.0534 4.62879 10.3363L9.23955 14.9471ZM9.75186 0.724487H9.02735V14.4348H9.75186H10.4764V0.724487H9.75186Z" fill="white"/>
+                  <path d="M0.724518 13.4354V18.117H18.782V13.4354" stroke="white" strokeWidth="1.44902" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] left-[calc(50%-89px)] -translate-x-1/2 not-italic text-[8.86px] text-center text-nowrap text-white top-[116px] cursor-pointer" onClick={handleCopyCoupon}>
+                {isCopied ? '✅ 복사 완료!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
+              </p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[199.99px] not-italic text-[0px] text-nowrap text-[#626262] top-[26px] tracking-[-1.3331px]">
+                <span className="text-[11.674px]">월</span>
+                <span className="text-[19.045px] line-through">{` ${activeTab === 'business' ? '39,200' : '59,200'}`}</span>
+                <span className="text-[11.674px]">원</span>
+              </p>
+              <BackgroundImage3 additionalClassNames="top-[38.02px]" />
+              <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '29,200' : '49,200'} additionalClassNames="top-[47.41px]" />
+              <div className="absolute h-[17.098px] left-[200.09px] rounded-[1.777px] top-[90.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[231.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[92.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[271.41px] not-italic text-[11.552px] text-center text-nowrap text-white top-[92.05px] tracking-[-0.8086px] translate-x-[-50%]">+</p>
+              <div className="absolute h-[17.098px] left-[280.8px] rounded-[1.777px] top-[90.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[311.83px] not-italic text-[10.304px] text-center text-nowrap text-white top-[92.63px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[199.78px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[113.72px] tracking-[-0.7488px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
+              <BackgroundImage additionalClassNames="top-[152.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
+            </div>
         </div>
-      </div>
+        <div className="absolute contents left-[calc(50%+0.5px)] top-[5406px] translate-x-[-50%]">
+          <div className="absolute bg-[#d9ff00] border-[#d9ff00] border-[0.561px] border-solid h-[38.578px] left-[calc(50%+0.5px)] rounded-[19.289px] top-[5406px] translate-x-[-50%] w-[280.707px] cursor-pointer" onClick={handleCTAClick} />
+          <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[calc(50%+0.91px)] not-italic text-[14.443px] text-black text-center text-nowrap top-[5416.17px] translate-x-[-50%] cursor-pointer" onClick={handleCTAClick}>지금 구매하기</p>
+        </div>
       <div className="absolute bg-white h-[1520px] left-0 overflow-hidden top-[4158px] w-[375px]">
         <div className="absolute bg-black h-[1520px] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[375px]" />
         <div className="absolute flex h-[142.53px] items-center justify-center left-[-77.53px] top-[-30px] w-[554.434px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
@@ -3409,27 +2179,27 @@ export default function Frame() {
           <div className="flex items-baseline gap-[6px] font-['Spoqa_Han_Sans_Neo'] font-medium text-[40.334px] tracking-[0.8067px]">
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.days)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">DAYS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-white">DAYS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.hours)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">HOURS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-white">HOURS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.minutes)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">MINS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-white">MINS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.seconds)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">SECS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-white">SECS</span>
             </div>
           </div>
         </div>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%+0.5px)] not-italic text-[28.842px] text-center text-white top-[287px] tracking-[-0.8653px] translate-x-[-50%] w-[292px]">일주일 뒤에는 없습니다</p>
-        <p className="absolute font-['WindSong:Regular',sans-serif] leading-[normal] left-[calc(50%+0.5px)] not-italic text-[#ff76d5] text-[29.758px] text-center top-[260px] tracking-[-0.8927px] translate-x-[-50%] w-[260px]">Final Offer</p>
+        <p className="absolute font-['WindSong',cursive] leading-[normal] left-[calc(50%+0.5px)] not-italic text-[#ff76d5] text-[29.758px] text-center top-[260px] tracking-[-0.8927px] translate-x-[-50%] w-[260px]">Final Offer</p>
         <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.5px)] not-italic text-[14.898px] text-center text-white top-[325.1px] tracking-[-0.4469px] translate-x-[-50%] w-[292px]">
           <p className="mb-0">26년 봄 프로모션, 할인받을 수 있는</p>
           <p className="font-['Spoqa_Han_Sans_Neo'] font-medium text-[#ff76d5]">이벤트 마지막 주!</p>
@@ -3474,72 +2244,74 @@ export default function Frame() {
           <BackgroundImage6>
             <div className="content-stretch flex gap-[10px] items-center relative shrink-0">
               <p className="font-['Spoqa_Han_Sans_Neo:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[30.79px] text-black text-center text-nowrap tracking-[-2.1553px]">🤖</p>
-              <BackgroundImage5 text="AI 튜터 스터디파이 NEW 앱" text1="출퇴근 길, 점심시간, 자기 전에 언제 어디서나" />
+              <div className="content-stretch flex flex-col gap-[3px] items-start leading-[normal] not-italic relative shrink-0 text-[13.482px] tracking-[-0.9437px] w-[225px]">
+                <p className="font-['Spoqa_Han_Sans_Neo'] font-medium relative shrink-0 text-white w-full">AI 튜터 스터디파이 NEW 앱</p>
+                <p className="font-['Spoqa_Han_Sans_Neo'] relative shrink-0 text-[#c9c9c9] w-full">출퇴근 길, 점심시간, 자기 전에 언제 어디서나</p>
+              </div>
             </div>
           </BackgroundImage6>
         </div>
         <div className="absolute contents left-[15px] top-[468px]">
           <div className="absolute bg-[#fd349a] h-[48px] left-1/2 rounded-[7px] top-[468px] translate-x-[-50%] w-[345px] cursor-pointer flex items-center justify-center" onClick={handleCTAClick}>
-            <p className="font-['Spoqa_Han_Sans_Neo',sans-serif] font-bold leading-[normal] not-italic text-[14.898px] text-center text-nowrap text-white tracking-[-1.0429px] m-0">
-              <span>{`📚 비즈니스 영어 패키지 수강하러 가기 >`}</span>
+            <p className="font-['Spoqa_Han_Sans_Neo',sans-serif] font-medium leading-[normal] not-italic text-[14.898px] text-center text-nowrap text-white tracking-[-1.0429px] m-0">
+              <span className="font-bold">{`📚 `}</span><span>{`비즈니스 영어 패키지 수강하러 가기 >`}</span>
             </p>
           </div>
         </div>
-        {/* 하단 탭 + 가격 + CTA 반복 */}
-        <div className="absolute left-[5.96px] top-[1020px] w-[364px]">
-          {/* 탭 */}
-          <div className="relative h-[38px]">
-            <div className="absolute h-[38px] left-0 top-0 w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => setActiveTab('business')} />
-            <div className="absolute h-[38px] right-0 top-0 w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => setActiveTab('study')} />
-            <button
-              onClick={() => setActiveTab('business')}
-              className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[91px] not-italic text-[14.77px] text-center text-nowrap top-[10px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
-              style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF' }}
+        {/* 하단 탭 + 가격 + CTA 반복 — 상단 탭과 동일 구조 */}
+        <div className="absolute left-0 top-[1020px] w-[375px] h-[290px]">
+          <div className="absolute bg-black h-[236.657px] left-[calc(50%+0.5px)] top-[38.13px] translate-x-[-50%] w-[364.087px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid', transition: 'border-color 0.3s ease' }} />
+          <div className="absolute h-[38.126px] left-[calc(50%-91.19px)] top-0 translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => switchTab('business')} />
+          <div className="absolute h-[38.126px] right-[4.96px] top-0 w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => switchTab('study')} />
+          <button
+            onClick={() => switchTab('business')}
+            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[97.12px] not-italic text-[14.77px] text-center text-nowrap top-[9.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+            style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF', transition: 'color 0.3s ease' }}
+          >
+            비즈니스 인텐시브
+          </button>
+          <button
+            onClick={() => switchTab('study')}
+            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[280.84px] not-italic text-[14.77px] text-center text-nowrap top-[9.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+            style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5', transition: 'color 0.3s ease' }}
+          >
+            출국 없이 어학연수
+          </button>
+          <div
+              className="absolute left-0 top-[38px] w-full h-[252px]"
+              style={{ opacity: tabFading ? 0 : 1, transform: tabFading ? 'translateY(10px)' : 'translateY(0)', transition: 'opacity 0.25s ease-in-out, transform 0.25s ease-in-out' }}
             >
-              비즈니스 인텐시브
-            </button>
-            <button
-              onClick={() => setActiveTab('study')}
-              className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[273px] not-italic text-[14.77px] text-center text-nowrap top-[10px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
-              style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5' }}
-            >
-              출국 없이 어학연수
-            </button>
-          </div>
-          {/* 가격 정보 */}
-          <div className="relative h-[237px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid', backgroundColor: '#000' }}>
-            {/* 쿠폰 카드 (작은 버전) */}
-            <div className="absolute left-[14px] top-[27px] cursor-pointer" onClick={handleCopyCoupon}>
-              <SubtractBackgroundImage additionalClassNames="" />
-            </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[26px] not-italic text-[8.469px] text-nowrap text-white top-[38px] tracking-[-0.5px]">봄맞이 할인 쿠폰</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[26px] not-italic text-[25px] text-nowrap text-white top-[55px] tracking-[-2px]">12만원</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[26px] not-italic text-[8px] text-nowrap text-white top-[110px] tracking-[-0.5px]">
-              {isCopied ? '✅ 복사 완료!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
-            </p>
-            {/* 가격 */}
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[195px] not-italic text-[#626262] text-[16px] text-nowrap top-[20px] line-through tracking-[-1px]">
-              월 {activeTab === 'business' ? '39,200' : '59,200'}원
-            </p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[195px] not-italic text-white text-[0px] text-nowrap top-[40px]">
-              <span className="text-[14px]">월</span>
-              <span className="text-[28px] tracking-[-1px]">{` ${activeTab === 'business' ? '29,200' : '49,200'}`}</span>
-              <span className="text-[20px]">원</span>
-            </p>
-            {/* 할인 배지들 */}
-            <div className="absolute flex gap-[4px] items-center left-[195px] top-[84px]">
-              <div className="h-[17px] rounded-[1.777px] px-[8px] flex items-center justify-center" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }}>
-                <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[10px] text-center text-white tracking-[-0.7px]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
+              <div className="absolute left-[24px] top-[33px] w-[156.105px] h-[72.548px] cursor-pointer" onClick={handleCopyCoupon}>
+                <img src={imgCoupon} alt="" className="absolute inset-0 w-full h-full" />
+                <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] left-[8px] not-italic text-[8.616px] text-nowrap text-white top-[10px] tracking-[-0.517px]">봄맞이 할인 쿠폰</p>
+                <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[0] left-[8px] not-italic text-[0px] text-nowrap text-white top-[35px] tracking-[-2.2443px]">
+                  <span className="leading-[normal] text-[28.054px] tracking-[-2.244px]">1</span>
+                  <span className="leading-[normal] text-[28.054px] tracking-[-0.281px]">2</span>
+                  <span className="leading-[normal] text-[18.113px] tracking-[-1.449px]">만원</span>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none" className="absolute left-[133.39px] top-[48.7px] w-[18.057px] h-[17.392px]">
+                  <path d="M10.4764 0.724487C10.4764 0.32435 10.152 -2.49147e-05 9.75186 -2.49147e-05C9.35172 -2.49147e-05 9.02735 0.32435 9.02735 0.724487H9.75186H10.4764ZM9.23955 14.9471C9.52249 15.23 9.98123 15.23 10.2642 14.9471L14.8749 10.3363C15.1579 10.0534 15.1579 9.59463 14.8749 9.31169C14.592 9.02875 14.1333 9.02875 13.8503 9.31169L9.75186 13.4102L5.6534 9.31169C5.37046 9.02875 4.91173 9.02875 4.62879 9.31169C4.34585 9.59463 4.34585 10.0534 4.62879 10.3363L9.23955 14.9471ZM9.75186 0.724487H9.02735V14.4348H9.75186H10.4764V0.724487H9.75186Z" fill="white"/>
+                  <path d="M0.724518 13.4354V18.117H18.782V13.4354" stroke="white" strokeWidth="1.44902" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
-              <span className="font-['Spoqa_Han_Sans_Neo'] text-white text-[10px]">+</span>
-              <div className="h-[17px] rounded-[1.777px] px-[8px] flex items-center justify-center" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }}>
-                <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[10px] text-center text-white tracking-[-0.7px]">12만원 할인</p>
-              </div>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] left-[calc(50%-89px)] -translate-x-1/2 not-italic text-[8.86px] text-center text-nowrap text-white top-[116px] cursor-pointer" onClick={handleCopyCoupon}>
+                {isCopied ? '✅ 복사 완료!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
+              </p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[199.99px] not-italic text-[0px] text-nowrap text-[#626262] top-[26px] tracking-[-1.3331px]">
+                <span className="text-[11.674px]">월</span>
+                <span className="text-[19.045px] line-through">{` ${activeTab === 'business' ? '39,200' : '59,200'}`}</span>
+                <span className="text-[11.674px]">원</span>
+              </p>
+              <BackgroundImage3 additionalClassNames="top-[38.02px]" />
+              <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '29,200' : '49,200'} additionalClassNames="top-[47.41px]" />
+              <div className="absolute h-[17.098px] left-[200.09px] rounded-[1.777px] top-[90.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[231.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[92.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[271.41px] not-italic text-[11.552px] text-center text-nowrap text-white top-[92.05px] tracking-[-0.8086px] translate-x-[-50%]">+</p>
+              <div className="absolute h-[17.098px] left-[280.8px] rounded-[1.777px] top-[90.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[311.83px] not-italic text-[10.304px] text-center text-nowrap text-white top-[92.63px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
+              <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[199.78px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[113.72px] tracking-[-0.7488px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
+              <BackgroundImage additionalClassNames="top-[152.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
             </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[195px] not-italic text-[#626262] text-[10px] text-nowrap top-[108px] tracking-[-0.7px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
-            {/* 수강 정보 */}
-            <BackgroundImage additionalClassNames="top-[135px] left-[14px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
-          </div>
         </div>
         {/* 최종 CTA */}
         <div className="absolute left-1/2 top-[1420px] translate-x-[-50%]">
