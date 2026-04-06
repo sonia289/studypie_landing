@@ -4,9 +4,9 @@ import clsx from "clsx";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import imgSpringHeroCopy from "../assets/spring-hero-copy.png";
-import imgSpringEllipse from "../assets/spring-ellipse.png";
-import imgCherryBlossomLeft from "../assets/cherry-blossom-left.png";
-import imgCherryBlossomRight from "../assets/cherry-blossom-right.png";
+import imgSpringEllipse from "../assets/spring-ellipse.svg";
+import imgCherryBlossomLeft from "../assets/cherry-blossom-left.svg";
+import imgCherryBlossomRight from "../assets/cherry-blossom-right.svg";
 import imgRectangle2 from "../assets/b06a8fef47b3a66fc4ffc63d1f0cb3298fc8513e.png";
 import imgRectangle3 from "../assets/0d18f6487bf1811e018db304c5abaa25dc4317e3.png";
 import imgRectangle4 from "../assets/b5d74c42e76c2897b02bcb75aa13dfbe39acee10.png";
@@ -36,14 +36,20 @@ import { imgRectangle, imgRectangle1, imgGroup, imgGroup1, imgGroup2, imgGroup3,
 import 레이어1 from "@/imports/레이어1-83-295";
 import Group2609478 from "@/imports/Group2609478";
 import svgPaths2 from "./svg-5hqvz2fdm0";
-import { imgRectangle as imgRectangleNew, imgRectangle1 as imgRectangle1New } from "./svg-q71tz";
-import svgPathsNew from "./svg-97i4e5iezt";
 import { imgRectangle as imgRectanglePbmmr, imgRectangle1 as imgRectangle1Pbmmr } from "./svg-pbmmr";
 import svgPathsAIChatbot from "./svg-t079hjqhyd";
 import svgPathsPhone from "./svg-rx6vro2irr";
 import imgImage11815 from "../assets/39248ea0707955963c88240aa6774c12f088652f.png";
 import imgPhone from "../assets/8fa2d7675a0ae862f451ffb6b383ea32a1cb99ba.png";
 import { imgImage11814 } from "./svg-4vy62";
+import imgPhoneFrame from "../assets/phone-frame.png";
+import imgPhoneScreenHome from "../assets/phone-screen-home.png";
+import imgPhoneScreenExpression from "../assets/phone-screen-expression.png";
+import imgPhoneScreenQuiz from "../assets/phone-screen-quiz.png";
+import imgStudyfyAppBadge from "../assets/studyfy-app-badge.svg";
+import imgTabArrowIcon from "../assets/tab-arrow-icon.svg";
+import imgTabArrowLine from "../assets/tab-arrow-line.svg";
+import imgNewBadgeBg from "../assets/new-badge-bg.svg";
 type BackgroundImage7Props = {
   additionalClassNames?: string;
 };
@@ -149,7 +155,7 @@ type BackgroundImage2Props = {
   additionalClassNames?: string;
 };
 
-function BackgroundImage2({ text, text1, price = '39,200', additionalClassNames = "" }: BackgroundImage2Props) {
+function BackgroundImage2({ text, text1, price = '29,200', additionalClassNames = "" }: BackgroundImage2Props) {
   return (
     <p className={clsx("absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[190.99px] not-italic text-[0px] text-nowrap text-white tracking-[-0.956px]", additionalClassNames)}>
       <span className="text-[14.651px] tracking-[-0.586px]">{text}</span>
@@ -1287,151 +1293,190 @@ export default function Frame() {
   const formatTime = (num: number) => String(num).padStart(2, '0');
 
   return (
-    <div className="bg-white relative w-[375px] min-h-screen mx-auto overflow-hidden">
-      <div className="absolute left-0 overflow-clip top-0 w-[375px] h-[246px]" data-name="1" style={{ background: 'linear-gradient(180deg, #0084FF 0%, rgba(255, 0, 224, 0.00) 50%, #FFF 100%)' }}>
-        {/* 벚꽃 타원 장식 - mix-blend-plus-lighter */}
-        <div className="absolute left-[34px] top-[-27px] w-[298px] h-[298px]" style={{ borderRadius: '298px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.00) 100%)', mixBlendMode: 'plus-lighter' }}>
-          <img alt="" className="absolute block max-w-none w-full h-full" src={imgSpringEllipse} />
+    <div className="w-[375px] mx-auto">
+      {/* 상단 띠배너 - sticky */}
+      <div className="sticky top-0 z-50 relative" data-name="상단 띠배너" style={{ height: '43.975px', background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)' }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <p className="font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] not-italic text-[8.91px] text-center text-nowrap text-white tracking-[-0.4px]">
+            🚨곧 마감! 놓치면 다음 봄을 기다려야 해요🚨
+          </p>
+          <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[12.73px] text-center text-nowrap text-white tracking-[-0.5px] w-[189.404px]">
+            {formatTime(timeLeft.days)}일 {formatTime(timeLeft.hours)}시간 {formatTime(timeLeft.minutes)}분  {formatTime(timeLeft.seconds)}초 남았습니다
+          </p>
         </div>
-        {/* 왼쪽 벚꽃 가지 - mix-blend-screen */}
-        <div className="absolute left-0 top-[68px] w-[224px] h-[178px] overflow-clip" style={{ mixBlendMode: 'screen' }}>
-          <img alt="" className="absolute block max-w-none w-full h-full object-cover" src={imgCherryBlossomLeft} />
+        <div className="absolute right-[12px] top-1/2 -translate-y-1/2 shrink-0 cursor-pointer flex items-center justify-center w-[62.33px] h-[17.04px]" style={{ border: '0.21px solid white', borderRadius: '0px', WebkitBorderRadius: '0px' }} onClick={handleCTAClick}>
+          <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[8.1px] text-center text-white text-nowrap tracking-[-0.5px]">강의 구매하기</p>
         </div>
-        {/* 오른쪽 벚꽃 가지 */}
-        <div className="absolute left-[207px] top-0 w-[168px] h-[169px] overflow-clip">
-          <img alt="" className="absolute block max-w-none w-full h-full object-cover" src={imgCherryBlossomRight} />
+      </div>
+      <div className="bg-white relative w-[375px] h-[5678px] overflow-x-hidden" style={{ marginTop: '-44px' }}>
+      {/* 히어로 섹션 - 띠배너 아래에서 시작 */}
+      <div className="absolute left-0 top-[44px] w-[375px] h-[246px] overflow-visible" data-name="1" style={{ background: 'linear-gradient(180deg, #0084FF 0%, #4070E8 10%, #9080D8 22%, #B8A0E0 32%, #D8C0E8 40%, #FFFFFF 50%, #F8B8E0 60%, #F0A0D0 75%, #F8C8E8 90%, #FFFFFF 100%)' }}>
+        {/* 벚꽃 타원 장식 (발광 효과) */}
+        <div className="absolute left-[34px] top-[-27px] w-[298px] h-[298px] z-0" style={{ borderRadius: '298px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.00) 100%)', mixBlendMode: 'plus-lighter' }}>
+        </div>
+        {/* 왼쪽 벚꽃 가지 */}
+        <div className="absolute left-0 top-[68px] w-[224px] h-[178px] z-[1]" style={{ mixBlendMode: 'screen' }}>
+          <img alt="" className="absolute block max-w-none w-full h-full object-contain" src={imgCherryBlossomLeft} />
+        </div>
+        {/* 오른쪽 벚꽃 가지 (Group 1707481104) */}
+        <div className="absolute left-[207px] top-0 w-[168px] h-[169px] z-[1]" style={{ mixBlendMode: 'screen' }}>
+          <img alt="" className="absolute block max-w-none w-full h-full object-contain" src={imgCherryBlossomRight} />
         </div>
         {/* 히어로 카피 텍스트 */}
-        <div className="absolute left-[69px] top-[15px] w-[236px] h-[183px]" data-name="카피">
+        <div className="absolute left-[69px] top-[15px] w-[236px] h-[183px] z-10" data-name="카피">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img alt="봄맞이 할인 프로모션 비즈니스 영어 패키지" className="absolute h-[141.34%] left-[3.39%] max-w-none top-[2.01%] w-[93.22%]" src={imgSpringHeroCopy} />
           </div>
         </div>
-        <div className="absolute left-0 top-0 w-[375px] relative" data-name="상단 띠배너" style={{ height: '43.975px', background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)' }}>
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <p className="font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] not-italic text-[8.91px] text-center text-nowrap text-white tracking-[-0.4px]">
-              🚨곧 마감! 놓치면 다음 봄을 기다려야 해요🚨
-            </p>
-            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[12.73px] text-center text-nowrap text-white tracking-[-0.5px] w-[189.404px]">
-              {formatTime(timeLeft.days)}일 {formatTime(timeLeft.hours)}시간 {formatTime(timeLeft.minutes)}분  {formatTime(timeLeft.seconds)}초 남았습니다
-            </p>
-          </div>
-          <div className="absolute right-[12px] top-1/2 -translate-y-1/2 shrink-0 cursor-pointer flex items-center justify-center w-[62.33px] h-[17.04px]" style={{ border: '0.21px solid white', borderRadius: '0px', WebkitBorderRadius: '0px' }} onClick={handleCTAClick}>
-            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[8.1px] text-center text-white text-nowrap tracking-[-0.5px]">강의 구매하기</p>
-          </div>
+      </div>
+      {/* 스터디파이 앱 섹션 - 3 phones with tabs */}
+      <div className="absolute h-[414px] left-0 overflow-clip top-[290px] w-[375px]" style={{ backgroundImage: "linear-gradient(101.41deg, rgb(220, 231, 255) 0.61%, rgb(240, 229, 255) 100%)" }}>
+        {/* 스터디파이 앱 badge */}
+        <div className="absolute left-[108px] top-[30px] w-[159px] h-[62.359px]">
+          <img alt="" className="absolute block max-w-none" style={{ inset: '-7% -2.75%', width: '105.5%', height: '114%' }} src={imgStudyfyAppBadge} />
         </div>
-        <div className="absolute contents left-[245px] top-[129px]">
-          <div className="absolute h-[34px] left-[245px] top-[129px] w-[115px]" data-name="Union">
-            <div className="absolute inset-[-5.88%_-1.74%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 119 38">
-                <g id="Union">
-                  <mask fill="black" height="38" id="path-1-outside-1_101_53" maskUnits="userSpaceOnUse" width="119" x="0" y="0">
-                    <rect fill="white" height="38" width="119" />
-                    <path d={svgPathsNew.p3a2c5040} />
-                  </mask>
-                  <path d={svgPathsNew.p3a2c5040} fill="var(--fill-0, #435AF7)" />
-                  <path d={svgPathsNew.p22bc9b80} fill="url(#paint0_linear_101_53)" mask="url(#path-1-outside-1_101_53)" />
-                </g>
-                <defs>
-                  <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_101_53" x1="2" x2="117" y1="20.9229" y2="20.9229">
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.5" />
-                  </linearGradient>
-                </defs>
-              </svg>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[1.147] left-[186.97px] not-italic text-[26.204px] text-center text-white top-[43.1px] tracking-[-2.3584px] translate-x-[-50%] whitespace-nowrap">스터디파이 앱</p>
+
+        {/* NEW badge */}
+        <div className="absolute left-[89px] top-[14px] w-[81px] h-[31.87px] flex items-center justify-center">
+          <div className="rotate-[-9.04deg]">
+            <div className="relative w-[78.86px] h-[19.72px]">
+              <img alt="" className="absolute block max-w-none size-full" src={imgNewBadgeBg} />
             </div>
           </div>
-          <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[1.147] left-[302.5px] not-italic text-[12px] text-center text-white text-nowrap top-[135px] tracking-[-1.08px] translate-x-[-50%]">AI 챗봇 업데이트 버전</p>
         </div>
-      </div>
-      <div className="absolute h-[180px] left-0 overflow-clip top-[278px] w-[375px]" style={{ backgroundImage: "linear-gradient(114.891deg, rgb(220, 231, 255) 0.60717%, rgb(240, 229, 255) 100%)" }}>
-        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%+75.5px)] not-italic text-[#252525] text-[25px] text-center top-[88px] tracking-[-2px] translate-x-[-50%] whitespace-nowrap">AI 분석 맞춤 학습</p>
-        <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+76px)] not-italic text-[#3a3a3a] text-[14px] text-center top-[126px] tracking-[-1.12px] translate-x-[-50%] whitespace-nowrap">
+        <div className="absolute left-[114px] top-[19px] w-[30.17px] h-[20.2px] flex items-center justify-center">
+          <div className="rotate-[-9.04deg]">
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[13.144px] text-center text-white tracking-[-1.0515px] whitespace-nowrap">NEW</p>
+          </div>
+        </div>
+
+        {/* Title */}
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-1/2 not-italic text-[#252525] text-[25px] text-center top-[104px] tracking-[-2px] translate-x-[-50%] whitespace-nowrap">AI 분석 맞춤 학습</p>
+
+        {/* Subtitle */}
+        <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[#3a3a3a] text-[14px] text-center top-[142px] tracking-[-1.12px] translate-x-[-50%] whitespace-nowrap">
           <p className="mb-0">지금 결제하시는 분들께만</p>
-          <p>AI 챗봇이 함께 제공돼요.</p>
+          <p><span className="font-['Spoqa_Han_Sans_Neo'] font-medium">스터디파이 앱</span>이 함께 제공돼요.</p>
         </div>
-        <div className="absolute contents left-[209px] top-[18px]">
-          <div className="absolute h-[62.359px] left-[209px] top-[18px] w-[107px]" data-name="Union">
-            <div className="absolute inset-[-7%_-4.08%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 115.735 71.0941" style={{ filter: 'drop-shadow(0px 2px 1.5px rgba(0, 0, 0, 0.41))' }}>
-                <g id="Union">
-                  <mask fill="black" height="72" id="path-1-outside-1_110_41" maskUnits="userSpaceOnUse" width="117" x="-0.632653" y="-0.632653">
-                    <rect fill="white" height="72" width="117" x="-0.632653" y="-0.632653" />
-                    <path d={svgPathsPhone.p2dd1f800} />
-                  </mask>
-                  <path d={svgPathsPhone.p2dd1f800} fill="var(--fill-0, #435AF7)" />
-                  <path d={svgPathsPhone.p29872100} fill="url(#paint0_linear_110_41_phone)" mask="url(#path-1-outside-1_110_41)" />
-                </g>
-                <defs>
-                  <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_110_41_phone" x1="-67.6939" x2="183.429" y1="45.6885" y2="45.6885">
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.5" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-          <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[1.147] left-[261.97px] not-italic text-[26.204px] text-center text-white top-[31.1px] tracking-[-2.3584px] translate-x-[-50%]">AI 챗봇</p>
+
+        {/* Tab labels */}
+        <div className="absolute left-[23px] top-[206px] bg-[#435af7] rounded-[7.5px] w-[48px] h-[15px] flex items-center justify-center z-[2]">
+          <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic text-[10px] text-center text-white tracking-[-0.8px] whitespace-nowrap">홈 화면</p>
         </div>
-        <div className="absolute contents left-[10px] top-0">
-          <div className="absolute contents left-[30.5px] top-[14.61px]" data-name="Mask group">
-            <div className="absolute h-[264.774px] left-[30.5px] top-[14.61px] w-[127.153px]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 127.153 264.774">
-                <path d={svgPathsPhone.p1b8a7480} fill="var(--fill-0, #0B0B0B)" id="Vector 609" />
-              </svg>
-            </div>
-            <div className="absolute contents left-[33.17px] top-[15.98px]" data-name="Mask group">
-              <div className="absolute h-[265.239px] left-[32.56px] top-[14.38px] w-[122.374px]" data-name="image 11814" style={{ maskImage: `url('${imgImage11814}')`, maskSize: '121.434px 263.641px', maskPosition: '0.609px 1.594px', maskRepeat: 'no-repeat', maskMode: 'alpha', maskComposite: 'intersect', WebkitMaskImage: `url('${imgImage11814}')`, WebkitMaskSize: '121.434px 263.641px', WebkitMaskPosition: '0.609px 1.594px', WebkitMaskRepeat: 'no-repeat' }}>
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage11815} />
-              </div>
-            </div>
+        <div className="absolute left-[158px] top-[206px] bg-[#435af7] rounded-[7.5px] w-[60px] h-[15px] flex items-center justify-center z-[2]">
+          <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic text-[10px] text-center text-white tracking-[-0.8px] whitespace-nowrap">표현 학습</p>
+        </div>
+        <div className="absolute left-[297px] top-[206px] bg-[#435af7] rounded-[7.5px] w-[60px] h-[15px] flex items-center justify-center z-[2]">
+          <p className="font-['Spoqa_Han_Sans_Neo'] leading-[normal] not-italic text-[10px] text-center text-white tracking-[-0.8px] whitespace-nowrap">퀴즈 풀기</p>
+        </div>
+
+        {/* Tab arrows */}
+        <div className="absolute left-[47px] top-[226px] w-[1px] h-[12px]">
+          <img alt="" className="block w-full h-full" src={imgTabArrowLine} />
+        </div>
+        <div className="absolute left-[188px] top-[226px] w-[1px] h-[12px]">
+          <img alt="" className="block w-full h-full" src={imgTabArrowLine} />
+        </div>
+        <div className="absolute left-[327px] top-[226px] w-[1px] h-[12px]">
+          <img alt="" className="block w-full h-full" src={imgTabArrowLine} />
+        </div>
+        <div className="absolute left-[41px] top-[243px] w-[12px] h-[12px]">
+          <img alt="" className="block size-full" src={imgTabArrowIcon} />
+        </div>
+        <div className="absolute left-[182px] top-[243px] w-[12px] h-[12px]">
+          <img alt="" className="block size-full" src={imgTabArrowIcon} />
+        </div>
+        <div className="absolute left-[321px] top-[243px] w-[12px] h-[12px]">
+          <img alt="" className="block size-full" src={imgTabArrowIcon} />
+        </div>
+
+        {/* Separator line */}
+        <div className="absolute left-[70px] top-[214px] w-[231px] h-[1px] opacity-30 bg-[#435af7]" />
+
+        {/* Phone 1 - 홈 화면 */}
+        <div className="absolute left-[-34.45px] top-[250px] w-[162.436px] h-[284px]" style={{ aspectRatio: '151/264' }}>
+          <div className="absolute left-[22.38px] top-[15.43px] w-[117.3px] h-[254.67px] overflow-hidden rounded-[16px] bg-white">
+            <img alt="홈 화면" className="absolute left-[-1px] top-[19px] max-w-none pointer-events-none w-[119px] h-[198px]" src={imgPhoneScreenHome} />
+            <div className="absolute left-[-6px] top-[-1px] w-[130px] h-[24px]" style={{ background: '#EDF1FE' }} />
           </div>
-          <div className="absolute h-[294px] left-[10px] top-0 w-[168.156px]" data-name="핸드폰 프레임 1">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgPhone} />
+          <img alt="" className="absolute inset-0 max-w-none pointer-events-none size-full" src={imgPhoneFrame} />
+        </div>
+
+        {/* Phone 2 - 표현 학습 */}
+        <div className="absolute left-[106px] top-[250px] w-[162.44px] h-[284px]">
+          <div className="absolute left-[22.38px] top-[15.43px] w-[117.3px] h-[254.67px] overflow-hidden rounded-[16px] bg-white">
+            <img alt="표현 학습" className="absolute left-[0px] top-[19px] max-w-none pointer-events-none w-[119px] h-[197px]" src={imgPhoneScreenExpression} />
+            <div className="absolute left-[-6px] top-[-1px] w-[130px] h-[24px]" style={{ background: '#FEFEFE' }} />
           </div>
+          <img alt="" className="absolute inset-0 max-w-none pointer-events-none size-full" src={imgPhoneFrame} />
+        </div>
+
+        {/* Phone 3 - 퀴즈 풀기 */}
+        <div className="absolute left-[245.68px] top-[250px] w-[162.44px] h-[284px]">
+          <div className="absolute left-[22.38px] top-[15.43px] w-[117.3px] h-[254.67px] overflow-hidden rounded-[16px] bg-white">
+            <img alt="퀴즈 풀기" className="absolute left-[0px] top-[19px] max-w-none pointer-events-none w-[117px] h-[196px]" src={imgPhoneScreenQuiz} />
+            <div className="absolute left-[-6px] top-[-1px] w-[130px] h-[24px]" style={{ background: '#FEFEFE' }} />
+          </div>
+          <img alt="" className="absolute inset-0 max-w-none pointer-events-none size-full" src={imgPhoneFrame} />
         </div>
       </div>
-      <div className="absolute bg-white h-[871px] left-0 overflow-clip top-[458px] w-[375px]" data-name="2">
+      <div className="absolute bg-black h-[1061px] left-0 overflow-clip top-[704px] w-[375px]" data-name="2">
         <div className="absolute h-[871px] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[375px]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 375 871">
             <path d="M0 0H375V871H187.5H0V0Z" fill="var(--fill-0, black)" id="Rectangle 34625552" />
           </svg>
         </div>
-        <div className="absolute contents left-1/2 top-0 translate-x-[-50%]">
-          <div className="absolute bg-[#435af7] h-[26.316px] left-1/2 top-0 translate-x-[-50%] w-[375px]" />
-          <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.31px)] not-italic text-[13.158px] text-center text-nowrap text-white top-[4.84px] translate-x-[-50%]">{`✶  할인 혜택 종료까지  ✶`}</p>
-        </div>
         <div className="absolute bg-gradient-to-b bottom-0 from-[18.165%] from-[rgba(67,90,247,0)] left-1/2 to-[#435af7] top-0 translate-x-[-50%] w-[375px]" />
-        <div className="absolute left-0 right-0 top-[61px] flex flex-col items-center text-white">
+        {/* ✶ 할인 혜택 종료까지 ✶ */}
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 translate-x-[-50%] not-italic text-[27.138px] text-center text-white top-[70px] whitespace-pre">
+          <span>{'✶  할인 혜택 '}</span>
+          <span className="font-medium text-[#ff76d5]">종료까지</span>
+          <span>{'  ✶'}</span>
+        </p>
+        <div className="absolute left-0 right-0 top-[125px] flex flex-col items-center text-white">
           <div className="flex items-baseline gap-[6px] font-['Spoqa_Han_Sans_Neo'] font-bold text-[40.334px] tracking-[0.8067px]">
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.days)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">DAYS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">DAYS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.hours)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">HOURS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">HOURS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.minutes)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">MINS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">MINS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.seconds)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">SECS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">SECS</span>
             </div>
           </div>
         </div>
         <div className="absolute contents left-[calc(50%+0.35px)] top-[196px] translate-x-[-50%]">
-          <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.35px)] not-italic text-[0px] text-[24.972px] text-center text-nowrap text-white top-[196px] translate-x-[-50%]">
+          <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.35px)] not-italic text-[0px] text-[24.972px] text-center text-nowrap text-white top-[275px] translate-x-[-50%]">
             <p className="mb-0">봄맞이 프로모션 특가!</p>
             <p className="font-['Spoqa_Han_Sans_Neo'] font-bold text-[#ff76d5]">12만원 선착순 할인</p>
           </div>
-          <div className="absolute contents left-[77.89px] top-[284.79px]">
-            <div className="absolute h-[101.87px] left-[77.89px] top-[284.79px] w-[219.199px]" data-name="Subtract">
+          {/* 쿠폰 복사 안내 */}
+          <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.35px)] not-italic text-[12px] text-center text-nowrap text-white top-[482px] translate-x-[-50%] tracking-[-0.5px]">
+            {isCopied ? '✅ 쿠폰 코드가 복사되었습니다!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
+          </p>
+          {/* 쿠폰 사용 유의사항 */}
+          <div className="absolute left-[23px] top-[548px] w-[308px]">
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[14.479px] text-white mb-[12px] tracking-[-0.7239px]">쿠폰 사용 유의사항</p>
+            <div className="font-['Spoqa_Han_Sans_Neo'] leading-[17px] not-italic text-[10.342px] text-[#616aac] tracking-[-0.5px]">
+              <p className="mb-0">• 해당 쿠폰은 선착순 쿠폰으로 조기 소진 될 수 있습니다.</p>
+              <p className="mb-0">• 결제 화면에서 할인 코드를 입력하시면 할인이 적용됩니다.</p>
+              <p className="mb-0">• 쿠폰 코드를 받으셨더라도 선착순 소진 시 사용이 불가할 수 있습니다.</p>
+            </div>
+          </div>
+          <div className="absolute contents left-[77.89px] top-[363.79px] cursor-pointer" onClick={handleCopyCoupon}>
+            <div className="absolute h-[101.87px] left-[77.89px] top-[363.79px] w-[219.199px] cursor-pointer" data-name="Subtract" onClick={handleCopyCoupon}>
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 219.199 101.87">
                 <path d={svgPaths.p24da5030} fill="url(#paint0_linear_72_2760)" id="Subtract" />
                 <defs>
@@ -1442,7 +1487,7 @@ export default function Frame() {
                 </defs>
               </svg>
             </div>
-            <div className="absolute contents left-[77.89px] top-[284.79px]" data-name="Mask group">
+            <div className="absolute contents left-[77.89px] top-[363.79px]" data-name="Mask group">
               <div className="absolute contents inset-[34.43%_13.68%_51.37%_51.73%]" data-name="Group">
                 <div className="absolute inset-[36.25%_38.81%_53.51%_55.74%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-131.145px_-30.961px] mask-size-[219.199px_101.867px] opacity-[0.51]" data-name="Vector" style={{ maskImage: `url('${imgGroup}')` }}>
                   <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20.4184 89.1551">
@@ -2180,19 +2225,19 @@ export default function Frame() {
                 </div>
               </div>
             </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[87.8px] not-italic text-[11.891px] text-nowrap text-white top-[299.85px] tracking-[-0.7135px]">비즈니스 영어 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[87.8px] not-italic text-[0px] text-nowrap text-white top-[330px] tracking-[-3.2209px]">
-              <span className="text-[26.621px] tracking-[-2.1296px]">최대</span>
-              <span className="text-[40.261px]"> </span>
-              <span className="text-[44.081px]">73%</span>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[87.8px] not-italic text-[11.891px] text-nowrap text-white top-[378.85px] tracking-[-0.7135px]">봄맞이 할인 쿠폰</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[87.8px] not-italic text-[0px] text-nowrap text-white top-[413px] tracking-[-3.0977px]">
+              <span className="text-[38.721px]">1</span>
+              <span className="text-[38.721px] tracking-[-0.3872px]">2</span>
+              <span className="text-[25px]">만원</span>
             </p>
           </div>
         </div>
-        <div className="absolute contents left-[5.96px] top-[455px]">
-          <div className="absolute bg-black h-[236.657px] left-[calc(50%+0.5px)] top-[493.13px] translate-x-[-50%] w-[364.087px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid' }} />
-          <div className="absolute contents left-[24px] top-[538px]">
-            <SubtractBackgroundImage additionalClassNames="top-[538px]" />
-            <div className="absolute contents left-[24px] top-[538px]" data-name="Mask group">
+        <div className="absolute contents left-[5.96px] top-[649px]">
+          <div className="absolute bg-black h-[236.657px] left-[calc(50%+0.5px)] top-[687.13px] translate-x-[-50%] w-[364.087px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid' }} />
+          <div className="absolute contents left-[24px] top-[720px] cursor-pointer" onClick={handleCopyCoupon}>
+            <SubtractBackgroundImage additionalClassNames="top-[720px]" />
+            <div className="absolute contents left-[24px] top-[720px]" data-name="Mask group">
               <div className="absolute contents inset-[63%_46.92%_26.88%_28.45%]" data-name="Group">
                 <VectorBackgroundImage additionalClassNames="inset-[64.3%_64.82%_28.41%_31.31%]" />
                 <VectorBackgroundImage1 additionalClassNames="inset-[65.1%_63.41%_29.16%_33.29%]" />
@@ -2385,50 +2430,55 @@ export default function Frame() {
                 </div>
               </div>
             </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[31.06px] not-italic text-[8.469px] text-nowrap text-white top-[548.73px] tracking-[-0.5081px]">비즈니스 영어 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[31.06px] not-italic text-[31.393px] text-nowrap text-white top-[570.2px] tracking-[-2.5114px]">{activeTab === 'business' ? '64' : '73'}%</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[31.06px] not-italic text-[8.469px] text-nowrap text-white top-[548.73px] tracking-[-0.5081px]">봄맞이 할인 쿠폰</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[31.06px] not-italic text-[31.393px] text-nowrap text-white top-[570.2px] tracking-[-2.5114px]">12만원</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[32px] not-italic text-[8.5px] text-nowrap text-white top-[620px] tracking-[-0.5px]">
+              {isCopied ? '✅ 쿠폰 코드가 복사되었습니다!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
+            </p>
           </div>
-          <div className="absolute h-[38.126px] left-[calc(50%-91.19px)] top-[455px] translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => setActiveTab('business')} />
-          <div className="absolute h-[38.126px] right-[4.96px] top-[455px] w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => setActiveTab('study')} />
+          <div className="absolute h-[38.126px] left-[calc(50%-91.19px)] top-[649px] translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => setActiveTab('business')} />
+          <div className="absolute h-[38.126px] right-[4.96px] top-[649px] w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => setActiveTab('study')} />
           <button 
             onClick={() => setActiveTab('business')} 
-            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[97.12px] not-italic text-[14.77px] text-center text-nowrap top-[464.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[97.12px] not-italic text-[14.77px] text-center text-nowrap top-[658.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
             style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF' }}
           >
             비즈니스 인텐시브
           </button>
           <button 
             onClick={() => setActiveTab('study')} 
-            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[280.84px] not-italic text-[14.77px] text-center text-nowrap top-[464.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+            className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[280.84px] not-italic text-[14.77px] text-center text-nowrap top-[658.95px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
             style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5' }}
           >
             출국 없이 어학연수
           </button>
-          <BackgroundImage additionalClassNames="top-[645.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
-          <div className="absolute contents left-[188px] top-[529px]">
-            <BackgroundImage1 text="월" text1="원" price={activeTab === 'business' ? '1,300,000' : '2,540,000'} additionalClassNames="top-[529px]" />
-            <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '39,200' : '59,200'} additionalClassNames="top-[555.36px]" />
-            <BackgroundImage3 additionalClassNames="top-[541.02px]" />
-            <div className="absolute h-[17.098px] left-[191.09px] rounded-[1.777px] top-[593.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[222.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[595.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[303.35px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[570px] tracking-[-0.7488px]">12개월 할부</p>
+          <BackgroundImage additionalClassNames="top-[839.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
+          <div className="absolute contents left-[188px] top-[713px]">
+            <BackgroundImage1 text="월" text1="원" price={activeTab === 'business' ? '1,300,000' : '2,540,000'} additionalClassNames="top-[713px]" />
+            {/* 기존 가격 (취소선) */}
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[190.99px] not-italic text-[0px] text-nowrap text-[#626262] top-[713px]">
+              <span className="text-[11.674px]">월</span>
+              <span className="text-[16px] line-through">{` ${activeTab === 'business' ? '39,200' : '59,200'}`}</span>
+              <span className="text-[11.674px]">원</span>
+            </p>
+            <BackgroundImage3 additionalClassNames="top-[725.02px]" />
+            {/* 할인된 가격 */}
+            <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '29,200' : '49,200'} additionalClassNames="top-[734.41px]" />
+            {/* 할인 배지들 */}
+            <div className="absolute h-[17.098px] left-[191.09px] rounded-[1.777px] top-[777.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[222.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[779.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[258.91px] not-italic text-[10.304px] text-center text-nowrap text-white top-[779.05px]">+</p>
+            <div className="absolute h-[17.098px] left-[271.81px] rounded-[1.777px] top-[777.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[302.68px] not-italic text-[10.304px] text-center text-nowrap text-white top-[779.63px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[303.35px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[800.72px] tracking-[-0.7488px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
           </div>
         </div>
-        <div className="absolute contents left-[calc(50%+0.5px)] top-[771px] translate-x-[-50%]">
-          <div className="absolute bg-[#d9ff00] border-[#d9ff00] border-[0.561px] border-solid h-[38.578px] left-[calc(50%+0.5px)] rounded-[19.289px] top-[771px] translate-x-[-50%] w-[280.707px] cursor-pointer" onClick={handleCTAClick} />
-          <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[calc(50%+0.91px)] not-italic text-[#4158f1] text-[14.443px] text-center text-nowrap top-[781.17px] translate-x-[-50%] cursor-pointer" onClick={handleCTAClick}>지금 구매하기</p>
-        </div>
-        {/* 쿠폰 남은 갯수 카운터 */}
-        <div className="absolute left-1/2 translate-x-[-50%] top-[830px] w-[335px]">
-          <p className="font-['Spoqa_Han_Sans_Neo'] text-[12px] text-center text-[#ff4d6d] font-medium mb-[8px]">30개가 모두 발급되면 할인 혜택이 끝나요!</p>
-          <div className="flex items-center justify-center gap-[6px]">
-            <span className="font-['Spoqa_Han_Sans_Neo'] font-bold text-[48px] text-[#ff4d6d] leading-none">13</span>
-            <span className="font-['Spoqa_Han_Sans_Neo'] font-bold text-[20px] text-[#ff4d6d]">개</span>
-          </div>
-          <p className="font-['Spoqa_Han_Sans_Neo'] text-[10px] text-center text-[#999] mt-[8px]">⚠️  혜택 기간이 끝나면 쿠폰이 남아도 조기 종료 될 수 있습니다 ⚠</p>
+        <div className="absolute contents left-[calc(50%+0.5px)] top-[965px] translate-x-[-50%]">
+          <div className="absolute bg-[#d9ff00] border-[#d9ff00] border-[0.561px] border-solid h-[38.578px] left-[calc(50%+0.5px)] rounded-[19.289px] top-[965px] translate-x-[-50%] w-[280.707px] cursor-pointer" onClick={handleCTAClick} />
+          <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[calc(50%+0.91px)] not-italic text-[#4158f1] text-[14.443px] text-center text-nowrap top-[975.17px] translate-x-[-50%] cursor-pointer" onClick={handleCTAClick}>지금 구매하기</p>
         </div>
       </div>
-      <div className="absolute bg-gradient-to-b from-[#8d005b] h-[256px] left-1/2 overflow-clip to-[#2e3fad] top-[1329px] translate-x-[-50%] w-[375px]" data-name="3">
+      <div className="absolute bg-gradient-to-b from-[#8d005b] h-[321px] left-1/2 overflow-clip to-[#2e3fad] top-[1765px] translate-x-[-50%] w-[375px]" data-name="3">
         <div className="absolute contents inset-[-25.78%_-14.03%_-25.39%_-11.23%]" data-name="Clip path group">
           <div className="absolute inset-[-158.72%_-66.97%_-159.12%_-64.02%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[197.961px_340.32px] mask-size-[469.707px_387.008px] opacity-[0.16]" data-name="Group" style={{ maskImage: `url('${imgGroup50}')` }}>
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 866.217 1069.68">
@@ -2613,8 +2663,21 @@ export default function Frame() {
             </defs>
           </svg>
         </div>
+        {/* 할인쿠폰 남은 갯수 텍스트 콘텐츠 */}
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-1/2 not-italic text-[19.24px] text-center text-white top-[20px] tracking-[-1.5392px] translate-x-[-50%] whitespace-nowrap" style={{ background: 'linear-gradient(90deg, #FFD700, #FF76D5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          할인쿠폰 남은 갯수
+        </p>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[19.24px] text-center text-white top-[107px] tracking-[-1.5392px] translate-x-[-50%] whitespace-nowrap">
+          <span className="font-bold">30개</span>
+          <span>가 모두 발급되면 할인 혜택이 끝나요!</span>
+        </p>
+        <div className="absolute left-1/2 top-[132px] translate-x-[-50%] flex items-baseline">
+          <p className="font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] not-italic text-[128.39px] text-center text-white tracking-[2.5678px]">13</p>
+          <p className="font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] not-italic text-[40.67px] text-center text-white tracking-[0.8134px] ml-[4px]">개</p>
+        </div>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[12px] text-center text-white top-[286px] tracking-[-0.96px] translate-x-[-50%] whitespace-pre">{`⚠️  혜택 기간이 끝나면 쿠폰이 남아도 조기 종료 될 수 있습니다 ⚠`}</p>
       </div>
-      <div className="absolute h-[165.972px] left-0 overflow-clip top-[1585px] w-[375px]" data-name="4" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 375 165.97\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-38.767 -10.388 11.973 -40.885 334.2 94.693)\\\'><stop stop-color=\\\'rgba(255,94,97,1)\\\' offset=\\\'0.039516\\\'/><stop stop-color=\\\'rgba(249,80,140,1)\\\' offset=\\\'0.28139\\\'/><stop stop-color=\\\'rgba(242,65,183,1)\\\' offset=\\\'0.52326\\\'/></radialGradient></defs></svg>')" }}>
+      <div className="absolute h-[165.972px] left-0 overflow-clip top-[2086px] w-[375px]" data-name="4" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 375 165.97\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-38.767 -10.388 11.973 -40.885 334.2 94.693)\\\'><stop stop-color=\\\'rgba(255,94,97,1)\\\' offset=\\\'0.039516\\\'/><stop stop-color=\\\'rgba(249,80,140,1)\\\' offset=\\\'0.28139\\\'/><stop stop-color=\\\'rgba(242,65,183,1)\\\' offset=\\\'0.52326\\\'/></radialGradient></defs></svg>')" }}>
         <div className="absolute inset-[-25.52%_-5%_-51.26%_52.87%]" data-name="Rectangle">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgRectangle11} />
@@ -2636,7 +2699,7 @@ export default function Frame() {
           <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImage11793} />
         </div>
       </div>
-      <div className="absolute bg-white h-[1900px] left-0 overflow-clip top-[1329px] w-[375px]">
+      <div className="absolute bg-white h-[1906px] left-0 overflow-clip top-[2252px] w-[375px]">
         <div className="absolute bg-gradient-to-b bottom-[-32.94%] from-[#73abff] from-[16.775%] left-1/2 to-[#435af7] to-[28.741%] top-0 translate-x-[-50%] w-[375px]" />
         <div className="absolute bottom-[68.36%] left-1/2 top-0 translate-x-[-50%] w-[375px]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 375 603">
@@ -3026,7 +3089,7 @@ export default function Frame() {
           </div>
         </div>
       </div>
-      <div className="absolute bg-white h-[447px] left-0 overflow-clip top-[4161px] w-[375px]">
+      <div className="absolute bg-white h-[447px] left-0 overflow-clip top-[5090px] w-[375px]">
         <div className="absolute bg-black bottom-0 h-[447px] left-1/2 translate-x-[-50%] w-[375px]" />
         <div className="absolute h-[52.622px] left-[20px] top-[5px] w-[145.642px]">
           <Group2609478 />
@@ -3241,8 +3304,12 @@ export default function Frame() {
                 </div>
               </div>
             </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[31.06px] not-italic text-[8.469px] text-nowrap text-white top-[93.73px] tracking-[-0.5081px]">비즈니스 영어 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[31.06px] not-italic text-[31.393px] text-nowrap text-white top-[115.2px] tracking-[-2.5114px]">{activeTab === 'business' ? '64' : '73'}%</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[31.06px] not-italic text-[8.616px] text-nowrap text-white top-[93.73px] tracking-[-0.5169px]">봄맞이 할인 쿠폰</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[31.06px] not-italic text-[0px] text-nowrap text-white top-[118.66px] tracking-[-2.2443px]">
+              <span className="text-[28.054px]">1</span>
+              <span className="text-[28.054px] tracking-[-0.2805px]">2</span>
+              <span className="text-[18.113px]">만원</span>
+            </p>
           </div>
           <div className="absolute h-[38.126px] left-[calc(50%-90.69px)] top-0 translate-x-[-50%] w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => setActiveTab('business')} />
           <div className="absolute h-[38.126px] right-[4.96px] top-0 w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => setActiveTab('study')} />
@@ -3263,16 +3330,27 @@ export default function Frame() {
           <BackgroundImage additionalClassNames="top-[190.29px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
           <div className="absolute contents left-[188px] top-[74px]">
             <BackgroundImage1 text="월" text1="원" price={activeTab === 'business' ? '1,300,000' : '2,540,000'} additionalClassNames="top-[74px]" />
-            <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '39,200' : '59,200'} additionalClassNames="top-[100.36px]" />
+            {/* 기존 가격 (취소선) */}
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[190.99px] not-italic text-[0px] text-nowrap text-[#626262] top-[94px]">
+              <span className="text-[11.674px]">월</span>
+              <span className="text-[16px] line-through">{` ${activeTab === 'business' ? '39,200' : '59,200'}`}</span>
+              <span className="text-[11.674px]">원</span>
+            </p>
             <BackgroundImage3 additionalClassNames="top-[86.02px]" />
+            {/* 할인된 가격 */}
+            <BackgroundImage2 text="월" text1="원" price={activeTab === 'business' ? '29,200' : '49,200'} additionalClassNames="top-[100.36px]" />
+            {/* 할인 배지들 */}
             <div className="absolute h-[17.098px] left-[191.09px] rounded-[1.777px] top-[138.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
             <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[222.07px] not-italic text-[10.304px] text-center text-nowrap text-white top-[140.63px] tracking-[-0.7213px] translate-x-[-50%]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[303.35px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[115px] tracking-[-0.7488px]">12개월 할부</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[258.91px] not-italic text-[10.304px] text-center text-nowrap text-white top-[140.63px]">+</p>
+            <div className="absolute h-[17.098px] left-[271.81px] rounded-[1.777px] top-[138.56px] w-[61.743px]" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }} />
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[302.68px] not-italic text-[10.304px] text-center text-nowrap text-white top-[140.63px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[303.35px] not-italic text-[#626262] text-[10.697px] text-nowrap top-[163px] tracking-[-0.7488px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
           </div>
         </div>
       </div>
-      <div className="absolute bg-white h-[932px] left-0 overflow-hidden top-[3229px] w-[375px]">
-        <div className="absolute bg-black h-[932px] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[375px]" />
+      <div className="absolute bg-white h-[1520px] left-0 overflow-hidden top-[4158px] w-[375px]">
+        <div className="absolute bg-black h-[1520px] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[375px]" />
         <div className="absolute flex h-[142.53px] items-center justify-center left-[-77.53px] top-[-30px] w-[554.434px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
           <div className="flex-none rotate-[10.895deg]">
             <div className="bg-[#ff76d5] font-['Spoqa_Han_Sans_Neo'] h-[37.876px] leading-[normal] not-italic overflow-clip relative text-[13.527px] text-center text-nowrap text-white w-[557.32px]" data-name="하단 띠배너2">
@@ -3331,22 +3409,22 @@ export default function Frame() {
           <div className="flex items-baseline gap-[6px] font-['Spoqa_Han_Sans_Neo'] font-medium text-[40.334px] tracking-[0.8067px]">
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.days)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">DAYS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">DAYS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.hours)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">HOURS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">HOURS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.minutes)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">MINS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">MINS</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
               <span>{formatTime(timeLeft.seconds)}</span>
-              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px]">SECS</span>
+              <span className="font-normal text-[11.429px] tracking-[0.2286px] mt-[4px] text-[#ff76d5]">SECS</span>
             </div>
           </div>
         </div>
@@ -3393,6 +3471,12 @@ export default function Frame() {
               <BackgroundImage5 text="전문 강사진" text1="10년 이상 경력의 비즈니스 영어 전문가" />
             </div>
           </BackgroundImage6>
+          <BackgroundImage6>
+            <div className="content-stretch flex gap-[10px] items-center relative shrink-0">
+              <p className="font-['Spoqa_Han_Sans_Neo:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[30.79px] text-black text-center text-nowrap tracking-[-2.1553px]">🤖</p>
+              <BackgroundImage5 text="AI 튜터 스터디파이 NEW 앱" text1="출퇴근 길, 점심시간, 자기 전에 언제 어디서나" />
+            </div>
+          </BackgroundImage6>
         </div>
         <div className="absolute contents left-[15px] top-[468px]">
           <div className="absolute bg-[#fd349a] h-[48px] left-1/2 rounded-[7px] top-[468px] translate-x-[-50%] w-[345px] cursor-pointer flex items-center justify-center" onClick={handleCTAClick}>
@@ -3401,7 +3485,70 @@ export default function Frame() {
             </p>
           </div>
         </div>
+        {/* 하단 탭 + 가격 + CTA 반복 */}
+        <div className="absolute left-[5.96px] top-[1020px] w-[364px]">
+          {/* 탭 */}
+          <div className="relative h-[38px]">
+            <div className="absolute h-[38px] left-0 top-0 w-[181.7px] cursor-pointer" style={{ backgroundColor: '#435AF7' }} onClick={() => setActiveTab('business')} />
+            <div className="absolute h-[38px] right-0 top-0 w-[182.387px] cursor-pointer" style={{ backgroundColor: '#FF76D5' }} onClick={() => setActiveTab('study')} />
+            <button
+              onClick={() => setActiveTab('business')}
+              className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[91px] not-italic text-[14.77px] text-center text-nowrap top-[10px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+              style={{ color: activeTab === 'business' ? '#fff' : '#8B99FF' }}
+            >
+              비즈니스 인텐시브
+            </button>
+            <button
+              onClick={() => setActiveTab('study')}
+              className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[273px] not-italic text-[14.77px] text-center text-nowrap top-[10px] tracking-[-1.0339px] translate-x-[-50%] cursor-pointer border-0 bg-transparent p-0"
+              style={{ color: activeTab === 'study' ? '#fff' : '#FFACE5' }}
+            >
+              출국 없이 어학연수
+            </button>
+          </div>
+          {/* 가격 정보 */}
+          <div className="relative h-[237px]" style={{ borderColor: activeTab === 'business' ? '#435af7' : '#ff76d5', borderWidth: '1.374px', borderStyle: 'solid', backgroundColor: '#000' }}>
+            {/* 쿠폰 카드 (작은 버전) */}
+            <div className="absolute left-[14px] top-[27px] cursor-pointer" onClick={handleCopyCoupon}>
+              <SubtractBackgroundImage additionalClassNames="" />
+            </div>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[26px] not-italic text-[8.469px] text-nowrap text-white top-[38px] tracking-[-0.5px]">봄맞이 할인 쿠폰</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[26px] not-italic text-[25px] text-nowrap text-white top-[55px] tracking-[-2px]">12만원</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[26px] not-italic text-[8px] text-nowrap text-white top-[110px] tracking-[-0.5px]">
+              {isCopied ? '✅ 복사 완료!' : '📑 쿠폰을 누르면 코드가 복사됩니다.'}
+            </p>
+            {/* 가격 */}
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[195px] not-italic text-[#626262] text-[16px] text-nowrap top-[20px] line-through tracking-[-1px]">
+              월 {activeTab === 'business' ? '39,200' : '59,200'}원
+            </p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[195px] not-italic text-white text-[0px] text-nowrap top-[40px]">
+              <span className="text-[14px]">월</span>
+              <span className="text-[28px] tracking-[-1px]">{` ${activeTab === 'business' ? '29,200' : '49,200'}`}</span>
+              <span className="text-[20px]">원</span>
+            </p>
+            {/* 할인 배지들 */}
+            <div className="absolute flex gap-[4px] items-center left-[195px] top-[84px]">
+              <div className="h-[17px] rounded-[1.777px] px-[8px] flex items-center justify-center" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }}>
+                <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[10px] text-center text-white tracking-[-0.7px]">{activeTab === 'business' ? '64' : '73'}% 할인</p>
+              </div>
+              <span className="font-['Spoqa_Han_Sans_Neo'] text-white text-[10px]">+</span>
+              <div className="h-[17px] rounded-[1.777px] px-[8px] flex items-center justify-center" style={{ backgroundColor: activeTab === 'business' ? '#435af7' : '#ff76d5' }}>
+                <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[10px] text-center text-white tracking-[-0.7px]">12만원 할인</p>
+              </div>
+            </div>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[195px] not-italic text-[#626262] text-[10px] text-nowrap top-[108px] tracking-[-0.7px]">{activeTab === 'business' ? '1,300,000' : '2,540,000'}원 / 12개월 할부</p>
+            {/* 수강 정보 */}
+            <BackgroundImage additionalClassNames="top-[135px] left-[14px]" activeTab={activeTab} startDate={dates.start} endDate={dates.end} />
+          </div>
+        </div>
+        {/* 최종 CTA */}
+        <div className="absolute left-1/2 top-[1420px] translate-x-[-50%]">
+          <div className="bg-[#d9ff00] border-[#d9ff00] border-[0.561px] border-solid h-[48px] rounded-[24px] w-[345px] cursor-pointer flex items-center justify-center" onClick={handleCTAClick}>
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] not-italic text-[#4158f1] text-[16px] text-center text-nowrap tracking-[-0.5px]">지금 구매하기</p>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   );
 }
