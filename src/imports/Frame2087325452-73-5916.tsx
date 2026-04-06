@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import imgSpringHeroCopy from "../assets/spring-hero-copy.png";
 import imgSpringEllipse from "../assets/spring-ellipse.png";
+import imgCherryBlossomLeft from "../assets/cherry-blossom-left.png";
+import imgCherryBlossomRight from "../assets/cherry-blossom-right.png";
 import imgRectangle2 from "../assets/b06a8fef47b3a66fc4ffc63d1f0cb3298fc8513e.png";
 import imgRectangle3 from "../assets/0d18f6487bf1811e018db304c5abaa25dc4317e3.png";
 import imgRectangle4 from "../assets/b5d74c42e76c2897b02bcb75aa13dfbe39acee10.png";
@@ -1286,17 +1288,21 @@ export default function Frame() {
 
   return (
     <div className="bg-white relative w-[375px] min-h-screen mx-auto overflow-hidden">
-      <div className="absolute left-0 overflow-clip top-0 w-[375px] h-[290px]" data-name="1">
-        {/* 배경 그라데이션 - Figma: #0084ff → rgba(255,0,224,0) → white */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #0084ff 0%, rgba(255,0,224,0) 50%, #ffffff 100%)' }} />
+      <div className="absolute left-0 overflow-clip top-0 w-[375px] h-[246px]" data-name="1" style={{ background: 'linear-gradient(180deg, #0084FF 0%, rgba(255, 0, 224, 0.00) 50%, #FFF 100%)' }}>
         {/* 벚꽃 타원 장식 - mix-blend-plus-lighter */}
-        <div className="absolute left-[34px] top-[-27px] w-[298px] h-[298px] mix-blend-plus-lighter">
+        <div className="absolute left-[34px] top-[-27px] w-[298px] h-[298px]" style={{ borderRadius: '298px', background: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.00) 100%)', mixBlendMode: 'plus-lighter' }}>
           <img alt="" className="absolute block max-w-none w-full h-full" src={imgSpringEllipse} />
         </div>
         {/* 왼쪽 벚꽃 가지 - mix-blend-screen */}
-        <div className="absolute bottom-0 h-[178px] left-0 mix-blend-screen overflow-clip w-[224px]" />
+        <div className="absolute left-0 top-[68px] w-[224px] h-[178px] overflow-clip" style={{ mixBlendMode: 'screen' }}>
+          <img alt="" className="absolute block max-w-none w-full h-full object-cover" src={imgCherryBlossomLeft} />
+        </div>
+        {/* 오른쪽 벚꽃 가지 */}
+        <div className="absolute left-[207px] top-0 w-[168px] h-[169px] overflow-clip">
+          <img alt="" className="absolute block max-w-none w-full h-full object-cover" src={imgCherryBlossomRight} />
+        </div>
         {/* 히어로 카피 텍스트 */}
-        <div className="absolute h-[183px] left-1/2 top-[calc(50%-16.5px)] -translate-x-1/2 -translate-y-1/2 w-[236px]" data-name="카피">
+        <div className="absolute left-[69px] top-[15px] w-[236px] h-[183px]" data-name="카피">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <img alt="봄맞이 할인 프로모션 비즈니스 영어 패키지" className="absolute h-[141.34%] left-[3.39%] max-w-none top-[2.01%] w-[93.22%]" src={imgSpringHeroCopy} />
           </div>
@@ -1310,8 +1316,8 @@ export default function Frame() {
               {formatTime(timeLeft.days)}일 {formatTime(timeLeft.hours)}시간 {formatTime(timeLeft.minutes)}분  {formatTime(timeLeft.seconds)}초 남았습니다
             </p>
           </div>
-          <div className="absolute right-[12px] top-1/2 -translate-y-1/2 border border-white h-[26px] rounded-[5px] shrink-0 px-[10px] cursor-pointer flex items-center justify-center" onClick={handleCTAClick}>
-            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[10px] text-center text-white text-nowrap tracking-[-0.5px]">강의 구매하기</p>
+          <div className="absolute right-[12px] top-1/2 -translate-y-1/2 shrink-0 cursor-pointer flex items-center justify-center w-[62.33px] h-[17.04px]" style={{ border: '0.21px solid white', borderRadius: '0px', WebkitBorderRadius: '0px' }} onClick={handleCTAClick}>
+            <p className="font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] not-italic text-[8.1px] text-center text-white text-nowrap tracking-[-0.5px]">강의 구매하기</p>
           </div>
         </div>
         <div className="absolute contents left-[245px] top-[129px]">
