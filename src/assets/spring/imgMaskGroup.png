@@ -1,0 +1,31 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 375 603" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mask group">
+<mask id="mask0_0_465" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="375" height="603">
+<path id="Rectangle 34625594" d="M1.33514e-05 0H375V548.797L187.5 603L0 548.797L1.33514e-05 0Z" fill="var(--fill-0, black)"/>
+</mask>
+<g mask="url(#mask0_0_465)">
+<path id="Vector 1448" d="M182.785 431.815L378.439 611.751L393.865 603.487L259.302 376.646L182.785 431.815Z" fill="url(#paint0_linear_0_465)"/>
+<path id="Vector 1450" d="M65.9627 585.615L328.134 629.472L336.542 614.124L99.9232 497.608L65.9627 585.615Z" fill="url(#paint1_linear_0_465)"/>
+<path id="Vector 1449" d="M267.287 369.346L396.592 601.59L413.832 598.585L357.252 340.974L267.287 369.346Z" fill="url(#paint2_linear_0_465)"/>
+<path id="Vector 1451" d="M100.141 489.289L338.08 607.79L350.603 595.567L158.32 415.035L100.141 489.289Z" fill="url(#paint3_linear_0_465)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_465" x1="223.161" y1="396.006" x2="347.587" y2="628.278" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_465" x1="80.2243" y1="533.566" x2="311.318" y2="660.168" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_465" x1="316.861" y1="348.015" x2="362.112" y2="607.601" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint3_linear_0_465" x1="128.98" y1="443.673" x2="313.033" y2="632.238" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

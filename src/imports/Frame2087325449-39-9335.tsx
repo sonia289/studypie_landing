@@ -2297,7 +2297,7 @@ export default function Frame() {
                 </div>
               </div>
             </div>
-            <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[87.8px] not-italic text-[11.891px] text-nowrap text-white top-[299.85px]">비즈니스 영어 할인쿠폰</p>
+            <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[87.8px] not-italic text-[11.891px] text-nowrap text-white top-[299.85px]">봄맞이 할인 쿠폰</p>
             <p className="absolute font-['Spoqa_Han_Sans_Neo:Bold',sans-serif] leading-[normal] left-[87.8px] not-italic text-[0px] text-nowrap text-white top-[330px] tracking-[-1.9808px]">
               <span className="text-[30px]">~최대 73</span>
               <span className="text-[22.443px] tracking-[-0.8977px]">%</span>
@@ -2545,7 +2545,7 @@ export default function Frame() {
               </div>
             </div>
           </div>
-          <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[28.71px] not-italic text-[7.938px] text-nowrap text-white top-[711.76px]">비즈니스 영어 할인쿠폰</p>
+          <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[28.71px] not-italic text-[7.938px] text-nowrap text-white top-[711.76px]">봄맞이 할인 쿠폰</p>
           <BackgroundImage text={activeTab === 'business' ? '64' : '73'} text1="%" additionalClassNames="top-[726.84px]" />
         </div>
         <ul className="absolute block font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[0] left-[5.96px] not-italic text-[#8b99ff] text-[8.587px] top-[953.83px] w-[270.661px]">
@@ -2976,7 +2976,7 @@ export default function Frame() {
               </div>
             </div>
           </div>
-          <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[28.71px] not-italic text-[7.938px] text-nowrap text-white top-[76.76px]">비즈니스 영어 할인쿠폰</p>
+          <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[28.71px] not-italic text-[7.938px] text-nowrap text-white top-[76.76px]">봄맞이 할인 쿠폰</p>
           <BackgroundImage text={activeTab === 'business' ? '64' : '73'} text1="%" additionalClassNames="top-[91.84px]" />
         </div>
         <ul className="absolute block font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[0] left-[5.96px] not-italic text-[#626262] text-[8.587px] top-[318.83px] w-[270.661px]">

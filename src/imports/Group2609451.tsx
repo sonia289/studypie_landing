@@ -57,8 +57,8 @@ function Group72Vector({ children, additionalClassNames = "" }: React.PropsWithC
 export default function Group() {
   return (
     <div className="relative size-full">
-      <div className="absolute bg-[#435af7] h-[38.126px] left-[calc(50%-91.19px)] top-0 translate-x-[-50%] w-[181.7px]" />
-      <div className="absolute bg-black border-[#435af7] border-[1.374px] border-solid h-[236.657px] left-1/2 top-[38.13px] translate-x-[-50%] w-[364.087px]" />
+      <div className="absolute bg-[#e85d9e] h-[38.126px] left-[calc(50%-91.19px)] top-0 translate-x-[-50%] w-[181.7px]" />
+      <div className="absolute bg-black border-[#e85d9e] border-[1.374px] border-solid h-[236.657px] left-1/2 top-[38.13px] translate-x-[-50%] w-[364.087px]" />
       <div className="absolute bg-[#ff76d5] h-[38.126px] right-0 top-0 w-[182.387px]" />
       <div className="absolute contents left-[16.14px] top-[57.7px]">
         <div className="absolute h-[68.001px] left-[16.14px] top-[57.7px] w-[146.322px]" data-name="Subtract">
@@ -67,7 +67,7 @@ export default function Group() {
             <defs>
               <radialGradient cx="0" cy="0" gradientTransform="matrix(80.636 36.4758 -31.7053 70.0889 80.636 37.0817)" gradientUnits="userSpaceOnUse" id="paint0_radial_21_2210" r="1">
                 <stop stopColor="#FF76D5" />
-                <stop offset="1" stopColor="#435AF7" />
+                <stop offset="1" stopColor="#e85d9e" />
               </radialGradient>
             </defs>
           </svg>
@@ -854,8 +854,8 @@ export default function Group() {
             </svg>
           </div>
         </div>
-        <div className="absolute bg-[#435af7] h-[17.098px] left-[276.5px] rounded-[1.777px] top-[139.8px] w-[61.743px]" />
-        <div className="absolute bg-[#435af7] h-[17.098px] left-[195.79px] rounded-[1.777px] top-[139.8px] w-[61.743px]" />
+        <div className="absolute bg-[#e85d9e] h-[17.098px] left-[276.5px] rounded-[1.777px] top-[139.8px] w-[61.743px]" />
+        <div className="absolute bg-[#e85d9e] h-[17.098px] left-[195.79px] rounded-[1.777px] top-[139.8px] w-[61.743px]" />
         <p className="absolute font-['Spoqa_Han_Sans_Neo:Medium',sans-serif] leading-[normal] left-[307.52px] not-italic text-[10.304px] text-center text-nowrap text-white top-[141.86px] tracking-[-0.7213px] translate-x-[-50%]">12만원 할인</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo:Regular',sans-serif] leading-[normal] left-[267.11px] not-italic text-[11.552px] text-center text-nowrap text-white top-[141.28px] tracking-[-0.8086px] translate-x-[-50%]">+</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo:Medium',sans-serif] leading-[normal] left-[226.77px] not-italic text-[10.304px] text-center text-nowrap text-white top-[141.86px] tracking-[-0.7213px] translate-x-[-50%]">64% 할인</p>
