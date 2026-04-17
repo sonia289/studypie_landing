@@ -1346,8 +1346,18 @@ export default function Frame() {
   return (
     <>
       {/* 상단 띠배너 - fixed, zoom 컨테이너 밖 */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none" data-name="상단 띠배너">
-        <div className="relative pointer-events-auto" style={{ width: 375, height: '43.975px', zoom: scale, background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)' }}>
+      <div
+        className="fixed top-0 left-1/2 z-50"
+        data-name="상단 띠배너"
+        style={{
+          width: 375,
+          height: '43.975px',
+          transform: `translateX(-50%) scale(${scale})`,
+          transformOrigin: 'top center',
+          background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)',
+        }}
+      >
+        <div className="relative w-full h-full">
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <p className="font-['Spoqa_Han_Sans_Neo'] font-normal leading-[normal] not-italic text-[8.91px] text-center text-nowrap text-white tracking-[-0.4px]">
               🚨곧 마감! 놓치면 다음 봄을 기다려야 해요🚨
