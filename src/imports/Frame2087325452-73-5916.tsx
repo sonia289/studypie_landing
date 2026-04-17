@@ -1343,18 +1343,35 @@ export default function Frame() {
     return () => window.removeEventListener('resize', updateScale);
   }, [updateScale]);
 
+  // 띠배너 가로 위치를 메인 콘텐츠와 정확히 맞추기 위해 런타임 측정
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [bannerLeft, setBannerLeft] = useState<number | null>(null);
+  useEffect(() => {
+    const sync = () => {
+      if (contentRef.current) {
+        const rect = contentRef.current.getBoundingClientRect();
+        setBannerLeft(rect.left);
+      }
+    };
+    sync();
+    window.addEventListener('resize', sync);
+    return () => window.removeEventListener('resize', sync);
+  }, [scale]);
+
   return (
     <>
-      {/* 상단 띠배너 - fixed, zoom 컨테이너 밖 */}
+      {/* 상단 띠배너 - fixed, 메인 콘텐츠와 가로 위치 동기화 */}
       <div
-        className="fixed top-0 left-1/2 z-50"
+        className="fixed top-0 z-50"
         data-name="상단 띠배너"
         style={{
+          left: bannerLeft !== null ? `${bannerLeft}px` : '50%',
           width: 375,
           height: '43.975px',
-          transform: `translateX(-50%) scale(${scale})`,
-          transformOrigin: 'top center',
+          transform: bannerLeft !== null ? `scale(${scale})` : `translateX(-50%) scale(${scale})`,
+          transformOrigin: 'top left',
           background: 'linear-gradient(91deg, #FF76D5 0.08%, #435AF7 99.92%)',
+          visibility: bannerLeft !== null ? 'visible' : 'hidden',
         }}
       >
         <div className="relative w-full h-full">
@@ -1373,6 +1390,7 @@ export default function Frame() {
       </div>
       {/* 메인 콘텐츠 */}
       <div
+        ref={contentRef}
         className="mx-auto origin-top"
         style={{ width: 375, zoom: scale }}
       >
