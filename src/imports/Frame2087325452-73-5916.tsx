@@ -1364,7 +1364,7 @@ export default function Frame() {
       {/* 메인 콘텐츠 */}
       <div
         className="mx-auto origin-top"
-        style={{ width: 375, zoom: scale, paddingTop: '43.975px' }}
+        style={{ width: 375, zoom: scale }}
       >
       <div className="bg-white relative w-[375px] h-[5678px] overflow-x-hidden">
       {/* 히어로 섹션 - 띠배너 아래에서 시작 */}
