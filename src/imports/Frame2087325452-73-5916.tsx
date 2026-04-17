@@ -1824,7 +1824,7 @@ export default function Frame() {
             </div>
           </div>
         </div>
-        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[calc(50%+0.47px)] not-italic text-[25.409px] text-center text-white top-[691.2px] tracking-[-0.7623px] translate-x-[-50%] w-[381.935px]">직장인 8,500명의 선택!</p>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[calc(50%+0.47px)] not-italic text-[25.409px] text-center text-white top-[691.2px] tracking-[-0.7623px] translate-x-[-50%] w-[381.935px]">10,000명의 선택!</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-medium leading-[normal] left-[calc(50%+0.47px)] not-italic text-[25.409px] text-center text-white top-[1056.2px] tracking-[-0.7623px] translate-x-[-50%] w-[381.935px]">2,500페이지 PDF 학습노트</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.47px)] not-italic text-[15.326px] text-center text-white top-[667px] tracking-[-1.3793px] translate-x-[-50%] w-[381.935px]">실제 수강생이 말하는 비즈니스 영어 패키지</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.47px)] not-italic text-[15.326px] text-center text-white top-[1094px] tracking-[-1.3793px] translate-x-[-50%] w-[381.935px]">강의 내용 복습 뿐만 아니라 꿀팁과 연습 문제도 제공됩니다</p>
