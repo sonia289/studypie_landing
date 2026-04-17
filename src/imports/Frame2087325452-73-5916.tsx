@@ -2231,7 +2231,7 @@ export default function Frame() {
           </div>
         </div>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%+0.5px)] not-italic text-[28.842px] text-center text-white top-[287px] tracking-[-0.8653px] translate-x-[-50%] w-[292px]">일주일 뒤에는 없습니다</p>
-        <p className="absolute font-['WindSong',cursive] leading-[normal] left-[calc(50%+0.5px)] not-italic text-[#ff76d5] text-[29.758px] text-center top-[260px] tracking-[-0.8927px] translate-x-[-50%] w-[260px]">Final Offer</p>
+        <p className="absolute leading-[normal] left-[calc(50%+0.5px)] not-italic text-[#ff76d5] text-[29.758px] text-center top-[260px] tracking-[-0.8927px] translate-x-[-50%] w-[260px]" style={{ fontFamily: "'WindSong', cursive" }}>Final Offer</p>
         <div className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-[calc(50%+0.5px)] not-italic text-[14.898px] text-center text-white top-[325.1px] tracking-[-0.4469px] translate-x-[-50%] w-[292px]">
           <p className="mb-0">26년 봄 프로모션, 할인받을 수 있는</p>
           <p className="font-['Spoqa_Han_Sans_Neo'] font-medium text-[#ff76d5]">이벤트 마지막 주!</p>
