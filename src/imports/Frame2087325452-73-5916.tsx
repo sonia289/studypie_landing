@@ -1264,7 +1264,7 @@ export default function Frame() {
   };
 
   const handleCTAClick = () => {
-    window.location.href = 'https://studypie.co/course/a/english_package_2022#package';
+    window.location.href = 'https://studypie.co/course/a/english_package_2026';
   };
 
   const slides = [imgLearningNoteExample1, img20251114320331];
