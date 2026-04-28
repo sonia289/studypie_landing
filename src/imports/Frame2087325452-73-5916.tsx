@@ -1674,7 +1674,7 @@ export default function Frame() {
           <span className="font-bold">30개</span>
           <span>가 모두 발급되면 할인 혜택이 끝나요!</span>
         </p>
-        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%-12.5px)] not-italic text-[128.39px] text-center text-white top-[132px] tracking-[2.5678px] translate-x-[-50%] whitespace-nowrap">19</p>
+        <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%-12.5px)] not-italic text-[128.39px] text-center text-white top-[132px] tracking-[2.5678px] translate-x-[-50%] whitespace-nowrap">7</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] font-bold leading-[normal] left-[calc(50%+82.38px)] not-italic text-[40.67px] text-center text-white top-[218px] tracking-[0.8134px] translate-x-[-50%] whitespace-nowrap">개</p>
         <p className="absolute font-['Spoqa_Han_Sans_Neo'] leading-[normal] left-1/2 not-italic text-[12px] text-center text-white top-[286px] tracking-[-0.96px] translate-x-[-50%] whitespace-pre">{`⚠  혜택 기간이 끝나면 쿠폰이 남아도 조기 종료 될 수 있습니다 ⚠`}</p>
       </div>
